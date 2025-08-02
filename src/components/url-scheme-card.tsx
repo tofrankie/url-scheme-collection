@@ -41,44 +41,41 @@ export function URLSchemeCard({
       }}
     >
       <Stack direction="vertical" spacing={3} sx={{ flex: 1 }}>
-        {/* 图标 */}
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            width: '32px',
-            height: '32px',
-            bg: 'accent.subtle',
-            borderRadius: 2,
-            color: 'accent.fg',
-            flexShrink: 0,
-          }}
-        >
-          <PackageIcon size={16} />
-        </Box>
+        <Stack direction="horizontal" gap="condensed" align="center">
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              width: '32px',
+              height: '32px',
+              bg: 'accent.subtle',
+              borderRadius: 2,
+              color: 'accent.fg',
+              flexShrink: 0,
+            }}
+          >
+            <PackageIcon size={16} />
+          </Box>
+          <Text
+            as="h3"
+            sx={{
+              fontWeight: 'bold',
+              fontSize: 2,
+              color: 'fg.default',
+              lineHeight: 1.2,
+            }}
+          >
+            {scheme.name}
+          </Text>
+          {scheme.deprecated && (
+            <Label variant="danger" size="small">
+              已废弃
+            </Label>
+          )}
+        </Stack>
 
-        {/* 标题和废弃标识 */}
         <Stack direction="vertical" spacing={1}>
-          <Stack direction="horizontal" spacing={2} align="center">
-            <Text
-              as="h3"
-              sx={{
-                fontWeight: 'bold',
-                fontSize: 2,
-                color: 'fg.default',
-                lineHeight: 1.2,
-              }}
-            >
-              {scheme.name}
-            </Text>
-            {scheme.deprecated && (
-              <Label variant="danger" size="small">
-                已废弃
-              </Label>
-            )}
-          </Stack>
-
           {/* 描述 */}
           {scheme.description && (
             <Text
@@ -97,10 +94,8 @@ export function URLSchemeCard({
           )}
         </Stack>
 
-        {/* URL 模板预览 */}
         <CopyableInput value={scheme.urlTemplate} />
 
-        {/* 操作按钮 */}
         <Stack direction="horizontal" gap="condensed">
           <Button onClick={handleOpen} size="small" variant="primary">
             打开

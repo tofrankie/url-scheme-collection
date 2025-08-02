@@ -1,116 +1,106 @@
 import type { URLScheme, Category } from '@/types'
 
-// 示例分类数据
-export const sampleCategories: Category[] = [
+export const GITHUB_REPO_URL =
+  'https://github.com/toFrankie/url-scheme-collection'
+
+export const GITHUB_ISSUES_URL = `${GITHUB_REPO_URL}/issues`
+
+export const GITHUB_PULLS_URL = `${GITHUB_REPO_URL}/pulls`
+
+// 基础分类定义（不包含 count 和 icon）
+const BASE_CATEGORIES = [
   {
     id: 'app-store',
     name: '应用商店',
     description: 'iOS App Store 和 Android 应用商店相关',
-    count: 13,
-    icon: 'package',
   },
   {
     id: 'social',
     name: '社交应用',
     description: '微信、QQ、微博等社交应用',
-    count: 16,
-    icon: 'people',
   },
   {
     id: 'payment',
     name: '支付应用',
     description: '支付宝、微信支付等支付应用',
-    count: 8,
-    icon: 'credit-card',
   },
   {
     id: 'navigation',
     name: '导航应用',
     description: '高德地图、百度地图等导航应用',
-    count: 6,
-    icon: 'location',
   },
   {
     id: 'music',
     name: '音乐应用',
     description: '网易云音乐、QQ音乐等音乐应用',
-    count: 8,
-    icon: 'music',
   },
   {
     id: 'video',
     name: '视频应用',
     description: '抖音、快手、B站等视频应用',
-    count: 10,
-    icon: 'video',
   },
   {
     id: 'shopping',
     name: '购物应用',
     description: '淘宝、京东、拼多多等购物应用',
-    count: 8,
-    icon: 'shopping-cart',
   },
   {
     id: 'tools',
     name: '工具应用',
     description: '计算器、时钟、天气等工具应用',
-    count: 6,
-    icon: 'tools',
   },
   {
     id: 'education',
     name: '教育应用',
     description: '学习、考试、培训等教育相关应用',
-    count: 7,
-    icon: 'mortar-board',
   },
   {
     id: 'health',
     name: '健康应用',
     description: '运动、医疗、健康管理等应用',
-    count: 6,
-    icon: 'heart',
   },
   {
     id: 'finance',
     name: '金融应用',
     description: '银行、证券、理财等金融应用',
-    count: 8,
-    icon: 'graph',
   },
   {
     id: 'travel',
     name: '旅行应用',
     description: '酒店、机票、旅游等旅行应用',
-    count: 7,
-    icon: 'airplane',
   },
   {
     id: 'food',
     name: '美食应用',
     description: '外卖、团购、美食推荐等应用',
-    count: 6,
-    icon: 'flame',
   },
   {
     id: 'entertainment',
     name: '娱乐应用',
     description: '游戏、直播、娱乐等应用',
-    count: 9,
-    icon: 'gamepad',
   },
   {
     id: 'productivity',
     name: '效率应用',
     description: '办公、笔记、项目管理等应用',
-    count: 8,
-    icon: 'briefcase',
   },
 ]
 
-// 示例 URL Scheme 数据
-export const sampleURLSchemes: URLScheme[] = [
+// 计算每个分类的 URL Scheme 数量
+const calculateCategoryCounts = (schemes: URLScheme[]) => {
+  const counts: Record<string, number> = {}
+
+  schemes.forEach(scheme => {
+    if (!scheme.deprecated) {
+      // 不计算已废弃的
+      counts[scheme.category] = (counts[scheme.category] || 0) + 1
+    }
+  })
+
+  return counts
+}
+
+export const SAMPLE_URL_SCHEMES: URLScheme[] = [
   {
     id: 'app-store-ios',
     name: 'iOS App Store 应用详情',
@@ -1172,3 +1162,13 @@ export const sampleURLSchemes: URLScheme[] = [
     examples: ['msteams://'],
   },
 ]
+
+// 动态生成分类列表
+export const CATEGORIES: Category[] = (() => {
+  const counts = calculateCategoryCounts(SAMPLE_URL_SCHEMES)
+
+  return BASE_CATEGORIES.map(category => ({
+    ...category,
+    count: counts[category.id] || 0,
+  }))
+})()

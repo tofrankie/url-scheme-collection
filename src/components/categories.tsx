@@ -1,29 +1,20 @@
 import React from 'react'
 import { Text, NavList, CounterLabel, Stack } from '@primer/react'
-import { PackageIcon, PeopleIcon, CreditCardIcon } from '@primer/octicons-react'
 import type { Category } from '@/types'
 
-interface CategoryFilterProps {
+interface CategoriesProps {
   categories: Category[]
   selectedCategory?: string | undefined
   onCategoryChange: (categoryId?: string) => void
 }
 
-// 图标映射
-const iconMap: Record<string, React.ComponentType<{ size?: number }>> = {
-  social: PeopleIcon,
-  payment: CreditCardIcon,
-  default: PackageIcon,
-}
-
-export function CategoryFilter({
+export function Categories({
   categories,
   selectedCategory,
   onCategoryChange,
-}: CategoryFilterProps) {
+}: CategoriesProps) {
   return (
     <NavList>
-      {/* 所有分类 */}
       <NavList.Item
         href="#"
         aria-current={!selectedCategory ? 'page' : false}
@@ -32,9 +23,6 @@ export function CategoryFilter({
           onCategoryChange(undefined)
         }}
       >
-        <NavList.LeadingVisual>
-          <PackageIcon />
-        </NavList.LeadingVisual>
         <Stack direction="horizontal" align="center" gap="condensed">
           <Text>所有</Text>
           <CounterLabel scheme="secondary">
@@ -43,9 +31,7 @@ export function CategoryFilter({
         </Stack>
       </NavList.Item>
 
-      {/* 分类列表 */}
       {categories.map(category => {
-        const IconComponent = iconMap[category.id] || PackageIcon
         const isSelected = selectedCategory === category.id
         return (
           <NavList.Item
@@ -57,9 +43,6 @@ export function CategoryFilter({
               onCategoryChange(category.id)
             }}
           >
-            <NavList.LeadingVisual>
-              <IconComponent />
-            </NavList.LeadingVisual>
             <Stack direction="horizontal" align="center" gap="condensed">
               <Text>{category.name}</Text>
               <CounterLabel scheme="secondary">{category.count}</CounterLabel>

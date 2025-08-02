@@ -1,23 +1,28 @@
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 import {
   Box,
-  Heading,
   Text,
   Flash,
   Stack,
-  Spinner,
   IconButton,
   Button,
   PageHeader,
   CounterLabel,
+  Link,
+  Heading,
 } from '@primer/react'
 import { MarkGithubIcon, CommentIcon } from '@primer/octicons-react'
 import { SearchBar } from '@/components/search-bar'
-import { CategoryFilter } from '@/components/category-filter'
+import { Categories } from '@/components/categories'
 import { URLSchemeCard } from '@/components/url-scheme-card'
 import { URLSchemeDetailModal } from '@/components/url-scheme-detail-modal'
 import { ThemeToggle } from '@/components/theme-toggle'
-import { useCategories, useFilteredURLSchemes } from '@/hooks/use-url-schemes'
+import {
+  SAMPLE_URL_SCHEMES,
+  CATEGORIES,
+  GITHUB_REPO_URL,
+  GITHUB_ISSUES_URL,
+} from '@/constants'
 import type { URLScheme } from '@/types'
 
 function App() {
@@ -26,33 +31,44 @@ function App() {
   const [selectedScheme, setSelectedScheme] = useState<URLScheme | null>(null)
   const [isModalOpen, setIsModalOpen] = useState(false)
 
-  // 使用 React Query hooks
-  const { data: categories = [], isLoading: categoriesLoading } =
-    useCategories()
-  const { data: filteredSchemes = [], isLoading: schemesLoading } =
-    useFilteredURLSchemes({
-      search: searchQuery,
-      category: selectedCategory,
-    })
+  const categories = CATEGORIES
 
-  // 处理打开 URL
+  const filteredSchemes = useMemo(() => {
+    let schemes = SAMPLE_URL_SCHEMES
+
+    // 按分类过滤
+    if (selectedCategory) {
+      schemes = schemes.filter(scheme => scheme.category === selectedCategory)
+    }
+
+    // 按搜索查询过滤
+    if (searchQuery?.trim()) {
+      const query = searchQuery.toLowerCase()
+      schemes = schemes.filter(
+        scheme =>
+          scheme.name.toLowerCase().includes(query) ||
+          scheme.description?.toLowerCase().includes(query) ||
+          scheme.urlTemplate.toLowerCase().includes(query)
+      )
+    }
+
+    return schemes
+  }, [searchQuery, selectedCategory])
+
   const handleOpenURL = (url: string) => {
     console.log('打开 URL:', url)
   }
 
-  // 处理显示详情
   const handleShowDetails = (scheme: URLScheme) => {
     setSelectedScheme(scheme)
     setIsModalOpen(true)
   }
 
-  // 处理关闭弹窗
   const handleCloseModal = () => {
     setIsModalOpen(false)
     setSelectedScheme(null)
   }
 
-  // 按分类分组 URL Scheme
   const groupedSchemes = filteredSchemes.reduce(
     (groups, scheme) => {
       const category = categories.find(c => c.id === scheme.category)
@@ -70,14 +86,11 @@ function App() {
     {} as Record<string, { name: string; schemes: URLScheme[] }>
   )
 
-  // 处理分类导航点击
   const handleCategoryClick = (categoryId?: string) => {
     setSelectedCategory(categoryId)
-    // 滚动到顶部
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  // 根据选中的分类过滤显示内容
   const displaySchemes = selectedCategory
     ? groupedSchemes[selectedCategory]?.schemes || []
     : filteredSchemes
@@ -90,7 +103,6 @@ function App() {
         flexDirection: 'column',
       }}
     >
-      {/* Header - 固定高度，不可伸缩 */}
       <Box
         as="header"
         sx={{
@@ -114,7 +126,6 @@ function App() {
 
           <PageHeader.Actions>
             <Stack direction="horizontal" align="center" gap="condensed">
-              {/* 搜索框 */}
               <Box sx={{ width: '300px' }}>
                 <SearchBar
                   value={searchQuery}
@@ -123,41 +134,25 @@ function App() {
                 />
               </Box>
 
-              {/* 反馈/添加按钮 - 跳转到 GitHub Issues 列表 */}
               <Button
                 variant="primary"
                 leadingVisual={CommentIcon}
-                onClick={() =>
-                  window.open(
-                    'https://github.com/toFrankie/url-scheme-collection/issues',
-                    '_blank'
-                  )
-                }
+                onClick={() => window.open(GITHUB_ISSUES_URL, '_blank')}
               >
                 反馈
               </Button>
-
-              {/* 主题切换 */}
               <ThemeToggle />
-
-              {/* GitHub 主页 */}
               <IconButton
-                aria-label="GitHub 主页"
+                aria-label="GitHub Homepage"
                 icon={MarkGithubIcon}
                 variant="invisible"
-                onClick={() =>
-                  window.open(
-                    'https://github.com/toFrankie/url-scheme-collection',
-                    '_blank'
-                  )
-                }
+                onClick={() => window.open(GITHUB_REPO_URL, '_blank')}
               />
             </Stack>
           </PageHeader.Actions>
         </PageHeader>
       </Box>
 
-      {/* 主内容区域 - 占据剩余空间，可滚动 */}
       <Box
         sx={{
           width: '100%',
@@ -169,7 +164,6 @@ function App() {
           boxSizing: 'content-box',
         }}
       >
-        {/* 侧边栏 */}
         <Box
           sx={{
             flexShrink: 0,
@@ -180,54 +174,69 @@ function App() {
           }}
         >
           <Box sx={{ pl: 4, pr: 3, py: 3 }}>
-            {categoriesLoading ? (
-              <Box sx={{ display: 'flex', justifyContent: 'center', py: 2 }}>
-                <Spinner size="small" />
-              </Box>
-            ) : (
-              <CategoryFilter
-                categories={categories}
-                selectedCategory={selectedCategory}
-                onCategoryChange={handleCategoryClick}
-              />
-            )}
+            <Categories
+              categories={categories}
+              selectedCategory={selectedCategory}
+              onCategoryChange={handleCategoryClick}
+            />
           </Box>
         </Box>
 
-        {/* 主内容区域 */}
         <Box sx={{ flex: 1, overflow: 'auto' }}>
           <Box sx={{ p: 4 }}>
             <Stack direction="vertical" spacing={4}>
-              {/* 页面标题和描述 */}
-              <Stack direction="vertical" spacing={2}>
-                <Heading as="h2" sx={{ fontSize: 4 }}>
-                  {selectedCategory
-                    ? groupedSchemes[selectedCategory]?.name ||
-                      '所有 URL Scheme'
-                    : '所有 URL Scheme'}
-                </Heading>
-                <Text sx={{ color: 'fg.muted', fontSize: 2 }}>
-                  {selectedCategory
-                    ? categories.find(c => c.id === selectedCategory)
+              <PageHeader>
+                <PageHeader.TitleArea>
+                  <PageHeader.Title sx={{ fontSize: 4 }}>
+                    {selectedCategory
+                      ? groupedSchemes[selectedCategory].name
+                      : '👋 Hey~'}
+                  </PageHeader.Title>
+                </PageHeader.TitleArea>
+                {selectedCategory ? (
+                  <PageHeader.Description>
+                    {
+                      categories.find(c => c.id === selectedCategory)
                         ?.description
-                    : '收录移动端各类应用的 URL Scheme，支持动态参数配置和快速测试'}
-                </Text>
-              </Stack>
+                    }
+                  </PageHeader.Description>
+                ) : (
+                  <PageHeader.Description sx={{ color: 'fg.muted' }}>
+                    <span>
+                      主流应用的 URL Scheme
+                      虽然网上不难找到，但总是零零散散的。我只是把它们尽可能地聚合在一起，仅此而已。
+                      欢迎提交{' '}
+                      <Link
+                        href={GITHUB_REPO_URL}
+                        target="_blank"
+                        style={{
+                          fontWeight: 'var(--base-text-weight-semibold)',
+                        }}
+                      >
+                        PR 📢
+                      </Link>{' '}
+                      一起完善它，如果觉得有用也欢迎点个{' '}
+                      <Link
+                        href={GITHUB_REPO_URL}
+                        target="_blank"
+                        style={{
+                          fontWeight: 'var(--base-text-weight-semibold)',
+                        }}
+                      >
+                        Star ⭐
+                      </Link>
+                      ，谢谢！
+                    </span>
+                  </PageHeader.Description>
+                )}
+              </PageHeader>
 
-              {/* 显示内容 */}
               <Box>
-                {schemesLoading ? (
-                  <Box
-                    sx={{ display: 'flex', justifyContent: 'center', py: 4 }}
-                  >
-                    <Spinner size="large" />
-                  </Box>
-                ) : displaySchemes.length === 0 ? (
+                {displaySchemes.length === 0 ? (
                   <Flash variant="warning">
                     <Text>没有找到匹配的 URL Scheme</Text>
                   </Flash>
                 ) : selectedCategory ? (
-                  // 显示单个分类的内容
                   <Box
                     sx={{
                       display: 'grid',
@@ -245,12 +254,10 @@ function App() {
                     ))}
                   </Box>
                 ) : (
-                  // 显示所有分类的内容，使用 sticky 布局
                   <Stack direction="vertical" spacing={6}>
                     {Object.entries(groupedSchemes).map(
                       ([categoryId, categoryData]) => (
                         <Box key={categoryId}>
-                          {/* 分类标题 - 使用 sticky 布局 */}
                           <Box
                             sx={{
                               position: 'sticky',
@@ -269,23 +276,15 @@ function App() {
                               align="center"
                               gap="condensed"
                             >
-                              <Text
-                                as="h3"
-                                sx={{
-                                  fontSize: 3,
-                                  color: 'fg.default',
-                                  fontWeight: 'bold',
-                                }}
-                              >
+                              <Heading as="h2" sx={{ fontSize: 3 }}>
                                 {categoryData.name}
-                              </Text>
+                              </Heading>
                               <CounterLabel>
                                 {categoryData.schemes.length}
                               </CounterLabel>
                             </Stack>
                           </Box>
 
-                          {/* 分类下的卡片网格 */}
                           <Box
                             sx={{
                               display: 'grid',
@@ -313,7 +312,6 @@ function App() {
         </Box>
       </Box>
 
-      {/* 详情弹窗 */}
       <URLSchemeDetailModal
         scheme={selectedScheme}
         isOpen={isModalOpen}

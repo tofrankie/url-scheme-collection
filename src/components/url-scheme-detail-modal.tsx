@@ -36,11 +36,9 @@ export function URLSchemeDetailModal({
   const [slotValues, setSlotValues] = useState<Record<string, string>>({})
   if (!scheme || !isOpen) return null
 
-  // 构建 URL
   const buildResult = buildURL(scheme, slotValues)
   const finalURL = buildResult.url
 
-  // 处理插槽值变化
   const handleSlotChange = (slotName: string, value: string) => {
     setSlotValues(prev => ({
       ...prev,
@@ -48,7 +46,6 @@ export function URLSchemeDetailModal({
     }))
   }
 
-  // 处理打开 URL
   const handleOpen = () => {
     if (buildResult.isValid) {
       onOpen(finalURL)
@@ -58,7 +55,6 @@ export function URLSchemeDetailModal({
 
   return (
     <>
-      {/* 背景遮罩 */}
       <Box
         sx={{
           position: 'fixed',
@@ -72,7 +68,6 @@ export function URLSchemeDetailModal({
         onClick={onClose}
       />
 
-      {/* 模态框内容 */}
       <Box
         sx={{
           position: 'fixed',
@@ -89,7 +84,6 @@ export function URLSchemeDetailModal({
           overflow: 'auto',
         }}
       >
-        {/* 头部 */}
         <Box
           sx={{
             p: 3,
@@ -126,17 +120,14 @@ export function URLSchemeDetailModal({
           />
         </Box>
 
-        {/* 内容 */}
         <Box sx={{ p: 4 }}>
           <Stack direction="vertical" spacing={4}>
-            {/* 描述 */}
             {scheme.description && (
               <Text sx={{ color: 'fg.muted', fontSize: 2, lineHeight: 1.5 }}>
                 {scheme.description}
               </Text>
             )}
 
-            {/* 动态插槽输入区域 */}
             {scheme.slots && scheme.slots.length > 0 && (
               <Stack direction="vertical" spacing={3}>
                 <Heading as="h2" sx={{ fontSize: 2 }}>
@@ -173,7 +164,6 @@ export function URLSchemeDetailModal({
               </Stack>
             )}
 
-            {/* 生成的 URL 显示 */}
             <FormControl>
               <FormControl.Label>生成的 URL Scheme</FormControl.Label>
               <CopyableInput
@@ -190,7 +180,6 @@ export function URLSchemeDetailModal({
               )}
             </FormControl>
 
-            {/* 操作按钮 */}
             <Stack direction="horizontal" gap="condensed">
               <Button
                 onClick={handleOpen}
@@ -201,7 +190,6 @@ export function URLSchemeDetailModal({
               </Button>
             </Stack>
 
-            {/* 元信息 */}
             <Box
               sx={{
                 pt: 3,
@@ -225,7 +213,6 @@ export function URLSchemeDetailModal({
               </Stack>
             </Box>
 
-            {/* 示例 */}
             {scheme.examples && scheme.examples.length > 0 && (
               <Stack direction="vertical" spacing={2}>
                 <Heading as="h2" sx={{ fontSize: 1 }}>

@@ -1,9 +1,21 @@
 {
   "name": "url-scheme-collection",
-  "private": true,
-  "version": "0.0.0",
+  "version": "0.0.1",
   "type": "module",
+  "license": "MIT",
+  "author": "toFrankie <1426203851@qq.com>",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/toFrankie/url-scheme-collection"
+  },
   "homepage": "https://github.com/toFrankie/url-scheme-collection",
+  "bugs": {
+    "url": "https://github.com/toFrankie/url-scheme-collection/issues"
+  },
+  "keywords": [
+    "url-scheme",
+    "url-scheme-collection"
+  ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",

@@ -10,7 +10,9 @@
     "lint": "run-p lint:*",
     "lint:eslint": "eslint . --fix --cache",
     "lint:prettier": "prettier --write . --cache",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "vercel --prod",
+    "deploy:preview": "vercel"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx}": [

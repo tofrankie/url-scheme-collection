@@ -1,0 +1,43 @@
+# 开发文件
+node_modules
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# 构建文件
+dist
+build
+
+# 日志文件
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# 编辑器文件
+.vscode
+.idea
+*.swp
+*.swo
+
+# 操作系统文件
+.DS_Store
+Thumbs.db
+
+# Git 文件
+.git
+.gitignore
+
+# 文档文件
+README.md
+docs/
+*.md
+
+# 测试文件
+coverage
+.nyc_output
+
+# 其他
+.cache
+.temp

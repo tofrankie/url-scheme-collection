@@ -35,7 +35,7 @@ export function CategoryFilter({
         <NavList.LeadingVisual>
           <PackageIcon />
         </NavList.LeadingVisual>
-        <Stack direction="horizontal" alignItems="center" gap="condensed">
+        <Stack direction="horizontal" align="center" gap="condensed">
           <Text>所有</Text>
           <CounterLabel scheme="secondary">
             {categories.reduce((sum, cat) => sum + cat.count, 0)}
@@ -60,7 +60,7 @@ export function CategoryFilter({
             <NavList.LeadingVisual>
               <IconComponent />
             </NavList.LeadingVisual>
-            <Stack direction="horizontal" alignItems="center" gap="condensed">
+            <Stack direction="horizontal" align="center" gap="condensed">
               <Text>{category.name}</Text>
               <CounterLabel scheme="secondary">{category.count}</CounterLabel>
             </Stack>

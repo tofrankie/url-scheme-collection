@@ -47,56 +47,82 @@ export function URLSchemeCard({
         bg: 'canvas.default',
         cursor: 'pointer',
         transition: 'all 0.2s ease',
+        minHeight: '180px',
+        display: 'flex',
+        flexDirection: 'column',
         '&:hover': {
           borderColor: 'border.muted',
           bg: 'canvas.subtle',
+          transform: 'translateY(-2px)',
+          boxShadow: 'shadow.medium',
         },
       }}
     >
-      <Stack direction="vertical" spacing={3}>
-        {/* 卡片头部：名称、废弃标识、描述 */}
-        <Stack direction="horizontal" spacing={3} align="start">
-          <Box
-            sx={{
-              p: 1.5,
-              bg: 'accent.subtle',
-              borderRadius: 1,
-              color: 'accent.fg',
-              flexShrink: 0,
-            }}
-          >
-            <PackageIcon size={16} />
-          </Box>
-          <Stack direction="vertical" spacing={1} sx={{ flex: 1, minWidth: 0 }}>
-            <Stack direction="horizontal" spacing={2} align="center">
-              <Text
-                as="h3"
-                sx={{ fontWeight: 'bold', fontSize: 2, color: 'fg.default' }}
+      <Stack direction="vertical" spacing={3} sx={{ flex: 1 }}>
+        {/* 图标 */}
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            width: '32px',
+            height: '32px',
+            bg: 'accent.subtle',
+            borderRadius: 2,
+            color: 'accent.fg',
+            flexShrink: 0,
+          }}
+        >
+          <PackageIcon size={16} />
+        </Box>
+
+        {/* 标题和废弃标识 */}
+        <Stack direction="vertical" spacing={1}>
+          <Stack direction="horizontal" spacing={2} align="center">
+            <Text
+              as="h3"
+              sx={{
+                fontWeight: 'bold',
+                fontSize: 2,
+                color: 'fg.default',
+                lineHeight: 1.2,
+              }}
+            >
+              {scheme.name}
+            </Text>
+            {scheme.deprecated && (
+              <Box
+                sx={{
+                  bg: 'danger.subtle',
+                  color: 'danger.fg',
+                  px: 1.5,
+                  py: 0.5,
+                  borderRadius: 1,
+                  fontSize: 0,
+                  fontWeight: 'bold',
+                }}
               >
-                {scheme.name}
-              </Text>
-              {scheme.deprecated && (
-                <Box
-                  sx={{
-                    bg: 'danger.subtle',
-                    color: 'danger.fg',
-                    px: 1.5,
-                    py: 0.5,
-                    borderRadius: 1,
-                    fontSize: 0,
-                    fontWeight: 'bold',
-                  }}
-                >
-                  已废弃
-                </Box>
-              )}
-            </Stack>
-            {scheme.description && (
-              <Text sx={{ color: 'fg.muted', fontSize: 1, lineHeight: 1.4 }}>
-                {scheme.description}
-              </Text>
+                已废弃
+              </Box>
             )}
           </Stack>
+
+          {/* 描述 */}
+          {scheme.description && (
+            <Text
+              sx={{
+                color: 'fg.muted',
+                fontSize: 1,
+                lineHeight: 1.4,
+                display: '-webkit-box',
+                WebkitLineClamp: 2,
+                WebkitBoxOrient: 'vertical',
+                overflow: 'hidden',
+              }}
+            >
+              {scheme.description}
+            </Text>
+          )}
         </Stack>
 
         {/* URL 模板预览 */}
@@ -110,9 +136,20 @@ export function URLSchemeCard({
             fontFamily: 'mono',
             fontSize: 0,
             wordBreak: 'break-all',
+            flex: 1,
+            display: 'flex',
+            alignItems: 'center',
           }}
         >
-          <Text sx={{ color: 'fg.muted' }}>{scheme.urlTemplate}</Text>
+          <Text
+            sx={{
+              color: 'fg.muted',
+              fontSize: 0,
+              lineHeight: 1.3,
+            }}
+          >
+            {scheme.urlTemplate}
+          </Text>
         </Box>
 
         {/* 操作按钮 */}
@@ -124,6 +161,7 @@ export function URLSchemeCard({
             }}
             size="small"
             variant="primary"
+            sx={{ flex: 1 }}
           >
             打开
           </Button>

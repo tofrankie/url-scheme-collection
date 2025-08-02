@@ -217,6 +217,7 @@ export function URLSchemeDetailModal({
                   fontSize: 1,
                   wordBreak: 'break-all',
                   position: 'relative',
+                  width: '100%',
                 }}
               >
                 {buildResult.isValid ? (

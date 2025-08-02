@@ -40,16 +40,6 @@ function App() {
     console.log('打开 URL:', url)
   }
 
-  // 处理复制 URL
-  const handleCopyURL = (url: string) => {
-    console.log('复制 URL:', url)
-  }
-
-  // 处理编辑 URL Scheme
-  const handleEditScheme = (scheme: URLScheme) => {
-    console.log('编辑 URL Scheme:', scheme)
-  }
-
   // 处理显示详情
   const handleShowDetails = (scheme: URLScheme) => {
     setSelectedScheme(scheme)
@@ -250,8 +240,6 @@ function App() {
                         key={scheme.id}
                         scheme={scheme}
                         onOpen={handleOpenURL}
-                        onCopy={handleCopyURL}
-                        onEdit={handleEditScheme}
                         onShowDetails={handleShowDetails}
                       />
                     ))}
@@ -310,8 +298,6 @@ function App() {
                                 key={scheme.id}
                                 scheme={scheme}
                                 onOpen={handleOpenURL}
-                                onCopy={handleCopyURL}
-                                onEdit={handleEditScheme}
                                 onShowDetails={handleShowDetails}
                               />
                             ))}
@@ -333,8 +319,6 @@ function App() {
         isOpen={isModalOpen}
         onClose={handleCloseModal}
         onOpen={handleOpenURL}
-        onCopy={handleCopyURL}
-        onEdit={handleEditScheme}
       />
     </Box>
   )

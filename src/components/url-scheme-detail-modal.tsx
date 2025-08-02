@@ -7,10 +7,9 @@ import {
   Heading,
   Stack,
   FormControl,
+  Label,
 } from '@primer/react'
 import {
-  CopyIcon,
-  PencilIcon,
   AlertIcon,
   CalendarIcon,
   PersonIcon,
@@ -18,15 +17,14 @@ import {
   XIcon,
 } from '@primer/octicons-react'
 import type { URLScheme } from '@/types'
-import { buildURL, openURL, copyToClipboard } from '@/utils/url-builder'
+import { buildURL, openURL } from '@/utils/url-builder'
+import { CopyableInput } from './copyable-input'
 
 interface URLSchemeDetailModalProps {
   scheme: URLScheme | null
   isOpen: boolean
   onClose: () => void
   onOpen: (url: string) => void
-  onCopy: (url: string) => void
-  onEdit?: (scheme: URLScheme) => void
 }
 
 export function URLSchemeDetailModal({
@@ -34,12 +32,8 @@ export function URLSchemeDetailModal({
   isOpen,
   onClose,
   onOpen,
-  onCopy,
-  onEdit,
 }: URLSchemeDetailModalProps) {
   const [slotValues, setSlotValues] = useState<Record<string, string>>({})
-  const [copied, setCopied] = useState(false)
-
   if (!scheme || !isOpen) return null
 
   // 构建 URL
@@ -59,18 +53,6 @@ export function URLSchemeDetailModal({
     if (buildResult.isValid) {
       onOpen(finalURL)
       openURL(finalURL)
-    }
-  }
-
-  // 处理复制
-  const handleCopy = async () => {
-    if (buildResult.isValid) {
-      const success = await copyToClipboard(finalURL)
-      if (success) {
-        setCopied(true)
-        onCopy(finalURL)
-        setTimeout(() => setCopied(false), 2000)
-      }
     }
   }
 
@@ -131,19 +113,9 @@ export function URLSchemeDetailModal({
             </Box>
             <Text sx={{ fontWeight: 'bold', fontSize: 3 }}>{scheme.name}</Text>
             {scheme.deprecated && (
-              <Box
-                sx={{
-                  bg: 'danger.subtle',
-                  color: 'danger.fg',
-                  px: 2,
-                  py: 1,
-                  borderRadius: 1,
-                  fontSize: 0,
-                  fontWeight: 'bold',
-                }}
-              >
+              <Label variant="danger" size="small">
                 已废弃
-              </Box>
+              </Label>
             )}
           </Stack>
           <Button
@@ -181,7 +153,7 @@ export function URLSchemeDetailModal({
                         <TextInput
                           placeholder={slot.placeholder}
                           value={slotValue}
-                          onChange={e =>
+                          onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                             handleSlotChange(slot.name, e.target.value)
                           }
                           block
@@ -203,48 +175,10 @@ export function URLSchemeDetailModal({
 
             {/* 生成的 URL 显示 */}
             <FormControl>
-              <FormControl.Label>生成的 URL</FormControl.Label>
-              <Box
-                sx={{
-                  p: 3,
-                  bg: 'canvas.subtle',
-                  border: '1px solid',
-                  borderColor: buildResult.isValid
-                    ? 'success.muted'
-                    : 'border.default',
-                  borderRadius: 2,
-                  fontFamily: 'mono',
-                  fontSize: 1,
-                  wordBreak: 'break-all',
-                  position: 'relative',
-                  width: '100%',
-                }}
-              >
-                {buildResult.isValid ? (
-                  <Text sx={{ color: 'fg.default' }}>{finalURL}</Text>
-                ) : (
-                  <Text sx={{ color: 'fg.muted' }}>{scheme.urlTemplate}</Text>
-                )}
-
-                {buildResult.isValid && (
-                  <Box
-                    sx={{
-                      position: 'absolute',
-                      top: 2,
-                      right: 2,
-                      bg: 'success.subtle',
-                      color: 'success.fg',
-                      px: 1,
-                      py: 0.5,
-                      borderRadius: 1,
-                      fontSize: 0,
-                      fontWeight: 'bold',
-                    }}
-                  >
-                    有效
-                  </Box>
-                )}
-              </Box>
+              <FormControl.Label>生成的 URL Scheme</FormControl.Label>
+              <CopyableInput
+                value={buildResult.isValid ? finalURL : scheme.urlTemplate}
+              />
 
               {buildResult.errors.length > 0 && (
                 <FormControl.Validation variant="error">
@@ -265,23 +199,6 @@ export function URLSchemeDetailModal({
               >
                 打开
               </Button>
-              <Button
-                onClick={handleCopy}
-                disabled={!buildResult.isValid}
-                leadingVisual={CopyIcon}
-                variant="default"
-              >
-                {copied ? '已复制' : '复制'}
-              </Button>
-              {onEdit && (
-                <Button
-                  onClick={() => onEdit(scheme)}
-                  leadingVisual={PencilIcon}
-                  variant="invisible"
-                >
-                  编辑
-                </Button>
-              )}
             </Stack>
 
             {/* 元信息 */}
@@ -316,20 +233,7 @@ export function URLSchemeDetailModal({
                 </Heading>
                 <Stack direction="vertical" spacing={2}>
                   {scheme.examples.map((example, index) => (
-                    <Box
-                      key={index}
-                      sx={{
-                        p: 2,
-                        bg: 'canvas.subtle',
-                        borderRadius: 1,
-                        fontFamily: 'mono',
-                        fontSize: 0,
-                        border: '1px solid',
-                        borderColor: 'border.subtle',
-                      }}
-                    >
-                      <Text sx={{ color: 'fg.muted' }}>{example}</Text>
-                    </Box>
+                    <CopyableInput key={index} value={example} />
                   ))}
                 </Stack>
               </Stack>

@@ -1,44 +1,26 @@
-import { useState } from 'react'
-import { Box, Text, Button, Stack } from '@primer/react'
-import { PackageIcon, CopyIcon, PencilIcon } from '@primer/octicons-react'
+import { Box, Text, Button, Stack, Label } from '@primer/react'
+import { PackageIcon } from '@primer/octicons-react'
 import type { URLScheme } from '@/types'
-import { copyToClipboard } from '@/utils/url-builder'
+import { CopyableInput } from './copyable-input'
 
 interface URLSchemeCardProps {
   scheme: URLScheme
   onOpen: (url: string) => void
-  onCopy: (url: string) => void
-  onEdit?: (scheme: URLScheme) => void
   onShowDetails?: (scheme: URLScheme) => void
 }
 
 export function URLSchemeCard({
   scheme,
   onOpen,
-  onCopy,
-  onEdit,
   onShowDetails,
 }: URLSchemeCardProps) {
-  const [copied, setCopied] = useState(false)
-
-  // 处理复制
-  const handleCopy = async () => {
-    const success = await copyToClipboard(scheme.urlTemplate)
-    if (success) {
-      setCopied(true)
-      onCopy(scheme.urlTemplate)
-      setTimeout(() => setCopied(false), 2000)
-    }
-  }
-
-  // 处理打开
+  // TODO:
   const handleOpen = () => {
     onOpen(scheme.urlTemplate)
   }
 
   return (
     <Box
-      onClick={() => onShowDetails?.(scheme)}
       sx={{
         p: 3,
         border: '1px solid',
@@ -91,19 +73,9 @@ export function URLSchemeCard({
               {scheme.name}
             </Text>
             {scheme.deprecated && (
-              <Box
-                sx={{
-                  bg: 'danger.subtle',
-                  color: 'danger.fg',
-                  px: 1.5,
-                  py: 0.5,
-                  borderRadius: 1,
-                  fontSize: 0,
-                  fontWeight: 'bold',
-                }}
-              >
+              <Label variant="danger" size="small">
                 已废弃
-              </Box>
+              </Label>
             )}
           </Stack>
 
@@ -126,69 +98,20 @@ export function URLSchemeCard({
         </Stack>
 
         {/* URL 模板预览 */}
-        <Box
-          sx={{
-            p: 2,
-            bg: 'canvas.subtle',
-            border: '1px solid',
-            borderColor: 'border.subtle',
-            borderRadius: 1,
-            fontFamily: 'mono',
-            fontSize: 0,
-            wordBreak: 'break-all',
-            flex: 1,
-            display: 'flex',
-            alignItems: 'center',
-          }}
-        >
-          <Text
-            sx={{
-              color: 'fg.muted',
-              fontSize: 0,
-              lineHeight: 1.3,
-            }}
-          >
-            {scheme.urlTemplate}
-          </Text>
-        </Box>
+        <CopyableInput value={scheme.urlTemplate} />
 
         {/* 操作按钮 */}
-        <Stack direction="horizontal" spacing={2}>
-          <Button
-            onClick={e => {
-              e.stopPropagation()
-              handleOpen()
-            }}
-            size="small"
-            variant="primary"
-            sx={{ flex: 1 }}
-          >
+        <Stack direction="horizontal" gap="condensed">
+          <Button onClick={handleOpen} size="small" variant="primary">
             打开
           </Button>
           <Button
-            onClick={e => {
-              e.stopPropagation()
-              handleCopy()
-            }}
-            leadingVisual={CopyIcon}
+            onClick={() => onShowDetails?.(scheme)}
             size="small"
-            variant="invisible"
+            variant="default"
           >
-            {copied ? '已复制' : '复制'}
+            详情
           </Button>
-          {onEdit && (
-            <Button
-              onClick={e => {
-                e.stopPropagation()
-                onEdit(scheme)
-              }}
-              leadingVisual={PencilIcon}
-              size="small"
-              variant="invisible"
-            >
-              编辑
-            </Button>
-          )}
         </Stack>
       </Stack>
     </Box>

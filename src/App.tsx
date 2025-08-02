@@ -18,7 +18,7 @@ import { URLSchemeCard } from '@/components/url-scheme-card'
 import { URLSchemeDetailModal } from '@/components/url-scheme-detail-modal'
 import { ThemeToggle } from '@/components/theme-toggle'
 import {
-  SAMPLE_URL_SCHEMES,
+  URL_SCHEMES,
   CATEGORIES,
   GITHUB_REPO_URL,
   GITHUB_ISSUES_URL,
@@ -34,18 +34,20 @@ function App() {
   const categories = CATEGORIES
 
   const filteredSchemes = useMemo(() => {
-    let schemes = SAMPLE_URL_SCHEMES
+    let schemes = URL_SCHEMES
 
     // 按分类过滤
     if (selectedCategory) {
-      schemes = schemes.filter(scheme => scheme.category === selectedCategory)
+      schemes = schemes.filter(
+        (scheme: URLScheme) => scheme.category === selectedCategory
+      )
     }
 
     // 按搜索查询过滤
     if (searchQuery?.trim()) {
       const query = searchQuery.toLowerCase()
       schemes = schemes.filter(
-        scheme =>
+        (scheme: URLScheme) =>
           scheme.name.toLowerCase().includes(query) ||
           scheme.description?.toLowerCase().includes(query) ||
           scheme.urlTemplate.toLowerCase().includes(query)
@@ -70,7 +72,10 @@ function App() {
   }
 
   const groupedSchemes = filteredSchemes.reduce(
-    (groups, scheme) => {
+    (
+      groups: Record<string, { name: string; schemes: URLScheme[] }>,
+      scheme: URLScheme
+    ) => {
       const category = categories.find(c => c.id === scheme.category)
       const categoryName = category?.name || '未分类'
       const categoryId = category?.id || 'uncategorized'
@@ -244,7 +249,7 @@ function App() {
                       gap: 3,
                     }}
                   >
-                    {displaySchemes.map(scheme => (
+                    {displaySchemes.map((scheme: URLScheme) => (
                       <URLSchemeCard
                         key={scheme.id}
                         scheme={scheme}
@@ -256,7 +261,10 @@ function App() {
                 ) : (
                   <Stack direction="vertical" spacing={6}>
                     {Object.entries(groupedSchemes).map(
-                      ([categoryId, categoryData]) => (
+                      ([categoryId, categoryData]: [
+                        string,
+                        { name: string; schemes: URLScheme[] },
+                      ]) => (
                         <Box key={categoryId}>
                           <Box
                             sx={{
@@ -292,7 +300,7 @@ function App() {
                               gap: 3,
                             }}
                           >
-                            {categoryData.schemes.map(scheme => (
+                            {categoryData.schemes.map((scheme: URLScheme) => (
                               <URLSchemeCard
                                 key={scheme.id}
                                 scheme={scheme}

@@ -13,12 +13,12 @@ export const CATEGORIES: Category[] = [
   {
     id: CATEGORY_IDS.APP_STORE,
     name: '应用商店',
-    description: '唤起 App Store 和 Android 各应用商店的应用',
+    description: '唤起 App Store 和 Android 各应用商店的应用。',
   },
   {
     id: CATEGORY_IDS.WECHAT,
     name: '微信',
-    description: '微信相关 URL Scheme',
+    description: '类似 weixin://dl/moments、weixin://dl/profile 等一系列 URL Scheme 已失效。',
   },
 ] as const
 

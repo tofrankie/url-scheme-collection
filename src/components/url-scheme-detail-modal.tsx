@@ -46,7 +46,7 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
           {scheme.name}
           {scheme.deprecated && (
             <Label variant="danger" size="small">
-              已废弃
+              已失效
             </Label>
           )}
         </Stack>

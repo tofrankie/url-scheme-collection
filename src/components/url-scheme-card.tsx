@@ -60,7 +60,7 @@ export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
           </Text>
           {scheme.deprecated && (
             <Label variant="danger" size="small">
-              已废弃
+              已失效
             </Label>
           )}
         </Stack>

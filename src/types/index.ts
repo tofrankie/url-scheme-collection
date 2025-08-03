@@ -28,7 +28,7 @@ export interface UrlScheme {
   /** 示例 */
   examples?: string[]
 
-  /** 已废弃 */
+  /** 已失效 */
   deprecated?: boolean
 }
 

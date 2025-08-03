@@ -90,7 +90,7 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
           )}
         </FormControl>
 
-        {scheme.examples && scheme.examples.length > 0 && (
+        {scheme.slots && scheme.slots.length > 0 && scheme.examples && scheme.examples.length > 0 && (
           <Stack direction="vertical" spacing={2}>
             <Heading as="h2" sx={{ fontSize: 1 }}>
               示例

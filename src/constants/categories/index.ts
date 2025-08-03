@@ -1,10 +1,12 @@
 import type { UrlScheme, UrlSchemeWithoutCategory, Category } from '@/types'
 import APP_STORE from './app-store'
 import WECHAT from './wechat'
+import ALIPAY from './alipay'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
   WECHAT: 'wechat',
+  ALIPAY: 'alipay',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -20,11 +22,17 @@ export const CATEGORIES: Category[] = [
     name: '微信',
     description: '类似 weixin://dl/moments、weixin://dl/profile 等一系列 URL Scheme 已失效。',
   },
+  {
+    id: CATEGORY_IDS.ALIPAY,
+    name: '支付宝',
+    description: '支付宝相关 URL Scheme。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
   [CATEGORY_IDS.APP_STORE]: APP_STORE,
   [CATEGORY_IDS.WECHAT]: WECHAT,
+  [CATEGORY_IDS.ALIPAY]: ALIPAY,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

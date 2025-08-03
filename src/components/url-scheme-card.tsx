@@ -25,7 +25,7 @@ export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
         '&:hover': {
           borderColor: 'border.muted',
           bg: 'canvas.subtle',
-          transform: 'translateY(-2px)',
+          transform: 'translateY(-1px)',
           boxShadow: 'shadow.medium',
         },
       }}

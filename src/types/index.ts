@@ -32,6 +32,8 @@ export interface UrlScheme {
   deprecated?: boolean
 }
 
+export type UrlSchemeWithoutCategory = Omit<UrlScheme, 'category'>
+
 export interface Slot {
   /** 插槽名称，用于在 URL 模板中标识 */
   name: string
@@ -52,9 +54,6 @@ export interface Category {
 
   /** 分类描述 */
   description?: string
-
-  /** 该分类下的 URL Scheme 数量 */
-  count: number
 }
 
 export type ValidateURLSchemes<T extends readonly UrlScheme[]> = {

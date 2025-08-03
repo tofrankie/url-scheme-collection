@@ -1,15 +1,16 @@
 import React from 'react'
 import { Text, NavList, CounterLabel, Stack } from '@primer/react'
-import type { Category } from '@/types'
+import type { Category, UrlScheme } from '@/types'
 import type { CategoryId } from '@/constants'
 
 interface CategoriesProps {
   categories: Category[]
+  schemes: UrlScheme[]
   selectedCategory?: CategoryId | undefined
   onCategoryChange: (categoryId?: CategoryId) => void
 }
 
-export function Categories({ categories, selectedCategory, onCategoryChange }: CategoriesProps) {
+export function Categories({ categories, schemes, selectedCategory, onCategoryChange }: CategoriesProps) {
   return (
     <NavList>
       <NavList.Item
@@ -22,7 +23,7 @@ export function Categories({ categories, selectedCategory, onCategoryChange }: C
       >
         <Stack direction="horizontal" align="center" gap="condensed">
           <Text>所有</Text>
-          <CounterLabel scheme="secondary">{categories.reduce((sum, cat) => sum + cat.count, 0)}</CounterLabel>
+          <CounterLabel scheme="secondary">{schemes.length}</CounterLabel>
         </Stack>
       </NavList.Item>
 
@@ -40,7 +41,9 @@ export function Categories({ categories, selectedCategory, onCategoryChange }: C
           >
             <Stack direction="horizontal" align="center" gap="condensed">
               <Text>{category.name}</Text>
-              <CounterLabel scheme="secondary">{category.count}</CounterLabel>
+              <CounterLabel scheme="secondary">
+                {schemes.filter(scheme => scheme.category === category.id).length}
+              </CounterLabel>
             </Stack>
           </NavList.Item>
         )

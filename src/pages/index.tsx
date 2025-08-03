@@ -1,5 +1,6 @@
 import { useState, useMemo } from 'react'
-import { Box, Text, Flash, Stack, CounterLabel, Link, Heading, PageHeader } from '@primer/react'
+import { Box, Text, Stack, CounterLabel, Link, Heading, PageHeader } from '@primer/react'
+import { Blankslate } from '@primer/react/experimental'
 import { AppHeader } from '@/components/app-header'
 import { Categories } from '@/components/categories'
 import { URLSchemeCard } from '@/components/url-scheme-card'
@@ -7,12 +8,13 @@ import { URLSchemeDetailModal } from '@/components/url-scheme-detail-modal'
 import { URL_SCHEMES, CATEGORIES, GITHUB_REPO_URL } from '@/constants'
 import type { UrlScheme, Category } from '@/types'
 import type { CategoryId } from '@/constants'
+import { SearchIcon } from '@primer/octicons-react'
 
 interface CategoryWithSchemes extends Category {
   schemes: UrlScheme[]
 }
 
-type GroupedSchemes = Partial<Record<CategoryId, CategoryWithSchemes>>
+type GroupedSchemes = Record<CategoryId, CategoryWithSchemes>
 
 function App() {
   const [searchQuery, setSearchQuery] = useState('')
@@ -50,30 +52,29 @@ function App() {
     setSelectedUrlScheme(null)
   }
 
-  const groupedSchemes = filteredSchemes.reduce((groups: GroupedSchemes, scheme: UrlScheme) => {
-    const category = CATEGORIES.find(c => c.id === scheme.category)
-    const categoryId = category?.id
-
-    if (categoryId && !groups[categoryId]) {
-      groups[categoryId] = {
-        ...category,
-        schemes: [],
-      }
+  // 确保所有分类都有条目，即使没有 URL Scheme
+  const groupedSchemes = CATEGORIES.reduce((groups: GroupedSchemes, category) => {
+    groups[category.id] = {
+      ...category,
+      schemes: [],
     }
-
-    if (categoryId) {
-      groups[categoryId]!.schemes.push(scheme)
-    }
-
     return groups
-  }, {})
+  }, {} as GroupedSchemes)
+
+  // 然后填充有 URL Scheme 的分类
+  filteredSchemes.forEach(scheme => {
+    const categoryId = scheme.category
+    if (groupedSchemes[categoryId]) {
+      groupedSchemes[categoryId]!.schemes.push(scheme)
+    }
+  })
 
   const handleCategoryClick = (categoryId?: CategoryId) => {
     setSelectedCategory(categoryId)
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const displaySchemes = selectedCategory ? groupedSchemes[selectedCategory]?.schemes || [] : filteredSchemes
+  const displaySchemes = selectedCategory ? groupedSchemes[selectedCategory].schemes : filteredSchemes
 
   return (
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -102,6 +103,7 @@ function App() {
           <Box sx={{ pl: 4, pr: 3, py: 3 }}>
             <Categories
               categories={CATEGORIES}
+              schemes={URL_SCHEMES}
               selectedCategory={selectedCategory}
               onCategoryChange={handleCategoryClick}
             />
@@ -114,7 +116,7 @@ function App() {
               <PageHeader>
                 <PageHeader.TitleArea>
                   <PageHeader.Title sx={{ fontSize: 4 }}>
-                    {selectedCategory ? groupedSchemes[selectedCategory]?.name : '👋 Hey~'}
+                    {selectedCategory ? groupedSchemes[selectedCategory].name : '👋 Hey~'}
                   </PageHeader.Title>
                 </PageHeader.TitleArea>
                 {selectedCategory ? (
@@ -140,20 +142,28 @@ function App() {
               </PageHeader>
 
               <Box>
-                {displaySchemes.length === 0 ? (
-                  <Flash variant="warning">
-                    <Text>没有找到匹配的 URL Scheme</Text>
-                  </Flash>
-                ) : selectedCategory ? (
-                  <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 3 }}>
-                    {displaySchemes.map((scheme: UrlScheme) => (
-                      <URLSchemeCard key={scheme.id} scheme={scheme} onShowDetails={openDetail} />
-                    ))}
-                  </Box>
+                {selectedCategory ? (
+                  <>
+                    {displaySchemes.length === 0 ? (
+                      <Blankslate>
+                        <Blankslate.Visual>
+                          <SearchIcon size="medium" />
+                        </Blankslate.Visual>
+                        <Blankslate.Heading>暂无可用 URL Scheme</Blankslate.Heading>
+                        <Blankslate.Description>请尝试调整搜索关键词或选择不同的分类</Blankslate.Description>
+                      </Blankslate>
+                    ) : (
+                      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 3 }}>
+                        {displaySchemes.map((scheme: UrlScheme) => (
+                          <URLSchemeCard key={scheme.id} scheme={scheme} onShowDetails={openDetail} />
+                        ))}
+                      </Box>
+                    )}
+                  </>
                 ) : (
                   <Stack direction="vertical" spacing={6}>
                     {Object.entries(groupedSchemes).map(([categoryId, categoryData]: [string, CategoryWithSchemes]) => (
-                      <Box key={categoryId}>
+                      <Stack key={categoryId}>
                         <Box
                           sx={{
                             position: 'sticky',
@@ -161,7 +171,6 @@ function App() {
                             zIndex: 10,
                             bg: 'canvas.default',
                             py: 3,
-                            mb: 3,
                             borderBottom: '1px solid',
                             borderColor: 'border.subtle',
                             backdropFilter: 'blur(8px)',
@@ -188,7 +197,7 @@ function App() {
                             <URLSchemeCard key={scheme.id} scheme={scheme} onShowDetails={openDetail} />
                           ))}
                         </Box>
-                      </Box>
+                      </Stack>
                     ))}
                   </Stack>
                 )}

@@ -1,13 +1,12 @@
-import type { UrlScheme } from '@/types'
+import type { UrlSchemeWithoutCategory } from '@/types'
 
-const APP_STORE: readonly UrlScheme[] = [
+const APP_STORE: UrlSchemeWithoutCategory[] = [
   {
     id: 'app-store-ios',
     name: 'App Store',
     description: '唤起 App Store 指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'itms-apps://itunes.apple.com/cn/app/<bundle_id>/id<apple_id>',
     slots: [
       {
@@ -32,7 +31,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起小米应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'https://app.mi.com/details?id=<package_name>',
     slots: [
       {
@@ -49,7 +47,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起华为应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'appmarket://details?pkgname=<package_name>',
     slots: [
       {
@@ -66,7 +63,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起 OPPO 应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'market://details?id=<package_name>',
     slots: [
       {
@@ -83,7 +79,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起 vivo 应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'vivomarket://details?id=<package_name>',
     slots: [
       {
@@ -100,7 +95,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起魅族应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'market://details?id=<package_name>',
     slots: [
       {
@@ -117,7 +111,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起三星应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'samsungapps://ProductDetail/<package_name>',
     slots: [
       {
@@ -134,7 +127,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起荣耀应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'market://details?id=<package_name>',
     slots: [
       {
@@ -151,7 +143,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起应用宝应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'tmast://appdetails?pname=<package_name>',
     slots: [
       {
@@ -168,7 +159,6 @@ const APP_STORE: readonly UrlScheme[] = [
     description: '唤起酷安应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    category: 'app_store',
     urlTemplate: 'coolmarket://com.coolapk.market/apk/<package_name>',
     slots: [
       {

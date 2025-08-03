@@ -1,52 +1,72 @@
 import type { CategoryId } from '@/constants'
 
-export interface URLScheme {
-  id: string // 约定 category_id + '_' + 标识
+export interface UrlScheme {
+  /** URL Scheme 唯一标识符，约定格式为 `category_id + '_' + 标识` */
+  id: string
+
+  /** URL Scheme 名称 */
   name: string
-  category: CategoryId
-  urlTemplate: string
-  slots?: Slot[]
-  deprecated?: boolean
-  lastUpdated: string
-  updatedBy?: string
+
+  /** 描述信息 */
   description: string
+
+  /** 贡献者的 GitHub 用户名，其中第一个表示创造者，其他表示贡献者 */
+  contributors: string[]
+
+  /** 最后更新时间，ISO8601 格式 */
+  updatedAt: string
+
+  /** 所属分类 */
+  category: CategoryId
+
+  /** URL 模板，使用 <slotName> 格式表示动态参数 */
+  urlTemplate: string
+
+  /** 动态参数插槽定义 */
+  slots?: Slot[]
+
+  /** 示例 */
   examples?: string[]
+
+  /** 已废弃 */
+  deprecated?: boolean
 }
 
 export interface Slot {
+  /** 插槽名称，用于在 URL 模板中标识 */
   name: string
+
+  /** 插槽的描述信息 */
   description: string
+
+  /** 输入框的占位符文本 */
   placeholder: string
-  required: boolean
-  defaultValue?: string
 }
 
 export interface Category {
+  /** 分类的唯一标识符 */
   id: CategoryId
+
+  /** 分类名称 */
   name: string
+
+  /** 分类描述 */
   description?: string
+
+  /** 该分类下的 URL Scheme 数量 */
   count: number
 }
 
-export interface URLBuilderResult {
-  url: string
-  isValid: boolean
-  errors: string[]
-}
-
-// 类型检查：确保所有 URL Scheme 的 category 都是有效的 CategoryId
-export type ValidateURLSchemes<T extends readonly URLScheme[]> = {
+export type ValidateURLSchemes<T extends readonly UrlScheme[]> = {
   [K in keyof T]: T[K] extends { category: CategoryId } ? T[K] : never
 }
 
-// 类型检查：确保所有 URL Scheme 的 id 都是唯一的
-export type ValidateUniqueIds<T extends readonly URLScheme[]> =
-  T extends readonly [infer First, ...infer Rest]
-    ? First extends URLScheme
-      ? Rest extends readonly URLScheme[]
-        ? First['id'] extends Rest[number]['id']
-          ? never
-          : ValidateUniqueIds<Rest>
-        : T
-      : never
-    : T
+export type ValidateUniqueIds<T extends readonly UrlScheme[]> = T extends readonly [infer First, ...infer Rest]
+  ? First extends UrlScheme
+    ? Rest extends readonly UrlScheme[]
+      ? First['id'] extends Rest[number]['id']
+        ? never
+        : ValidateUniqueIds<Rest>
+      : T
+    : never
+  : T

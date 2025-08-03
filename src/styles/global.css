@@ -1,0 +1,6 @@
+@import '@primer/primitives/dist/css/functional/themes/light.css';
+@import '@primer/css/dist/primer.css';
+
+#__primerPortalRoot__ {
+  z-index: 100;
+}

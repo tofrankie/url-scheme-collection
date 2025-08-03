@@ -1,0 +1,31 @@
+import type { UrlScheme } from '@/types'
+
+export function genUrlScheme(scheme: UrlScheme, slotValues: Record<string, string>) {
+  const { urlTemplate, slots } = scheme
+  let replacedUrl = urlTemplate
+
+  if (slots) {
+    for (const slot of slots) {
+      const value = slotValues[slot.name]
+      if (!value) continue
+      // /<[^>]+>/g
+      replacedUrl = replacedUrl.replace(new RegExp(`<${slot.name}>`, 'g'), value)
+    }
+  }
+
+  return replacedUrl
+}
+
+export function openURL(url: string) {
+  window.open(url, '_blank')
+}
+
+export async function copyToClipboard(text: string) {
+  try {
+    await navigator.clipboard.writeText(text)
+    return true
+  } catch (error) {
+    console.error('复制失败:', error)
+    return false
+  }
+}

@@ -1,24 +1,14 @@
 import { Box, Text, Button, Stack, Label } from '@primer/react'
 import { PackageIcon } from '@primer/octicons-react'
-import type { URLScheme } from '@/types'
+import type { UrlScheme } from '@/types'
 import { CopyableInput } from './copyable-input'
 
 interface URLSchemeCardProps {
-  scheme: URLScheme
-  onOpen: (url: string) => void
-  onShowDetails?: (scheme: URLScheme) => void
+  scheme: UrlScheme
+  onShowDetails?: (scheme: UrlScheme) => void
 }
 
-export function URLSchemeCard({
-  scheme,
-  onOpen,
-  onShowDetails,
-}: URLSchemeCardProps) {
-  // TODO:
-  const handleOpen = () => {
-    onOpen(scheme.urlTemplate)
-  }
-
+export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
   return (
     <Box
       sx={{
@@ -97,14 +87,7 @@ export function URLSchemeCard({
         <CopyableInput value={scheme.urlTemplate} />
 
         <Stack direction="horizontal" gap="condensed">
-          <Button onClick={handleOpen} size="small" variant="primary">
-            打开
-          </Button>
-          <Button
-            onClick={() => onShowDetails?.(scheme)}
-            size="small"
-            variant="default"
-          >
+          <Button onClick={() => onShowDetails?.(scheme)} size="small">
             详情
           </Button>
         </Stack>

@@ -1,7 +1,7 @@
 import { useState } from 'react'
 import { TextInput, IconButton, Stack } from '@primer/react'
 import { CopyIcon, CheckIcon } from '@primer/octicons-react'
-import { copyToClipboard } from '@/utils/url-builder'
+import { copyToClipboard } from '@/utils'
 
 interface CopyableInputProps {
   value: string
@@ -19,21 +19,16 @@ export function CopyableInput({ value }: CopyableInputProps) {
   }
 
   return (
-    <Stack direction="horizontal" gap="condensed" sx={{ width: '100%' }}>
-      <TextInput
-        value={value}
-        block
-        readOnly
-        sx={{ backgroundColor: 'canvas.subtle', flex: 1 }}
-      />
+    <Stack direction="horizontal" gap="condensed" align="center" sx={{ width: '100%' }}>
+      <TextInput value={value} block readOnly sx={{ backgroundColor: 'canvas.subtle', flex: 1 }} />
       <IconButton
         onClick={handleCopy}
         icon={copied ? CheckIcon : CopyIcon}
         variant="invisible"
         size="small"
+        tooltipDirection="n"
         aria-label={copied ? '已复制' : '复制'}
         sx={{ color: copied ? 'success.fg' : 'fg.default' }}
-        tooltipDirection="n"
       />
     </Stack>
   )

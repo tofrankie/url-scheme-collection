@@ -21,7 +21,7 @@
     "build": "tsc -b && vite build",
     "lint": "run-p lint:*",
     "lint:eslint": "eslint . --fix --cache",
-    "lint:prettier": "prettier --write . --cache",
+    "lint:prettier": "prettier . --write --cache",
     "preview": "vite preview",
     "deploy": "vercel --prod",
     "deploy:preview": "vercel"

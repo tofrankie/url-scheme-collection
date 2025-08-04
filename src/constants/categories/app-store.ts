@@ -12,12 +12,12 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'bundle_id',
         description: '应用 Bundle ID，可在 App Store Connect 中查看',
-        placeholder: '例如：wechat',
+        placeholder: 'wechat',
       },
       {
         name: 'apple_id',
         description: 'Apple 分配的应用 ID，可在 App Store Connect 中查看',
-        placeholder: '例如：414478124',
+        placeholder: '414478124',
       },
     ],
     examples: [
@@ -36,7 +36,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['https://app.mi.com/details?id=com.tencent.mm'],
@@ -52,7 +52,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['appmarket://details?pkgname=com.tencent.mm'],
@@ -68,7 +68,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['market://details?id=com.tencent.mm'],
@@ -84,7 +84,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['vivomarket://details?id=com.tencent.mm'],
@@ -100,7 +100,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['market://details?id=com.tencent.mm'],
@@ -116,7 +116,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['samsungapps://ProductDetail/com.tencent.mm'],
@@ -132,7 +132,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['market://details?id=com.tencent.mm'],
@@ -148,7 +148,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['tmast://appdetails?pname=com.tencent.mm'],
@@ -164,7 +164,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       {
         name: 'package_name',
         description: '应用的包名',
-        placeholder: '例如：com.tencent.mm',
+        placeholder: 'com.tencent.mm',
       },
     ],
     examples: ['coolmarket://com.coolapk.market/apk/com.tencent.mm'],

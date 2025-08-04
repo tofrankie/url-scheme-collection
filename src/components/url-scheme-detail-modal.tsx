@@ -67,7 +67,7 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
                 <FormControl key={slot.name}>
                   <FormControl.Label>{slot.name}</FormControl.Label>
                   <TextInput
-                    placeholder={slot.placeholder}
+                    placeholder={`如 ${slot.placeholder}`}
                     value={slotValue}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSlotChange(slot.name, e.target.value)}
                     block

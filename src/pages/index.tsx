@@ -52,7 +52,6 @@ function App() {
     setSelectedUrlScheme(null)
   }
 
-  // 确保所有分类都有条目，即使没有 URL Scheme
   const groupedSchemes = CATEGORIES.reduce((groups: GroupedSchemes, category) => {
     groups[category.id] = {
       ...category,
@@ -61,7 +60,6 @@ function App() {
     return groups
   }, {} as GroupedSchemes)
 
-  // 然后填充有 URL Scheme 的分类
   filteredSchemes.forEach(scheme => {
     const categoryId = scheme.category
     if (groupedSchemes[categoryId]) {

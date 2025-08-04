@@ -28,7 +28,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
   {
     id: 'app-store-xiaomi',
     name: '小米应用商店',
-    description: '唤起小米应用商店指定应用',
+    description: '唤起小米应用商店指定应用，原 mimarket://details?id=<package_name> 已失效，唯有先通过浏览器打开再唤起',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
     urlTemplate: 'https://app.mi.com/details?id=<package_name>',
@@ -42,12 +42,12 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     examples: ['https://app.mi.com/details?id=com.tencent.mm'],
   },
   {
-    id: 'app-store-huawei',
-    name: '华为应用市场',
-    description: '唤起华为应用商店指定应用',
+    id: 'app-store-meizu',
+    name: '魅族应用商店',
+    description: '唤起魅族应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'appmarket://details?pkgname=<package_name>',
+    urlTemplate: 'market://details?id=<package_name>',
     slots: [
       {
         name: 'package_name',
@@ -55,7 +55,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
         placeholder: 'com.tencent.mm',
       },
     ],
-    examples: ['appmarket://details?pkgname=com.tencent.mm'],
+    examples: ['market://details?id=com.tencent.mm'],
   },
   {
     id: 'app-store-oppo',
@@ -90,9 +90,25 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     examples: ['vivomarket://details?id=com.tencent.mm'],
   },
   {
-    id: 'app-store-meizu',
-    name: '魅族应用商店',
-    description: '唤起魅族应用商店指定应用',
+    id: 'app-store-huawei',
+    name: '华为应用市场',
+    description: '唤起华为应用商店指定应用',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-03T00:00:00Z',
+    urlTemplate: 'appmarket://details?pkgname=<package_name>',
+    slots: [
+      {
+        name: 'package_name',
+        description: '应用的包名',
+        placeholder: 'com.tencent.mm',
+      },
+    ],
+    examples: ['appmarket://details?pkgname=com.tencent.mm'],
+  },
+  {
+    id: 'app-store-honor',
+    name: '荣耀应用商店',
+    description: '唤起荣耀应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
     urlTemplate: 'market://details?id=<package_name>',
@@ -120,22 +136,6 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       },
     ],
     examples: ['samsungapps://ProductDetail/com.tencent.mm'],
-  },
-  {
-    id: 'app-store-honor',
-    name: '荣耀应用商店',
-    description: '唤起荣耀应用商店指定应用',
-    contributors: ['toFrankie'],
-    updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'market://details?id=<package_name>',
-    slots: [
-      {
-        name: 'package_name',
-        description: '应用的包名',
-        placeholder: 'com.tencent.mm',
-      },
-    ],
-    examples: ['market://details?id=com.tencent.mm'],
   },
   {
     id: 'app-store-tencent',

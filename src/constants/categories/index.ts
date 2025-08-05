@@ -4,6 +4,7 @@ import XIAOHONGSHU from './xiaohongshu'
 import WECHAT from './wechat'
 import WXWORK from './wxwork'
 import ALIPAY from './alipay'
+import ZHIHU from './zhihu'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -11,6 +12,7 @@ export const CATEGORY_IDS = {
   WECHAT: 'wechat',
   WXWORK: 'wxwork',
   ALIPAY: 'alipay',
+  ZHIHU: 'zhihu',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -42,6 +44,11 @@ export const CATEGORIES: Category[] = [
     name: '支付宝',
     description: '支付宝相关 URL Scheme。',
   },
+  {
+    id: CATEGORY_IDS.ZHIHU,
+    name: '知乎',
+    description: '知乎相关 URL Scheme。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -50,6 +57,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.WECHAT]: WECHAT,
   [CATEGORY_IDS.WXWORK]: WXWORK,
   [CATEGORY_IDS.ALIPAY]: ALIPAY,
+  [CATEGORY_IDS.ZHIHU]: ZHIHU,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

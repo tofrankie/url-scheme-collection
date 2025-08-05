@@ -2,13 +2,15 @@ import type { UrlScheme, UrlSchemeWithoutCategory, Category } from '@/types'
 import APP_STORE from './app-store'
 import XIAOHONGSHU from './xiaohongshu'
 import WECHAT from './wechat'
+import WXWORK from './wxwork'
 import ALIPAY from './alipay'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
-  WECHAT: 'wechat',
-  ALIPAY: 'alipay',
   XIAOHONGSHU: 'xiaohongshu',
+  WECHAT: 'wechat',
+  WXWORK: 'wxwork',
+  ALIPAY: 'alipay',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -31,6 +33,11 @@ export const CATEGORIES: Category[] = [
     description: '类似 weixin://dl/moments、weixin://dl/profile 等一系列 URL Scheme 已失效。',
   },
   {
+    id: CATEGORY_IDS.WXWORK,
+    name: '企业微信',
+    description: '企业微信相关 URL Scheme。',
+  },
+  {
     id: CATEGORY_IDS.ALIPAY,
     name: '支付宝',
     description: '支付宝相关 URL Scheme。',
@@ -41,6 +48,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.APP_STORE]: APP_STORE,
   [CATEGORY_IDS.XIAOHONGSHU]: XIAOHONGSHU,
   [CATEGORY_IDS.WECHAT]: WECHAT,
+  [CATEGORY_IDS.WXWORK]: WXWORK,
   [CATEGORY_IDS.ALIPAY]: ALIPAY,
 } as const
 

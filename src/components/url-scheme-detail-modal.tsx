@@ -15,6 +15,8 @@ import { CalendarIcon, PeopleIcon } from '@primer/octicons-react'
 import type { UrlScheme } from '@/types'
 import { genUrlScheme } from '@/utils'
 import { CopyableInput } from './copyable-input'
+import { CATEGORIES } from '@/constants'
+import { trackUrlSchemeCopy } from '@/utils/track'
 
 interface URLSchemeDetailModalProps {
   scheme: UrlScheme
@@ -25,6 +27,18 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
   const [slotValues, setSlotValues] = useState<Record<string, string>>({})
 
   const finalUrlScheme = useMemo(() => genUrlScheme(scheme, slotValues), [scheme, slotValues])
+
+  const category = CATEGORIES.find(c => c.id === scheme.category)
+  const categoryName = category?.name || ''
+
+  const handleCopy = () => {
+    trackUrlSchemeCopy({
+      id: scheme.id,
+      name: scheme.name,
+      category_id: scheme.category,
+      category_name: categoryName,
+    })
+  }
 
   const handleSlotChange = (slotName: string, value: string) => {
     setSlotValues(prev => ({
@@ -81,7 +95,7 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
 
         <FormControl>
           <FormControl.Label>Your URL Scheme</FormControl.Label>
-          <CopyableInput value={finalUrlScheme} />
+          <CopyableInput value={finalUrlScheme} onCopy={handleCopy} />
 
           {missSlotNames && missSlotNames.length > 0 && (
             <FormControl.Validation variant="error">

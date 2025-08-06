@@ -29,3 +29,19 @@ export async function copyToClipboard(text: string) {
     return false
   }
 }
+
+export function debounce<A extends unknown[], R, T = unknown>(
+  func: (this: T, ...args: A) => R,
+  wait: number
+): (this: T, ...args: A) => void {
+  let timer: number | null = null
+
+  return function (this: T, ...args: A) {
+    if (timer) clearTimeout(timer)
+
+    timer = setTimeout(() => {
+      func.apply(this, args)
+      timer = null
+    }, wait)
+  }
+}

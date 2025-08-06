@@ -2,6 +2,8 @@ import { Box, Text, Button, Stack, Label } from '@primer/react'
 import { PackageIcon } from '@primer/octicons-react'
 import type { UrlScheme } from '@/types'
 import { CopyableInput } from './copyable-input'
+import { CATEGORIES } from '@/constants'
+import { trackUrlSchemeCopy, trackUrlSchemeDetail } from '@/utils/track'
 
 interface URLSchemeCardProps {
   scheme: UrlScheme
@@ -9,6 +11,28 @@ interface URLSchemeCardProps {
 }
 
 export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
+  const category = CATEGORIES.find(c => c.id === scheme.category)
+  const categoryName = category?.name || ''
+
+  const handleCopy = () => {
+    trackUrlSchemeCopy({
+      id: scheme.id,
+      name: scheme.name,
+      category_id: scheme.category,
+      category_name: categoryName,
+    })
+  }
+
+  const handleShowDetails = () => {
+    trackUrlSchemeDetail({
+      id: scheme.id,
+      name: scheme.name,
+      category_id: scheme.category,
+      category_name: categoryName,
+    })
+    onShowDetails?.(scheme)
+  }
+
   return (
     <Box
       sx={{
@@ -84,10 +108,10 @@ export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
           )}
         </Stack>
 
-        <CopyableInput value={scheme.urlTemplate} />
+        <CopyableInput value={scheme.urlTemplate} onCopy={handleCopy} />
 
         <Stack direction="horizontal" gap="condensed">
-          <Button onClick={() => onShowDetails?.(scheme)} size="small">
+          <Button onClick={handleShowDetails} size="small">
             详情
           </Button>
         </Stack>

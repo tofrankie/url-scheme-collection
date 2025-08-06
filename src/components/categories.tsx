@@ -2,6 +2,7 @@ import React from 'react'
 import { Text, NavList, CounterLabel, Stack } from '@primer/react'
 import type { Category, UrlScheme } from '@/types'
 import type { CategoryId } from '@/constants'
+import { trackCategoryNav } from '@/utils/track'
 
 interface CategoriesProps {
   categories: Category[]
@@ -11,6 +12,17 @@ interface CategoriesProps {
 }
 
 export function Categories({ categories, schemes, selectedCategory, onCategoryChange }: CategoriesProps) {
+  const handleCategoryClick = (categoryId?: CategoryId) => {
+    onCategoryChange(categoryId)
+
+    if (categoryId) {
+      const category = categories.find(c => c.id === categoryId)
+      trackCategoryNav({ id: categoryId, name: category?.name || '' })
+    } else {
+      trackCategoryNav({ id: 'all', name: '所有' })
+    }
+  }
+
   return (
     <NavList>
       <NavList.Item
@@ -18,7 +30,7 @@ export function Categories({ categories, schemes, selectedCategory, onCategoryCh
         aria-current={!selectedCategory ? 'page' : false}
         onClick={(e: React.MouseEvent) => {
           e.preventDefault()
-          onCategoryChange(undefined)
+          handleCategoryClick(undefined)
         }}
       >
         <Stack direction="horizontal" align="center" gap="condensed">
@@ -36,7 +48,7 @@ export function Categories({ categories, schemes, selectedCategory, onCategoryCh
             aria-current={isSelected ? 'page' : false}
             onClick={(e: React.MouseEvent) => {
               e.preventDefault()
-              onCategoryChange(category.id)
+              handleCategoryClick(category.id)
             }}
           >
             <Stack direction="horizontal" align="center" gap="condensed">

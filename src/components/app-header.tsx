@@ -1,6 +1,7 @@
 import { Box, Button, IconButton, PageHeader, Stack, TextInput, useTheme } from '@primer/react'
 import { CommentIcon, MarkGithubIcon, SunIcon, MoonIcon, SearchIcon } from '@primer/octicons-react'
 import { GITHUB_ISSUES_URL, GITHUB_REPO_URL, STORAGE_KEYS } from '@/constants'
+import { trackThemeToggle, trackFeedback, trackGithubHomepage, debouncedTrackSearch } from '@/utils/track'
 
 interface AppHeaderProps {
   searchQuery: string
@@ -14,6 +15,27 @@ export function AppHeader({ searchQuery, onSearchChange }: AppHeaderProps) {
     const newColorMode = colorMode === 'day' ? 'night' : 'day'
     setColorMode(newColorMode)
     localStorage.setItem(STORAGE_KEYS.COLOR_MODE, newColorMode)
+
+    trackThemeToggle({ to: newColorMode })
+  }
+
+  const handleSearchChange = (keyword: string) => {
+    const trimmedKeyword = keyword.trim()
+    onSearchChange(trimmedKeyword)
+
+    if (trimmedKeyword) {
+      debouncedTrackSearch({ keyword: trimmedKeyword })
+    }
+  }
+
+  const handleFeedbackClick = () => {
+    trackFeedback()
+    window.open(GITHUB_ISSUES_URL, '_blank')
+  }
+
+  const handleGithubClick = () => {
+    trackGithubHomepage()
+    window.open(GITHUB_REPO_URL, '_blank')
   }
 
   return (
@@ -43,18 +65,14 @@ export function AppHeader({ searchQuery, onSearchChange }: AppHeaderProps) {
             <Box sx={{ width: '200px', fontWeight: 'normal' }}>
               <TextInput
                 value={searchQuery}
-                onChange={e => onSearchChange(e.target.value)}
+                onChange={e => handleSearchChange(e.target.value)}
                 placeholder="搜索 URL Scheme..."
                 leadingVisual={SearchIcon}
                 block
               />
             </Box>
 
-            <Button
-              variant="primary"
-              leadingVisual={CommentIcon}
-              onClick={() => window.open(GITHUB_ISSUES_URL, '_blank')}
-            >
+            <Button variant="primary" leadingVisual={CommentIcon} onClick={handleFeedbackClick}>
               反馈
             </Button>
 
@@ -70,7 +88,7 @@ export function AppHeader({ searchQuery, onSearchChange }: AppHeaderProps) {
               aria-label="GitHub Homepage"
               icon={MarkGithubIcon}
               variant="invisible"
-              onClick={() => window.open(GITHUB_REPO_URL, '_blank')}
+              onClick={handleGithubClick}
             />
           </Stack>
         </PageHeader.Actions>

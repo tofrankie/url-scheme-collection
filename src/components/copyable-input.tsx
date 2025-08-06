@@ -5,9 +5,10 @@ import { copyToClipboard } from '@/utils'
 
 interface CopyableInputProps {
   value: string
+  onCopy?: () => void
 }
 
-export function CopyableInput({ value }: CopyableInputProps) {
+export function CopyableInput({ value, onCopy }: CopyableInputProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {
@@ -15,6 +16,8 @@ export function CopyableInput({ value }: CopyableInputProps) {
     if (success) {
       setCopied(true)
       setTimeout(() => setCopied(false), 2000)
+
+      onCopy?.()
     }
   }
 

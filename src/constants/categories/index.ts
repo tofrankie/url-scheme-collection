@@ -7,6 +7,7 @@ import ALIPAY from './alipay'
 import ZHIHU from './zhihu'
 import XITU from './xitu'
 import JIANSHU from './jianshu'
+import IOS from './ios'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -17,6 +18,7 @@ export const CATEGORY_IDS = {
   ZHIHU: 'zhihu',
   XITU: 'xitu',
   JIANSHU: 'jianshu',
+  IOS: 'ios',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -63,6 +65,11 @@ export const CATEGORIES: Category[] = [
     name: '简书',
     description: '简书相关 URL Scheme。',
   },
+  {
+    id: CATEGORY_IDS.IOS,
+    name: 'iOS',
+    description: 'iOS、iPadOS、macOS 相关 URL Scheme。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -74,6 +81,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.ZHIHU]: ZHIHU,
   [CATEGORY_IDS.XITU]: XITU,
   [CATEGORY_IDS.JIANSHU]: JIANSHU,
+  [CATEGORY_IDS.IOS]: IOS,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

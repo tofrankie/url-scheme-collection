@@ -6,7 +6,7 @@ const JIANSHU: UrlSchemeWithoutCategory[] = [
     name: '文章',
     description: '打开简书文章',
     contributors: ['toFrankie'],
-    updatedAt: '2025-08-07T00:00:00Z',
+    updatedAt: '2025-08-08T00:00:00Z',
     urlTemplate: 'jianshu://notes/<article_id>',
     slots: [
       {
@@ -22,7 +22,7 @@ const JIANSHU: UrlSchemeWithoutCategory[] = [
     name: '专题',
     description: '打开简书专题',
     contributors: ['toFrankie'],
-    updatedAt: '2025-08-07T00:00:00Z',
+    updatedAt: '2025-08-08T00:00:00Z',
     urlTemplate: 'jianshu://collections/<collection_id>',
     slots: [
       {
@@ -38,7 +38,7 @@ const JIANSHU: UrlSchemeWithoutCategory[] = [
     name: '文集',
     description: '打开简书文集',
     contributors: ['toFrankie'],
-    updatedAt: '2025-08-07T00:00:00Z',
+    updatedAt: '2025-08-08T00:00:00Z',
     urlTemplate: 'jianshu://notebooks/45333472',
     slots: [
       {
@@ -54,7 +54,7 @@ const JIANSHU: UrlSchemeWithoutCategory[] = [
     name: '用户主页',
     description: '打开简书用户主页',
     contributors: ['toFrankie'],
-    updatedAt: '2025-08-07T00:00:00Z',
+    updatedAt: '2025-08-08T00:00:00Z',
     urlTemplate: 'jianshu://users/<user_id>',
     slots: [
       {

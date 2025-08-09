@@ -86,7 +86,7 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSlotChange(slot.name, e.target.value)}
                     block
                   />
-                  <FormControl.Caption>{slot.description}</FormControl.Caption>
+                  <FormControl.Caption sx={{ wordBreak: 'break-all' }}>{slot.description}</FormControl.Caption>
                 </FormControl>
               )
             })}

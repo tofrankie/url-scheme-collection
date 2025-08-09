@@ -52,6 +52,7 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
   }
 
   const missSlotNames = scheme.slots?.filter(slot => !slotValues[slot.name]).map(slot => slot.name)
+  const exampleVisible = Boolean(scheme.examples?.length && (scheme.examples.length > 1 || scheme.slots?.length))
 
   return (
     <Dialog
@@ -104,13 +105,13 @@ export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalPr
           )}
         </FormControl>
 
-        {scheme.slots && scheme.slots.length > 0 && scheme.examples && scheme.examples.length > 0 && (
+        {exampleVisible && (
           <Stack direction="vertical" spacing={2}>
             <Heading as="h2" sx={{ fontSize: 1 }}>
               示例
             </Heading>
             <Stack direction="vertical" spacing={2}>
-              {scheme.examples.map((example, index) => (
+              {scheme.examples?.map((example, index) => (
                 <CopyableInput key={index} value={example} />
               ))}
             </Stack>

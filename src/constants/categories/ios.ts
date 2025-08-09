@@ -2,6 +2,64 @@ import type { UrlSchemeWithoutCategory } from '@/types'
 
 const IOS: UrlSchemeWithoutCategory[] = [
   {
+    id: 'ios-photos',
+    name: '相册',
+    description: '打开相册',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'photos-redirect://',
+    examples: ['photos-redirect://'],
+  },
+  {
+    id: 'ios-sms-create',
+    name: '短信-发送短信',
+    description: '打开短信并给指定号码发送短信。',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'sms://<tel_number>?body=<body>',
+    slots: [
+      {
+        name: 'tel_number',
+        description: '电话号码（可选）。若不填写，则新建短信。若已有对话，则打开对话内容。',
+        placeholder: '10086',
+      },
+      {
+        name: 'body',
+        description: '短信内容（可选）。若不填写，输入内容为空',
+        placeholder: 'Hello World!',
+      },
+    ],
+    examples: ['sms://', 'sms://10086', 'sms://10086?body=Hello World!'],
+  },
+  {
+    id: 'ios-people',
+    name: '通讯录',
+    description: '打开通讯录',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'people://',
+    examples: ['people://'],
+    deprecated: true,
+  },
+  {
+    id: 'ios-apple-map',
+    name: 'Apple 地图',
+    description: '打开 Apple 地图',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'map://',
+    examples: ['map://'],
+  },
+  {
+    id: 'ios-apple-mail',
+    name: 'Apple 邮箱',
+    description: '打开 Apple 邮箱',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'message://',
+    examples: ['message://'],
+  },
+  {
     id: 'ios-apple-music-redeem',
     name: 'Apple Music 兑换',
     description: '打开 Apple Music 兑换',
@@ -97,6 +155,22 @@ const IOS: UrlSchemeWithoutCategory[] = [
     examples: ['music://music.apple.com/library/playlist/pl.u-xlyNEdkuoB7rMak'],
   },
   {
+    id: 'ios-apple-music-song',
+    name: 'Apple Music 指定歌曲',
+    description: '打开 Apple Music 指定歌曲',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'music://music.apple.com/song/<song_id>',
+    slots: [
+      {
+        name: 'song_id',
+        description: '歌曲 ID。在歌曲，点击右上角，选择分享歌曲并拷贝，URL 中 i= 后面的便是歌曲 ID',
+        placeholder: '1708384422',
+      },
+    ],
+    examples: ['music://music.apple.com/song/1708384422'],
+  },
+  {
     id: 'ios-apple-music-album',
     name: 'Apple Music 指定专辑',
     description: '打开 Apple Music 指定专辑',
@@ -163,6 +237,15 @@ const IOS: UrlSchemeWithoutCategory[] = [
     updatedAt: '2025-08-09T00:00:00Z',
     urlTemplate: 'music://music.apple.com/musicrenew',
     examples: ['music://music.apple.com/musicrenew'],
+  },
+  {
+    id: 'ios-apple-music-account-settings',
+    name: 'Apple Music 账户设置',
+    description: '打开 Apple Music 账户设置',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-09T00:00:00Z',
+    urlTemplate: 'music://music.apple.com/account/settings',
+    examples: ['music://music.apple.com/account/settings'],
   },
   {
     id: 'ios-app-store',

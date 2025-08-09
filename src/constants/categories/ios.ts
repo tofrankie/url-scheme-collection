@@ -74,12 +74,17 @@ const IOS: UrlSchemeWithoutCategory[] = [
   },
   {
     id: 'ios-app-store-specific-app',
-    name: 'App Store 应用详情',
-    description: '打开 App Store 指定应用详情',
+    name: 'App Store 指定应用',
+    description: '打开 App Store 指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/cn/app/<bundle_id>/id<apple_id>',
+    urlTemplate: 'itms-apps://itunes.apple.com/<region>/app/<bundle_id>/id<apple_id>',
     slots: [
+      {
+        name: 'region',
+        description: '国家或地区，如国区 cn、美区 us 等',
+        placeholder: 'cn',
+      },
       {
         name: 'bundle_id',
         description: '应用 Bundle ID，可在 App Store Connect 中查看',
@@ -91,10 +96,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
         placeholder: '414478124',
       },
     ],
-    examples: [
-      'itms-apps://itunes.apple.com/cn/app/wechat/id414478124',
-      'itms-apps://itunes.apple.com/cn/app/qq/id444934666',
-    ],
+    examples: ['itms-apps://itunes.apple.com/cn/app/wechat/id414478124'],
   },
   {
     id: 'ios-app-store-updates',

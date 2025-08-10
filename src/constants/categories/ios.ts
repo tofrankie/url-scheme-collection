@@ -69,7 +69,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     examples: ['music://music.apple.com/WebObjects/MZFinance.woa/wa/redeemLandingPage'],
   },
   {
-    id: 'ios-music-show-now-playing',
+    id: 'ios-apple-music-show-now-playing',
     name: 'Apple Music 播放页',
     description: '打开 Apple Music 播放页',
     contributors: ['toFrankie'],

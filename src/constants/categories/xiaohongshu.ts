@@ -7,7 +7,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开扫一扫',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://scan',
+    urlSchemeTemplate: 'xhsdiscover://scan',
     examples: ['xhsdiscover://scan'],
   },
   {
@@ -16,7 +16,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开图文笔记详情',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://item/<note_id>',
+    urlSchemeTemplate: 'xhsdiscover://item/{note_id}',
     slots: [
       {
         name: 'note_id',
@@ -37,7 +37,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开视频笔记详情',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://video_feed/<note_id>',
+    urlSchemeTemplate: 'xhsdiscover://video_feed/{note_id}',
     slots: [
       {
         name: 'note_id',
@@ -53,7 +53,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开小红书首页发现 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://home/explore',
+    urlSchemeTemplate: 'xhsdiscover://home/explore',
     examples: ['xhsdiscover://home/explore'],
   },
   {
@@ -62,7 +62,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开小红书首页关注 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://home/follow',
+    urlSchemeTemplate: 'xhsdiscover://home/follow',
     examples: ['xhsdiscover://home/follow'],
   },
   {
@@ -71,7 +71,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开小红书首页同城 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://home/localfeed',
+    urlSchemeTemplate: 'xhsdiscover://home/localfeed',
     examples: ['xhsdiscover://home/localfeed'],
   },
   {
@@ -80,7 +80,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开用户主页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://user/<user_id>',
+    urlSchemeTemplate: 'xhsdiscover://user/{user_id}',
     slots: [
       {
         name: 'user_id',
@@ -100,7 +100,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开用户主页的指定 Tab 页面',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://user/<user_id>?tab=<tab>',
+    urlSchemeTemplate: 'xhsdiscover://user/{user_id}?tab={tab}',
     slots: [
       {
         name: 'user_id',
@@ -122,7 +122,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开用户的粉丝列表',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://user/<user_id>/followers',
+    urlSchemeTemplate: 'xhsdiscover://user/{user_id}/followers',
     slots: [
       {
         name: 'user_id',
@@ -138,7 +138,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开我的草稿',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://draft_list',
+    urlSchemeTemplate: 'xhsdiscover://draft_list',
     examples: ['xhsdiscover://draft_list'],
   },
   {
@@ -147,7 +147,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开我的评论',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://history_comment/posted',
+    urlSchemeTemplate: 'xhsdiscover://history_comment/posted',
     examples: ['xhsdiscover://history_comment/posted'],
   },
   {
@@ -156,7 +156,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开浏览记录',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://browsinghistory',
+    urlSchemeTemplate: 'xhsdiscover://browsinghistory',
     examples: ['xhsdiscover://browsinghistory'],
   },
   {
@@ -165,7 +165,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开我的钱包',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://rn/wallet-rn/user/wallet',
+    urlSchemeTemplate: 'xhsdiscover://rn/wallet-rn/user/wallet',
     examples: ['xhsdiscover://rn/wallet-rn/user/wallet'],
   },
   {
@@ -174,7 +174,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开发布作品（从相册选择）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://post',
+    urlSchemeTemplate: 'xhsdiscover://post',
     examples: ['xhsdiscover://post'],
   },
   {
@@ -183,7 +183,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开日常页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://hey_home_feed',
+    urlSchemeTemplate: 'xhsdiscover://hey_home_feed',
     examples: ['xhsdiscover://hey_home_feed'],
   },
   {
@@ -192,7 +192,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开日常发布',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://hey_post',
+    urlSchemeTemplate: 'xhsdiscover://hey_post',
     examples: ['xhsdiscover://hey_post'],
   },
   {
@@ -201,7 +201,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开搜索页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://search/recommend',
+    urlSchemeTemplate: 'xhsdiscover://search/recommend',
     examples: ['xhsdiscover://search/recommend'],
   },
   {
@@ -210,7 +210,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开搜索并搜索指定关键词',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://search/result?keyword=<keyword>',
+    urlSchemeTemplate: 'xhsdiscover://search/result?keyword={keyword}',
     slots: [
       {
         name: 'keyword',
@@ -226,7 +226,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开话题（标签）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://topic/<topic_id>',
+    urlSchemeTemplate: 'xhsdiscover://topic/{topic_id}',
     slots: [
       {
         name: 'topic_id',
@@ -242,7 +242,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开专辑页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://board/<board_id>',
+    urlSchemeTemplate: 'xhsdiscover://board/{board_id}',
     slots: [
       {
         name: 'board_id',
@@ -258,7 +258,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开小红书消息 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://message/notification',
+    urlSchemeTemplate: 'xhsdiscover://message/notification',
     examples: ['xhsdiscover://message/notification'],
   },
   {
@@ -267,7 +267,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开收到的赞和收藏消息',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://message/collections',
+    urlSchemeTemplate: 'xhsdiscover://message/collections',
     examples: ['xhsdiscover://message/collections'],
   },
   {
@@ -276,7 +276,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开新增关注消息',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://message/followers',
+    urlSchemeTemplate: 'xhsdiscover://message/followers',
     examples: ['xhsdiscover://message/followers'],
   },
   {
@@ -285,7 +285,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开评论和 @ 消息',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://message/comments',
+    urlSchemeTemplate: 'xhsdiscover://message/comments',
     examples: ['xhsdiscover://message/comments'],
   },
   {
@@ -294,7 +294,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开陌生人消息',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://message/strangers',
+    urlSchemeTemplate: 'xhsdiscover://message/strangers',
     examples: ['xhsdiscover://message/strangers'],
   },
   {
@@ -303,7 +303,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开发现好友',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://recommend/user',
+    urlSchemeTemplate: 'xhsdiscover://recommend/user',
     examples: ['xhsdiscover://recommend/user'],
   },
   {
@@ -312,7 +312,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开通讯录好友',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://recommend/contacts',
+    urlSchemeTemplate: 'xhsdiscover://recommend/contacts',
     examples: ['xhsdiscover://recommend/contacts'],
   },
   {
@@ -321,7 +321,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开微博好友',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://recommend/weibo',
+    urlSchemeTemplate: 'xhsdiscover://recommend/weibo',
     examples: ['xhsdiscover://recommend/weibo'],
   },
   {
@@ -330,7 +330,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开直播间',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://live_audience?room_id=<room_id>',
+    urlSchemeTemplate: 'xhsdiscover://live_audience?room_id={room_id}',
     slots: [
       {
         name: 'room_id',
@@ -346,7 +346,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开直播广场',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://live_square',
+    urlSchemeTemplate: 'xhsdiscover://live_square',
     examples: ['xhsdiscover://live_square'],
   },
   {
@@ -355,7 +355,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开购物车',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://rn/lancer-slim/user/shopping_cart',
+    urlSchemeTemplate: 'xhsdiscover://rn/lancer-slim/user/shopping_cart',
     examples: ['xhsdiscover://rn/lancer-slim/user/shopping_cart'],
   },
   {
@@ -364,7 +364,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开友好市集（新版商城）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://home/store',
+    urlSchemeTemplate: 'xhsdiscover://home/store',
     examples: ['xhsdiscover://home/store'],
   },
   {
@@ -373,7 +373,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开旧版商城首页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://mall',
+    urlSchemeTemplate: 'xhsdiscover://mall',
     examples: ['xhsdiscover://mall'],
     deprecated: true,
   },
@@ -383,7 +383,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开商品详情',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://goods_detail/<goods_id>',
+    urlSchemeTemplate: 'xhsdiscover://goods_detail/{goods_id}',
     slots: [
       {
         name: 'goods_id',
@@ -399,7 +399,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://settings',
+    urlSchemeTemplate: 'xhsdiscover://settings',
     examples: ['xhsdiscover://settings'],
   },
   {
@@ -408,7 +408,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开通用设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://general_setting',
+    urlSchemeTemplate: 'xhsdiscover://general_setting',
     examples: ['xhsdiscover://general_setting'],
   },
   {
@@ -417,7 +417,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开小红书系统设置（iOS）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://system_settings',
+    urlSchemeTemplate: 'xhsdiscover://system_settings',
     examples: ['xhsdiscover://system_settings'],
   },
   {
@@ -426,7 +426,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开账号与安全',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://account/bind',
+    urlSchemeTemplate: 'xhsdiscover://account/bind',
     examples: ['xhsdiscover://account/bind'],
   },
   {
@@ -435,7 +435,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开绑定手机号',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://account/bind/phone',
+    urlSchemeTemplate: 'xhsdiscover://account/bind/phone',
     examples: ['xhsdiscover://account/bind/phone'],
   },
   {
@@ -444,7 +444,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
     description: '打开设置帮助与客服',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-04T00:00:00Z',
-    urlTemplate: 'xhsdiscover://rn/eva-seraph/customHelpCenter/home',
+    urlSchemeTemplate: 'xhsdiscover://rn/eva-seraph/customHelpCenter/home',
     examples: ['xhsdiscover://rn/eva-seraph/customHelpCenter/home'],
   },
 
@@ -455,7 +455,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开逛逛',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://guang/<note_id>',
+  //   urlSchemeTemplate: 'xhsdiscover://guang/<note_id>',
   //   slots: [
   //     {
   //       name: 'note_id',
@@ -472,7 +472,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开举报功能页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://report?type=<type>',
+  //   urlSchemeTemplate: 'xhsdiscover://report?type=<type>',
   //   slots: [
   //     {
   //       name: 'type',
@@ -489,7 +489,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开逛逛',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://guang/<note_id>',
+  //   urlSchemeTemplate: 'xhsdiscover://guang/<note_id>',
   //   slots: [
   //     {
   //       name: 'note_id',
@@ -505,7 +505,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开笔记评论',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://comments/<note_id>?uid=<user_id>',
+  //   urlSchemeTemplate: 'xhsdiscover://comments/<note_id>?uid=<user_id>',
   //   slots: [
   //     {
   //       name: 'note_id',
@@ -526,7 +526,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开发布视频页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://post_video',
+  //   urlSchemeTemplate: 'xhsdiscover://post_video',
   //   examples: ['xhsdiscover://post_video'],
   // },
   // {
@@ -535,7 +535,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开深色模式设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://dark_mode_setting',
+  //   urlSchemeTemplate: 'xhsdiscover://dark_mode_setting',
   //   examples: ['xhsdiscover://dark_mode_setting'],
   // },
   // {
@@ -544,7 +544,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开选择分享用户页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://choose_share_user',
+  //   urlSchemeTemplate: 'xhsdiscover://choose_share_user',
   //   examples: ['xhsdiscover://choose_share_user'],
   // },
   // {
@@ -553,7 +553,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开商品详情',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://page/goods/<goods_id>',
+  //   urlSchemeTemplate: 'xhsdiscover://page/goods/<goods_id>',
   //   slots: [
   //     {
   //       name: 'goods_id',
@@ -569,7 +569,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开商品列表',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://spl/<spl_id>',
+  //   urlSchemeTemplate: 'xhsdiscover://spl/<spl_id>',
   //   slots: [
   //     {
   //       name: 'spl_id',
@@ -585,7 +585,7 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开商品展示页',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-04T00:00:00Z',
-  //   urlTemplate: 'xhsdiscover://spv/<spv_id>',
+  //   urlSchemeTemplate: 'xhsdiscover://spv/<spv_id>',
   //   slots: [
   //     {
   //       name: 'spv_id',

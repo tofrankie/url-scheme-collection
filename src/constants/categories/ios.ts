@@ -7,7 +7,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开相册',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'photos-redirect://',
+    urlSchemeTemplate: 'photos-redirect://',
     examples: ['photos-redirect://'],
   },
   {
@@ -16,7 +16,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开短信并给指定号码发送短信。',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'sms://<tel_number>?body=<body>',
+    urlSchemeTemplate: 'sms://{tel_number}?body={body}',
     slots: [
       {
         name: 'tel_number',
@@ -37,7 +37,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开通讯录',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'people://',
+    urlSchemeTemplate: 'people://',
     examples: ['people://'],
     deprecated: true,
   },
@@ -47,7 +47,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple 地图',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'map://',
+    urlSchemeTemplate: 'map://',
     examples: ['map://'],
   },
   {
@@ -56,7 +56,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple 邮箱',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'message://',
+    urlSchemeTemplate: 'message://',
     examples: ['message://'],
   },
   {
@@ -65,7 +65,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 兑换',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/WebObjects/MZFinance.woa/wa/redeemLandingPage',
+    urlSchemeTemplate: 'music://music.apple.com/WebObjects/MZFinance.woa/wa/redeemLandingPage',
     examples: ['music://music.apple.com/WebObjects/MZFinance.woa/wa/redeemLandingPage'],
   },
   {
@@ -74,7 +74,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 播放页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-08T00:00:00Z',
-    urlTemplate: 'music://shownowplaying',
+    urlSchemeTemplate: 'music://shownowplaying',
     examples: ['music://shownowplaying'],
   },
   {
@@ -83,7 +83,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: 'Apple Music 主页 Tab 页（原现在就听）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/home',
+    urlSchemeTemplate: 'music://music.apple.com/home',
     examples: ['music://music.apple.com/home', 'music://music.apple.com/listennow'],
   },
   {
@@ -92,7 +92,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: 'Apple Music 新发现 Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/browse',
+    urlSchemeTemplate: 'music://music.apple.com/browse',
     examples: ['music://music.apple.com/browse', 'music://music.apple.com/new'],
   },
   {
@@ -101,7 +101,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 广播 Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/radio',
+    urlSchemeTemplate: 'music://music.apple.com/radio',
     examples: ['music://music.apple.com/radio'],
   },
   {
@@ -110,7 +110,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 搜索',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-08T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/search',
+    urlSchemeTemplate: 'music://music.apple.com/search',
     examples: ['music://music.apple.com/search'],
   },
   {
@@ -119,7 +119,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 搜索并搜索指定内容',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/search?term=<keyword>',
+    urlSchemeTemplate: 'music://music.apple.com/search?term={keyword}',
     slots: [
       {
         name: 'keyword',
@@ -135,7 +135,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 资料库播放列表',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/library/all-playlists',
+    urlSchemeTemplate: 'music://music.apple.com/library/all-playlists',
     examples: ['music://music.apple.com/library/all-playlists'],
   },
   {
@@ -144,7 +144,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 播放列表',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/library/playlist/pl.<playlist_id>',
+    urlSchemeTemplate: 'music://music.apple.com/library/playlist/pl.{playlist_id}',
     slots: [
       {
         name: 'playlist_id',
@@ -160,7 +160,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 指定歌曲',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/song/<song_id>',
+    urlSchemeTemplate: 'music://music.apple.com/song/{song_id}',
     slots: [
       {
         name: 'song_id',
@@ -176,7 +176,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 指定专辑',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/library/album/<album_id>',
+    urlSchemeTemplate: 'music://music.apple.com/library/album/{album_id}',
     slots: [
       {
         name: 'album_id',
@@ -192,7 +192,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 指定艺人',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/library/artist/<artist_id>',
+    urlSchemeTemplate: 'music://music.apple.com/library/artist/{artist_id}',
     slots: [
       {
         name: 'artist_id',
@@ -208,7 +208,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 个人订阅',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/subscribe/individual',
+    urlSchemeTemplate: 'music://music.apple.com/subscribe/individual',
     examples: ['music://music.apple.com/subscribe/individual'],
   },
   {
@@ -217,7 +217,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 学生订阅',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/subscribe/student',
+    urlSchemeTemplate: 'music://music.apple.com/subscribe/student',
     examples: ['music://music.apple.com/subscribe/student'],
   },
   {
@@ -226,7 +226,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 家庭订阅',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/subscribe/family',
+    urlSchemeTemplate: 'music://music.apple.com/subscribe/family',
     examples: ['music://music.apple.com/subscribe/family'],
   },
   {
@@ -235,7 +235,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 续费',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/musicrenew',
+    urlSchemeTemplate: 'music://music.apple.com/musicrenew',
     examples: ['music://music.apple.com/musicrenew'],
   },
   {
@@ -244,7 +244,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Music 账户设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'music://music.apple.com/account/settings',
+    urlSchemeTemplate: 'music://music.apple.com/account/settings',
     examples: ['music://music.apple.com/account/settings'],
   },
   {
@@ -253,7 +253,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store（仍可用，但加载较慢，更建议使用 Tab 的 URL Scheme）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-08T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com',
     examples: ['itms-apps://itunes.apple.com'],
     deprecated: true,
   },
@@ -263,7 +263,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store Today Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/today',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/today',
     examples: ['itms-apps://itunes.apple.com/today'],
   },
   {
@@ -272,7 +272,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store 游戏 Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/games',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/games',
     examples: ['itms-apps://itunes.apple.com/games'],
   },
   {
@@ -281,7 +281,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store App Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/apps',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/apps',
     examples: ['itms-apps://itunes.apple.com/apps'],
   },
   {
@@ -290,7 +290,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store Arcade Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/arcade',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/arcade',
     examples: ['itms-apps://itunes.apple.com/arcade'],
   },
   {
@@ -299,7 +299,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store Search Tab 页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/search',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/search',
     examples: ['App-Prefs:root=General'],
   },
   {
@@ -308,7 +308,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store 搜索并搜索指定内容',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/search?term=<keyword>',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/search?term={keyword}',
     slots: [
       {
         name: 'keyword',
@@ -325,7 +325,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store 指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/<region>/app/<bundle_id>/id<apple_id>',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/{region}/app/{bundle_id}/id{apple_id}',
     slots: [
       {
         name: 'region',
@@ -352,7 +352,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store 更新（账户）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/updates',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/updates',
     examples: ['itms-apps://itunes.apple.com/updates'],
   },
   {
@@ -361,7 +361,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store 账户设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-ui://',
+    urlSchemeTemplate: 'itms-ui://',
     examples: ['itms-ui://'],
   },
   {
@@ -370,7 +370,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     description: '打开 Apple Store',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'applestore://',
+    urlSchemeTemplate: 'applestore://',
     examples: ['applestore://'],
   },
   // TODO: 以下很多设置 URL Scheme 在 iOS 18 上已失效
@@ -380,7 +380,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '测试',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'App-Prefs:root=General',
+  //   urlSchemeTemplate: 'App-Prefs:root=General',
   //   examples: ['App-Prefs:root=General'],
   // },
   // {
@@ -389,7 +389,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 iOS 通用设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'App-Prefs:root=General',
+  //   urlSchemeTemplate: 'App-Prefs:root=General',
   //   examples: ['App-Prefs:root=General'],
   // },
   // {
@@ -398,7 +398,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开辅助功能设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=ACCESSIBILITY',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=ACCESSIBILITY',
   //   examples: ['Prefs:root=General&path=ACCESSIBILITY'],
   // },
   // {
@@ -407,7 +407,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开关于本机页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=About',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=About',
   //   examples: ['Prefs:root=General&path=About'],
   // },
   // {
@@ -416,7 +416,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开键盘设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=Keyboard',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=Keyboard',
   //   examples: ['Prefs:root=General&path=Keyboard'],
   // },
   // {
@@ -425,7 +425,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开键盘设置中的“键盘”页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=Keyboard/KEYBOARDS',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=Keyboard/KEYBOARDS',
   //   examples: ['Prefs:root=General&path=Keyboard/KEYBOARDS'],
   // },
   // {
@@ -434,7 +434,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开存储空间页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=STORAGE_ICLOUD_USAGE/DEVICE_STORAGE',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=STORAGE_ICLOUD_USAGE/DEVICE_STORAGE',
   //   examples: ['Prefs:root=General&path=STORAGE_ICLOUD_USAGE/DEVICE_STORAGE'],
   // },
   // {
@@ -443,7 +443,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开描述文件页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=ManagedConfigurationList',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=ManagedConfigurationList',
   //   examples: ['Prefs:root=General&path=ManagedConfigurationList'],
   // },
   // {
@@ -452,7 +452,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开日期与时间设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=DATE_AND_TIME',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=DATE_AND_TIME',
   //   examples: ['Prefs:root=General&path=DATE_AND_TIME'],
   // },
   // {
@@ -461,7 +461,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开语言与地区设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=INTERNATIONAL',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=INTERNATIONAL',
   //   examples: ['Prefs:root=General&path=INTERNATIONAL'],
   // },
   // {
@@ -470,7 +470,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开还原设置页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=Reset',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=Reset',
   //   examples: ['Prefs:root=General&path=Reset'],
   // },
   // {
@@ -479,7 +479,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开自动锁定时间设置页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=General&path=AUTOLOCK',
+  //   urlSchemeTemplate: 'Prefs:root=General&path=AUTOLOCK',
   //   examples: ['Prefs:root=General&path=AUTOLOCK'],
   // },
   // {
@@ -488,7 +488,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开隐私设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Privacy',
+  //   urlSchemeTemplate: 'Prefs:root=Privacy',
   //   examples: ['Prefs:root=Privacy'],
   // },
   // {
@@ -497,7 +497,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开隐私设置中的定位服务',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Privacy&path=LOCATION',
+  //   urlSchemeTemplate: 'Prefs:root=Privacy&path=LOCATION',
   //   examples: ['Prefs:root=Privacy&path=LOCATION'],
   // },
   // {
@@ -506,7 +506,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开电池电量设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=BATTERY_USAGE',
+  //   urlSchemeTemplate: 'Prefs:root=BATTERY_USAGE',
   //   examples: ['Prefs:root=BATTERY_USAGE'],
   // },
   // {
@@ -515,7 +515,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开蜂窝数据设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=MOBILE_DATA_SETTINGS_ID',
+  //   urlSchemeTemplate: 'Prefs:root=MOBILE_DATA_SETTINGS_ID',
   //   examples: ['Prefs:root=MOBILE_DATA_SETTINGS_ID'],
   // },
   // {
@@ -524,7 +524,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开蓝牙设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Bluetooth',
+  //   urlSchemeTemplate: 'Prefs:root=Bluetooth',
   //   examples: ['Prefs:root=Bluetooth'],
   // },
   // {
@@ -533,7 +533,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开显示设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=DISPLAY',
+  //   urlSchemeTemplate: 'Prefs:root=DISPLAY',
   //   examples: ['Prefs:root=DISPLAY'],
   // },
   // {
@@ -542,7 +542,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开声音设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Sounds',
+  //   urlSchemeTemplate: 'Prefs:root=Sounds',
   //   examples: ['Prefs:root=Sounds'],
   // },
   // {
@@ -551,7 +551,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开铃声设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Sounds&path=Ringtone',
+  //   urlSchemeTemplate: 'Prefs:root=Sounds&path=Ringtone',
   //   examples: ['Prefs:root=Sounds&path=Ringtone'],
   // },
   // {
@@ -560,7 +560,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开墙纸设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Wallpaper',
+  //   urlSchemeTemplate: 'Prefs:root=Wallpaper',
   //   examples: ['Prefs:root=Wallpaper'],
   // },
   // {
@@ -569,7 +569,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开个人热点设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=INTERNET_TETHERING',
+  //   urlSchemeTemplate: 'Prefs:root=INTERNET_TETHERING',
   //   examples: ['Prefs:root=INTERNET_TETHERING'],
   // },
   // {
@@ -578,7 +578,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开飞行模式设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=AIRPLANE_MODE',
+  //   urlSchemeTemplate: 'Prefs:root=AIRPLANE_MODE',
   //   examples: ['Prefs:root=AIRPLANE_MODE'],
   // },
   // {
@@ -587,7 +587,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开邮件设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=ACCOUNT_SETTINGS',
+  //   urlSchemeTemplate: 'Prefs:root=ACCOUNT_SETTINGS',
   //   examples: ['Prefs:root=ACCOUNT_SETTINGS'],
   // },
   // {
@@ -596,7 +596,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 FaceTime 设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=FACETIME',
+  //   urlSchemeTemplate: 'Prefs:root=FACETIME',
   //   examples: ['Prefs:root=FACETIME'],
   // },
   // {
@@ -605,7 +605,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开音乐设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=MUSIC',
+  //   urlSchemeTemplate: 'Prefs:root=MUSIC',
   //   examples: ['Prefs:root=MUSIC'],
   // },
   // {
@@ -614,7 +614,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开备忘录设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=NOTES',
+  //   urlSchemeTemplate: 'Prefs:root=NOTES',
   //   examples: ['Prefs:root=NOTES'],
   // },
   // {
@@ -623,7 +623,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开通知设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=NOTIFICATIONS_ID',
+  //   urlSchemeTemplate: 'Prefs:root=NOTIFICATIONS_ID',
   //   examples: ['Prefs:root=NOTIFICATIONS_ID'],
   // },
   // {
@@ -632,7 +632,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开指纹/面容与密码设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=TOUCHID_PASSCODE',
+  //   urlSchemeTemplate: 'Prefs:root=TOUCHID_PASSCODE',
   //   examples: ['Prefs:root=TOUCHID_PASSCODE'],
   // },
   // {
@@ -641,7 +641,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开钱包与 Apple Pay 设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=PASSBOOK',
+  //   urlSchemeTemplate: 'Prefs:root=PASSBOOK',
   //   examples: ['Prefs:root=PASSBOOK'],
   // },
   // {
@@ -650,7 +650,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开电话设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Phone',
+  //   urlSchemeTemplate: 'Prefs:root=Phone',
   //   examples: ['Prefs:root=Phone'],
   // },
   // {
@@ -659,7 +659,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开照片设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=Photos',
+  //   urlSchemeTemplate: 'Prefs:root=Photos',
   //   examples: ['Prefs:root=Photos'],
   // },
   // {
@@ -668,7 +668,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 Siri 设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=SIRI',
+  //   urlSchemeTemplate: 'Prefs:root=SIRI',
   //   examples: ['Prefs:root=SIRI'],
   // },
   // {
@@ -677,7 +677,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 Wi-Fi 设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=WIFI',
+  //   urlSchemeTemplate: 'Prefs:root=WIFI',
   //   examples: ['Prefs:root=WIFI'],
   // },
   // {
@@ -686,7 +686,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 iCloud 设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=CASTLE',
+  //   urlSchemeTemplate: 'Prefs:root=CASTLE',
   //   examples: ['Prefs:root=CASTLE'],
   // },
   // {
@@ -695,7 +695,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 App Store 设置',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=STORE',
+  //   urlSchemeTemplate: 'Prefs:root=STORE',
   //   examples: ['Prefs:root=STORE'],
   // },
   // {
@@ -704,7 +704,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开控制中心自定页面',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Prefs:root=ControlCenter&path=CUSTOMIZE_CONTROLS',
+  //   urlSchemeTemplate: 'Prefs:root=ControlCenter&path=CUSTOMIZE_CONTROLS',
   //   examples: ['Prefs:root=ControlCenter&path=CUSTOMIZE_CONTROLS'],
   // },
 
@@ -715,7 +715,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 iOS 钱包',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'shoebox://url-scheme',
+  //   urlSchemeTemplate: 'shoebox://url-scheme',
   //   examples: ['shoebox://url-scheme'],
   // },
   // {
@@ -724,7 +724,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开 Safari 浏览器',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'x-web-search://',
+  //   urlSchemeTemplate: 'x-web-search://',
   //   examples: ['x-web-search://'],
   // },
   // {
@@ -733,7 +733,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '运行捷径（旧版）',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'workflow://run-workflow?name=<name>&input=<input>',
+  //   urlSchemeTemplate: 'workflow://run-workflow?name=<name>&input=<input>',
   //   slots: [
   //     {
   //       name: 'name',
@@ -754,7 +754,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开地图',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'map://',
+  //   urlSchemeTemplate: 'map://',
   //   examples: ['map://'],
   // },
   // {
@@ -763,7 +763,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开世界时钟',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Clock-worldclock://',
+  //   urlSchemeTemplate: 'Clock-worldclock://',
   //   examples: ['Clock-worldclock://'],
   // },
   // {
@@ -772,7 +772,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开闹钟',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Clock-alarm://',
+  //   urlSchemeTemplate: 'Clock-alarm://',
   //   examples: ['Clock-alarm://'],
   // },
   // {
@@ -781,7 +781,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开秒表',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Clock-stopwatch://',
+  //   urlSchemeTemplate: 'Clock-stopwatch://',
   //   examples: ['Clock-stopwatch://'],
   // },
   // {
@@ -790,7 +790,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开倒计时',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Clock-timer://',
+  //   urlSchemeTemplate: 'Clock-timer://',
   //   examples: ['Clock-timer://'],
   // },
   // {
@@ -799,7 +799,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开相册',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'Photos://',
+  //   urlSchemeTemplate: 'Photos://',
   //   examples: ['Photos://'],
   // },
   // {
@@ -808,7 +808,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开查找 iPhone',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'fmip1://',
+  //   urlSchemeTemplate: 'fmip1://',
   //   examples: ['fmip1://'],
   // },
   // {
@@ -817,7 +817,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '拨打电话',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'tel://<number>',
+  //   urlSchemeTemplate: 'tel://<number>',
   //   slots: [
   //     {
   //       name: 'number',
@@ -833,7 +833,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '给指定号码发送短信',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'sms://<number>',
+  //   urlSchemeTemplate: 'sms://<number>',
   //   slots: [
   //     {
   //       name: 'number',
@@ -849,7 +849,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开备忘录',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'mobilenotes://',
+  //   urlSchemeTemplate: 'mobilenotes://',
   //   examples: ['mobilenotes://'],
   // },
   // {
@@ -858,7 +858,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
   //   description: '打开日历',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-08T00:00:00Z',
-  //   urlTemplate: 'calshow://',
+  //   urlSchemeTemplate: 'calshow://',
   //   examples: ['calshow://'],
   // },
 ]

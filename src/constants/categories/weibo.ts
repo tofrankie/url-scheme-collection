@@ -10,7 +10,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博扫一扫',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://qrcode',
+    urlSchemeTemplate: 'sinaweibo://qrcode',
     examples: ['sinaweibo://qrcode'],
   },
   {
@@ -19,7 +19,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博并搜索指定内容',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://searchall?q=<content>',
+    urlSchemeTemplate: 'sinaweibo://searchall?q={content}',
     slots: [
       {
         name: 'content',
@@ -35,7 +35,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '发微博',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://sendweibo?content=<content>',
+    urlSchemeTemplate: 'sinaweibo://sendweibo?content={content}',
     slots: [
       {
         name: 'content',
@@ -56,7 +56,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博草稿箱（不起作用？）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://draftbox',
+    urlSchemeTemplate: 'sinaweibo://draftbox',
     examples: ['sinaweibo://draftbox'],
     deprecated: true, // TODO: 似乎不起作用
   },
@@ -66,7 +66,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博首页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://gotohome',
+    urlSchemeTemplate: 'sinaweibo://gotohome',
     examples: ['sinaweibo://gotohome'],
   },
   {
@@ -75,7 +75,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博视频 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://gotovideo',
+    urlSchemeTemplate: 'sinaweibo://gotovideo',
     examples: ['sinaweibo://gotovideo'],
   },
   {
@@ -84,7 +84,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博发现 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://discover',
+    urlSchemeTemplate: 'sinaweibo://discover',
     examples: ['sinaweibo://discover'],
   },
   {
@@ -93,7 +93,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博消息 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://message',
+    urlSchemeTemplate: 'sinaweibo://message',
     examples: ['sinaweibo://message'],
   },
   {
@@ -102,7 +102,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博我的 Tab',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://myprofile',
+    urlSchemeTemplate: 'sinaweibo://myprofile',
     examples: ['sinaweibo://myprofile'],
   },
   {
@@ -111,7 +111,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博指定用户主页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://userinfo?uid=<uid>',
+    urlSchemeTemplate: 'sinaweibo://userinfo?uid={uid}',
     slots: [
       {
         name: 'uid',
@@ -127,7 +127,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '与指定用户私信对话',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://messagelist?uid=<uid>&content=<content>',
+    urlSchemeTemplate: 'sinaweibo://messagelist?uid={uid}&content={content}',
     slots: [
       {
         name: 'uid',
@@ -148,7 +148,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博指定群聊',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://groupchat?id=<group_id>',
+    urlSchemeTemplate: 'sinaweibo://groupchat?id={group_id}',
     slots: [
       {
         name: 'group_id',
@@ -165,7 +165,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博直播（包括历史直播）',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://wblive?live_id=<live_id>',
+    urlSchemeTemplate: 'sinaweibo://wblive?live_id={live_id}',
     slots: [
       {
         name: 'live_id',
@@ -182,7 +182,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博小店',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://wbshop',
+    urlSchemeTemplate: 'sinaweibo://wbshop',
     examples: ['sinaweibo://wbshop'],
   },
   // TODO: 似乎跟主页打开的设置稍稍不同
@@ -192,7 +192,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://setupoptions',
+    urlSchemeTemplate: 'sinaweibo://setupoptions',
     examples: ['sinaweibo://setupoptions'],
   },
   {
@@ -201,7 +201,7 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
     description: '打开微博登录页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-10T00:00:00Z',
-    urlTemplate: 'sinaweibo://login', // register 注册
+    urlSchemeTemplate: 'sinaweibo://login', // register 注册
     examples: ['sinaweibo://login'],
   },
 ]

@@ -7,7 +7,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝扫一扫',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?saId=10000007',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?saId=10000007',
     examples: ['alipay://platformapi/startapp?saId=10000007'],
   },
   {
@@ -16,7 +16,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝付款码',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000056',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000056',
     examples: ['alipay://platformapi/startapp?appId=20000056'],
   },
   {
@@ -25,7 +25,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝收款码',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000123',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000123',
     examples: ['alipay://platformapi/startapp?appId=20000123'],
   },
   {
@@ -34,7 +34,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝蚂蚁森林小程序',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=60000002',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=60000002',
     examples: ['alipay://platformapi/startapp?appId=60000002'],
   },
   {
@@ -43,7 +43,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝蚂蚁庄园小程序',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=66666674',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=66666674',
     examples: ['alipay://platformapi/startapp?appId=66666674'],
   },
   {
@@ -52,7 +52,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝我的快递',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000754',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000754',
     examples: ['alipay://platformapi/startapp?appId=20000754'],
   },
   {
@@ -61,7 +61,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝充值中心',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?saId=10000003',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?saId=10000003',
     examples: ['alipay://platformapi/startapp?saId=10000003'],
   },
   {
@@ -70,7 +70,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝生活缴费',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000193',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000193',
     examples: ['alipay://platformapi/startapp?appId=20000193'],
   },
   {
@@ -79,7 +79,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝总资产',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000243',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000243',
     examples: ['alipay://platformapi/startapp?appId=20000243'],
   },
   {
@@ -88,7 +88,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝余额',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000019',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000019',
     examples: ['alipay://platformapi/startapp?appId=20000019'],
   },
   {
@@ -97,7 +97,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝账单',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000003',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000003',
     examples: ['alipay://platformapi/startapp?appId=20000003'],
   },
   {
@@ -106,7 +106,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝转账',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?saId=20000116',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?saId=20000116',
     examples: ['alipay://platformapi/startapp?saId=20000116'],
   },
   {
@@ -115,7 +115,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝银行卡管理',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000014',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000014',
     examples: ['alipay://platformapi/startapp?appId=20000014'],
   },
   {
@@ -124,7 +124,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝余额宝',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000032',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000032',
     examples: ['alipay://platformapi/startapp?appId=20000032'],
   },
   {
@@ -133,7 +133,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝花呗/信用购',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000199',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000199',
     examples: ['alipay://platformapi/startapp?appId=20000199'],
   },
   {
@@ -142,7 +142,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝养老金',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=68687131',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=68687131',
     examples: ['alipay://platformapi/startapp?appId=68687131'],
   },
   {
@@ -151,7 +151,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝商家服务',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=60000081',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=60000081',
     examples: ['alipay://platformapi/startapp?appId=60000081'],
   },
 
@@ -161,7 +161,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝记账本',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000168',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000168',
     examples: ['alipay://platformapi/startapp?appId=20000168'],
   },
   {
@@ -170,7 +170,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝会员',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000160',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000160',
     examples: ['alipay://platformapi/startapp?appId=20000160'],
   },
   {
@@ -179,7 +179,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝通讯录',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000166',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000166',
     examples: ['alipay://platformapi/startapp?appId=20000166'],
   },
   {
@@ -188,7 +188,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝饿了么小程序',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000120',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000120',
     examples: ['alipay://platformapi/startapp?appId=20000120'],
   },
   {
@@ -197,7 +197,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝滴滴出行小程序',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000778',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000778',
     examples: ['alipay://platformapi/startapp?appId=20000778'],
   },
   {
@@ -206,7 +206,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝共享单车',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=60000155',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=60000155',
     examples: ['alipay://platformapi/startapp?appId=60000155'],
   },
   {
@@ -215,7 +215,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝理财基金',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000793',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000793',
     examples: ['alipay://platformapi/startapp?appId=20000793'],
   },
   {
@@ -224,7 +224,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝理财股票',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000134',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000134',
     examples: ['alipay://platformapi/startapp?appId=20000134'],
   },
   {
@@ -233,7 +233,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝理财定期',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000165',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000165',
     examples: ['alipay://platformapi/startapp?appId=20000165'],
   },
   {
@@ -242,7 +242,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝理财黄金',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20000218',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20000218',
     examples: ['alipay://platformapi/startapp?appId=20000218'],
   },
   {
@@ -251,7 +251,7 @@ export const ALIPAY: UrlSchemeWithoutCategory[] = [
     description: '打开支付宝搜索',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'alipay://platformapi/startapp?appId=20001003',
+    urlSchemeTemplate: 'alipay://platformapi/startapp?appId=20001003',
     examples: ['alipay://platformapi/startapp?appId=20001003'],
   },
 ] as const

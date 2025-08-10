@@ -7,7 +7,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开 App Store 指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-09T00:00:00Z',
-    urlTemplate: 'itms-apps://itunes.apple.com/<region>/app/<bundle_id>/id<apple_id>',
+    urlSchemeTemplate: 'itms-apps://itunes.apple.com/{region}/app/{bundle_id}/id{apple_id}',
     slots: [
       {
         name: 'region',
@@ -34,7 +34,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       '打开小米应用商店指定应用，原 mimarket://details?id=<package_name> 已失效，唯有先通过浏览器打开再唤起应用商店',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'https://app.mi.com/details?id=<package_name>',
+    urlSchemeTemplate: 'https://app.mi.com/details?id={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -50,7 +50,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开魅族应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'market://details?id=<package_name>',
+    urlSchemeTemplate: 'market://details?id={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -66,7 +66,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开 OPPO 应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'market://details?id=<package_name>',
+    urlSchemeTemplate: 'market://details?id={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -82,7 +82,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开 vivo 应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'vivomarket://details?id=<package_name>',
+    urlSchemeTemplate: 'vivomarket://details?id={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -98,7 +98,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开华为应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'appmarket://details?pkgname=<package_name>',
+    urlSchemeTemplate: 'appmarket://details?pkgname={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -114,7 +114,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开荣耀应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'market://details?id=<package_name>',
+    urlSchemeTemplate: 'market://details?id={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -130,7 +130,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开三星应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'samsungapps://ProductDetail/<package_name>',
+    urlSchemeTemplate: 'samsungapps://ProductDetail/{package_name}',
     slots: [
       {
         name: 'package_name',
@@ -146,7 +146,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开应用宝应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'tmast://appdetails?pname=<package_name>',
+    urlSchemeTemplate: 'tmast://appdetails?pname={package_name}',
     slots: [
       {
         name: 'package_name',
@@ -162,7 +162,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     description: '打开酷安应用商店指定应用',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
-    urlTemplate: 'coolmarket://com.coolapk.market/apk/<package_name>',
+    urlSchemeTemplate: 'coolmarket://com.coolapk.market/apk/{package_name}',
     slots: [
       {
         name: 'package_name',

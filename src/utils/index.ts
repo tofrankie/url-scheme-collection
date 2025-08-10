@@ -1,15 +1,15 @@
 import type { UrlScheme } from '@/types'
 
 export function genUrlScheme(scheme: UrlScheme, slotValues: Record<string, string>) {
-  const { urlTemplate, slots } = scheme
-  let replacedUrl = urlTemplate
+  const { urlSchemeTemplate, slots } = scheme
+  let replacedUrl = urlSchemeTemplate
 
   if (slots) {
     for (const slot of slots) {
       const value = slotValues[slot.name]
       if (!value) continue
-      // /<[^>]+>/g
-      replacedUrl = replacedUrl.replace(new RegExp(`<${slot.name}>`, 'g'), value)
+      // /{[^}]+}/g
+      replacedUrl = replacedUrl.replace(new RegExp(`\\{${slot.name}\\}`, 'g'), value)
     }
   }
 

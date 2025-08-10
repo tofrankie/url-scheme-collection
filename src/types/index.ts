@@ -19,8 +19,8 @@ export interface UrlScheme {
   /** 所属分类 */
   category: CategoryId
 
-  /** URL 模板，使用 <slotName> 格式表示动态参数 */
-  urlTemplate: string
+  /** URL Scheme 模板，使用 {slotName} 格式表示动态参数 */
+  urlSchemeTemplate: string
 
   /** 动态参数插槽定义 */
   slots?: Slot[]

@@ -108,7 +108,7 @@ export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
           )}
         </Stack>
 
-        <CopyableInput value={scheme.urlTemplate} onCopy={handleCopy} />
+        <CopyableInput value={scheme.urlSchemeTemplate} onCopy={handleCopy} />
 
         <Stack direction="horizontal" gap="condensed">
           <Button onClick={handleShowDetails} size="small">

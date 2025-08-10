@@ -35,7 +35,7 @@ function App() {
         (scheme: UrlScheme) =>
           scheme.name.toLowerCase().includes(query) ||
           scheme.description?.toLowerCase().includes(query) ||
-          scheme.urlTemplate.toLowerCase().includes(query)
+          scheme.urlSchemeTemplate.toLowerCase().includes(query)
       )
     }
 

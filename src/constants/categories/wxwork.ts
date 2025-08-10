@@ -7,7 +7,7 @@ const WXWORK: UrlSchemeWithoutCategory[] = [
     description: '打开企业微信扫一扫',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'wxwork://platformId=wechat&wwact=qrcode',
+    urlSchemeTemplate: 'wxwork://platformId=wechat&wwact=qrcode',
     examples: ['wxwork://platformId=wechat&wwact=qrcode'],
   },
 ]

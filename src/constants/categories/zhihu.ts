@@ -7,7 +7,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎首页推荐流',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://feed/item/recommend',
+    urlSchemeTemplate: 'zhihu://feed/item/recommend',
     examples: ['zhihu://feed/item/recommend'],
   },
   {
@@ -16,7 +16,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎用户主页',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://people/<user_id>',
+    urlSchemeTemplate: 'zhihu://people/{user_id}',
     slots: [
       {
         name: 'user_id',
@@ -32,7 +32,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎文章',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://articles/<article_id>',
+    urlSchemeTemplate: 'zhihu://articles/{article_id}',
     slots: [
       {
         name: 'article_id',
@@ -48,7 +48,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎问题',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://questions/<question_id>',
+    urlSchemeTemplate: 'zhihu://questions/{question_id}',
     slots: [
       {
         name: 'question_id',
@@ -64,7 +64,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎回答',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://answers/<answer_id>',
+    urlSchemeTemplate: 'zhihu://answers/{answer_id}',
     slots: [
       {
         name: 'answer_id',
@@ -80,7 +80,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎写回答',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://answer/editor/<question_id>',
+    urlSchemeTemplate: 'zhihu://answer/editor/{question_id}',
     slots: [
       {
         name: 'question_id',
@@ -96,7 +96,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎专栏',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://columns/<column_id>',
+    urlSchemeTemplate: 'zhihu://columns/{column_id}',
     slots: [
       {
         name: 'column_id',
@@ -112,7 +112,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎收藏夹',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://collection/<collection_id>',
+    urlSchemeTemplate: 'zhihu://collection/{collection_id}',
     slots: [
       {
         name: 'collection_id',
@@ -128,7 +128,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎视频',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://zvideo/<video_id>',
+    urlSchemeTemplate: 'zhihu://zvideo/{video_id}',
     slots: [
       {
         name: 'video_id',
@@ -144,7 +144,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎新建提问',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://ask',
+    urlSchemeTemplate: 'zhihu://ask',
     examples: ['zhihu://ask'],
   },
   {
@@ -153,7 +153,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎想法',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://pin/<pin_id>',
+    urlSchemeTemplate: 'zhihu://pin/{pin_id}',
     slots: [
       {
         name: 'pin_id',
@@ -169,7 +169,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎话题',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://topics/<topic_id>',
+    urlSchemeTemplate: 'zhihu://topics/{topic_id}',
     slots: [
       {
         name: 'topic_id',
@@ -185,7 +185,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎搜索',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://search',
+    urlSchemeTemplate: 'zhihu://search',
     examples: ['zhihu://search'],
   },
   {
@@ -194,7 +194,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎搜索并搜索指定内容',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://search?q=<keyword>',
+    urlSchemeTemplate: 'zhihu://search?q={keyword}',
     slots: [
       {
         name: 'keyword',
@@ -210,7 +210,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎盐选会员',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://vip/purchase',
+    urlSchemeTemplate: 'zhihu://vip/purchase',
     examples: ['zhihu://vip/purchase'],
   },
   {
@@ -219,7 +219,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://settings',
+    urlSchemeTemplate: 'zhihu://settings',
     examples: ['zhihu://settings'],
   },
   {
@@ -228,7 +228,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎动态设置',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://dynamic/settings',
+    urlSchemeTemplate: 'zhihu://dynamic/settings',
     examples: ['zhihu://dynamic/settings'],
   },
   {
@@ -237,7 +237,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
     description: '打开知乎二维码扫描',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-05T00:00:00Z',
-    urlTemplate: 'zhihu://codereader',
+    urlSchemeTemplate: 'zhihu://codereader',
     examples: ['zhihu://codereader'],
   },
   // TODO: 不起作用，暂时注释
@@ -247,7 +247,7 @@ const ZHIHU: UrlSchemeWithoutCategory[] = [
   //   description: '打开知乎通知',
   //   contributors: ['toFrankie'],
   //   updatedAt: '2025-08-05T00:00:00Z',
-  //   urlTemplate: 'zhihu://notifications',
+  //   urlSchemeTemplate: 'zhihu://notifications',
   //   examples: ['zhihu://notifications'],
   //   deprecated: true,
   // },

@@ -1,5 +1,8 @@
 # 📱 URL Scheme Collection
 
+> [!IMPORTANT]
+> 仓库内容源自公开途径，非法使用后果自负！
+
 主流应用的 URL Scheme 虽然网上不难找到，但总是零零散散的，我只是把它们尽可能地聚合在一起，仅此而已。
 
 欢迎提交 PR 📢 一起完善它，也欢迎点个 Star ⭐。
@@ -211,11 +214,11 @@ MIT License
 - 签到：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fuser%2Fcenter%2Fsignin%22%7D`
 - 用户主页：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fuser%2F{user_id}%22%7D`
 - 文章：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpost%2F{post_id}%22%7D`
-- 专栏：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcolumn%2F<column_id>%22%7D`
-- 收藏集：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcollection%2F<collection_id>%22%7D`
+- 专栏：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcolumn%2F{column_id}%22%7D`
+- 收藏集：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcollection%2F{collection_id}%22%7D`
 - 课程：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D`
 - 掘金小册：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fbook%2F{book_id}%22%7D`
-- 字节内部课：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%2Fbytetech%2F<course_id>%22%7D`
+- 字节内部课：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%2Fbytetech%2F{course_id}%22%7D`
 - 沸点：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D`
 - 沸点详情：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpin%2F{pin_id}%22%7D`
 
@@ -231,12 +234,15 @@ MIT License
 - 扫一扫：`snssdk1128://aweme/scan`
 - 抖音热榜：`snssdk1128://search/trending`
 - 直播人气榜：`snssdk1128://webcast_board/hot_live_rank`
+- 搜索：`snssdk1128://search?keyword={keyword}`
+- AI 搜索：`snssdk1128://search/aigc`
 - 用户主页：`snssdk1128://user/profile/{uid}`
 - 视频创作：`snssdk1128://aweme/create`
 - 日常创作：`snssdk1128://aweme/closefriends/moments`
 - 首页-朋友：`snssdk1128://aweme/familiar`
 - 我的：`snssdk1128://user/homepage`
 - 我的-编辑主页：`snssdk1128://profile_edit`
+- 我的钱包：`snssdk1128://wallet`
 - 粉丝求更新：`snssdk1128://im/fansPush`
 - 稍后再看：`snssdk1128://aweme/watch_later_list`
 - 视频作品：`snssdk1128://aweme/detail/{aweme_id}`

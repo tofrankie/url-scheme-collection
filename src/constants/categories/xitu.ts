@@ -58,7 +58,7 @@ const XITU: UrlSchemeWithoutCategory[] = [
     contributors: ['toFrankie'],
     updatedAt: '2025-08-06T00:00:00Z',
     urlSchemeTemplate:
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcolumn%2F<column_id>%22%7D',
+      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcolumn%2F{column_id}%22%7D',
     slots: [
       {
         name: 'column_id',
@@ -77,7 +77,7 @@ const XITU: UrlSchemeWithoutCategory[] = [
     contributors: ['toFrankie'],
     updatedAt: '2025-08-06T00:00:00Z',
     urlSchemeTemplate:
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcollection%2F<collection_id>%22%7D',
+      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcollection%2F{collection_id}%22%7D',
     slots: [
       {
         name: 'collection_id',
@@ -124,7 +124,7 @@ const XITU: UrlSchemeWithoutCategory[] = [
     contributors: ['toFrankie'],
     updatedAt: '2025-08-06T00:00:00Z',
     urlSchemeTemplate:
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%2Fbytetech%2F<course_id>%22%7D',
+      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%2Fbytetech%2F{course_id}%22%7D',
     slots: [
       {
         name: 'course_id',

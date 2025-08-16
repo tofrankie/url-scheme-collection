@@ -83,7 +83,7 @@ export const CATEGORIES: Category[] = [
   {
     id: CATEGORY_IDS.DOUYIN,
     name: '抖音',
-    description: '抖音相关 URL Scheme。',
+    description: '抖音以 snssdk1128:// 开头，抖音极速版以 snssdk2329:// 开头，TikTok 以 snssdk1233:// 开头。',
   },
 ] as const
 

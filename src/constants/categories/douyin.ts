@@ -29,6 +29,31 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
     examples: ['snssdk1128://webcast_board/hot_live_rank'],
   },
   {
+    id: 'douyin-search',
+    name: '搜索',
+    description: '打开抖音并搜索指定内容',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-17T00:00:00Z',
+    urlSchemeTemplate: 'snssdk1128://search?keyword={keyword}',
+    slots: [
+      {
+        name: 'keyword',
+        description: '搜索关键词',
+        placeholder: '广州未赢够',
+      },
+    ],
+    examples: ['snssdk1128://search/video?keyword=广州未赢够'],
+  },
+  {
+    id: 'douyin-search-aigc',
+    name: 'AI 搜索',
+    description: '打开抖音 AI 搜索',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-17T00:00:00Z',
+    urlSchemeTemplate: 'snssdk1128://search/aigc',
+    examples: ['snssdk1128://search/aigc'],
+  },
+  {
     id: 'douyin-user-profile',
     name: '用户主页',
     description: '打开抖音指定用户主页',
@@ -89,6 +114,15 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
     updatedAt: '2025-08-14T00:00:00Z',
     urlSchemeTemplate: 'snssdk1128://profile_edit',
     examples: ['snssdk1128://profile_edit'],
+  },
+  {
+    id: 'douyin-wallet',
+    name: '我的钱包',
+    description: '打开抖音我的钱包',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-17T00:00:00Z',
+    urlSchemeTemplate: 'snssdk1128://wallet',
+    examples: ['snssdk1128://wallet'],
   },
   {
     id: 'douyin-im-fansPush',

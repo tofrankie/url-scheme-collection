@@ -29,6 +29,23 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
     examples: ['snssdk1128://webcast_board/hot_live_rank'],
   },
   {
+    id: 'douyin-land-tab',
+    name: '首页',
+    description: '打开抖音首页指定 Tab',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-18T00:00:00Z',
+    urlSchemeTemplate: 'snssdk1128://land_tab?tabid={tabid}',
+    slots: [
+      {
+        name: 'tabid',
+        description:
+          '有效值：推荐 homepage_hot（默认）、关注 homepage_follow、朋友 homepage_familiar、同城 homepage_nearby、团购 homepage_groupon、精选 homepage_mediumvideo、直播 homepage_tablive、经验 homepage_hangout、侧边栏 homepage_left_sidebar',
+        placeholder: 'homepage_hot',
+      },
+    ],
+    examples: ['snssdk1128://land_tab?tabid=homepage_hot', 'snssdk1128://land_tab?tabid=homepage_follow'],
+  },
+  {
     id: 'douyin-search',
     name: '搜索',
     description: '打开抖音并搜索指定内容',
@@ -49,9 +66,16 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
     name: 'AI 搜索',
     description: '打开抖音 AI 搜索',
     contributors: ['toFrankie'],
-    updatedAt: '2025-08-17T00:00:00Z',
-    urlSchemeTemplate: 'snssdk1128://search/aigc',
-    examples: ['snssdk1128://search/aigc'],
+    updatedAt: '2025-08-18T00:00:00Z',
+    urlSchemeTemplate: 'snssdk1128://search/aigc?search_keyword={keyword}',
+    slots: [
+      {
+        name: 'keyword',
+        description: '搜索关键词（可选）。加上则自动搜索相关内容。',
+        placeholder: '广州未赢够',
+      },
+    ],
+    examples: ['snssdk1128://search/aigc', 'snssdk1128://search/aigc?search_keyword=广州未赢够'],
   },
   {
     id: 'douyin-user-profile',
@@ -105,15 +129,16 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
     ],
     examples: ['snssdk1128://music/detail/7279006583593945090'],
   },
-  {
-    id: 'douyin-familiar',
-    name: '首页-朋友',
-    description: '打开抖音首页朋友 Tab',
-    contributors: ['toFrankie'],
-    updatedAt: '2025-08-14T00:00:00Z',
-    urlSchemeTemplate: 'snssdk1128://aweme/familiar',
-    examples: ['snssdk1128://aweme/familiar'],
-  },
+  // 效果同 snssdk1128://land_tab?tabid=homepage_familiar
+  // {
+  //   id: 'douyin-familiar',
+  //   name: '首页-朋友',
+  //   description: '打开抖音首页朋友 Tab',
+  //   contributors: ['toFrankie'],
+  //   updatedAt: '2025-08-14T00:00:00Z',
+  //   urlSchemeTemplate: 'snssdk1128://aweme/familiar',
+  //   examples: ['snssdk1128://aweme/familiar'],
+  // },
   {
     id: 'douyin-user-homepage',
     name: '我的',
@@ -259,6 +284,15 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
       },
     ],
     examples: ['snssdk1128://microgame?app_id=tta682d03f39b2471b07&version=v2'],
+  },
+  {
+    id: 'douyin-land-tab-homepage-notification',
+    name: '消息',
+    description: '打开抖音消息 Tab',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-18T00:00:00Z',
+    urlSchemeTemplate: 'snssdk1128://land_tab?tabid=homepage_notification',
+    examples: ['snssdk1128://land_tab?tabid=homepage_notification'],
   },
   {
     id: 'douyin-setting',

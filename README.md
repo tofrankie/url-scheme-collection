@@ -239,6 +239,7 @@ MIT License
 - 用户主页：`snssdk1128://user/profile/{uid}`
 - 视频创作：`snssdk1128://aweme/create`
 - 日常创作：`snssdk1128://aweme/closefriends/moments`
+- 音乐详情(拍同款)：`snssdk1128://music/detail/{id}`
 - 首页-朋友：`snssdk1128://aweme/familiar`
 - 我的：`snssdk1128://user/homepage`
 - 我的-编辑主页：`snssdk1128://profile_edit`
@@ -251,3 +252,10 @@ MIT License
 - 开直播：`snssdk1128://webcast_open_live`
 - 商城-我的订单：`snssdk1128://ecom_order_list`
 - 商城-搜索：`snssdk1128://ec_search`
+- 小程序：`snssdk1128://microapp?app_id={app_id}&version=v2`
+- 小游戏：`snssdk1128://microgame?app_id={app_id}&version=v2`
+- 设置：`snssdk1128://setting`
+- 设置-通用设置：`snssdk1128://setting/common`
+- 设置-隐私设置：`snssdk1128://privacy/setting`
+- 设置-浏览和访客：`snssdk1128://setting/viewer_and_visitor`
+- 未成年人模式：`snssdk1128://teenage/setting`

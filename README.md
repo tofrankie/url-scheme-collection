@@ -234,13 +234,13 @@ MIT License
 - 扫一扫：`snssdk1128://aweme/scan`
 - 抖音热榜：`snssdk1128://search/trending`
 - 直播人气榜：`snssdk1128://webcast_board/hot_live_rank`
+- 首页：`snssdk1128://land_tab?tabid={tabid}`
 - 搜索：`snssdk1128://search?keyword={keyword}`
-- AI 搜索：`snssdk1128://search/aigc`
+- AI 搜索：`snssdk1128://search/aigc?search_keyword={keyword}`
 - 用户主页：`snssdk1128://user/profile/{uid}`
 - 视频创作：`snssdk1128://aweme/create`
 - 日常创作：`snssdk1128://aweme/closefriends/moments`
 - 音乐详情(拍同款)：`snssdk1128://music/detail/{id}`
-- 首页-朋友：`snssdk1128://aweme/familiar`
 - 我的：`snssdk1128://user/homepage`
 - 我的-编辑主页：`snssdk1128://profile_edit`
 - 我的钱包：`snssdk1128://wallet`
@@ -254,6 +254,7 @@ MIT License
 - 商城-搜索：`snssdk1128://ec_search`
 - 小程序：`snssdk1128://microapp?app_id={app_id}&version=v2`
 - 小游戏：`snssdk1128://microgame?app_id={app_id}&version=v2`
+- 消息：`snssdk1128://land_tab?tabid=homepage_notification`
 - 设置：`snssdk1128://setting`
 - 设置-通用设置：`snssdk1128://setting/common`
 - 设置-隐私设置：`snssdk1128://privacy/setting`

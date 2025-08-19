@@ -1,6 +1,6 @@
 import type { UrlSchemeWithoutCategory } from '@/types'
 
-export const ALIPAY: UrlSchemeWithoutCategory[] = [
+const ALIPAY: UrlSchemeWithoutCategory[] = [
   {
     id: 'alipay-scan',
     name: '扫一扫',

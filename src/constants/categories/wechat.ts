@@ -1,6 +1,6 @@
 import type { UrlSchemeWithoutCategory } from '@/types'
 
-export const WECHAT: UrlSchemeWithoutCategory[] = [
+const WECHAT: UrlSchemeWithoutCategory[] = [
   {
     id: 'wechat_scan',
     name: '扫一扫',

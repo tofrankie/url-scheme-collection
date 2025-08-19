@@ -10,6 +10,7 @@ import ALIPAY from './alipay'
 import XITU from './xitu'
 import JIANSHU from './jianshu'
 import DOUYIN from './douyin'
+import QQMUSIC from './qqmusic'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -23,6 +24,7 @@ export const CATEGORY_IDS = {
   XITU: 'xitu',
   JIANSHU: 'jianshu',
   DOUYIN: 'douyin',
+  QQMUSIC: 'qqmusic',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -85,6 +87,11 @@ export const CATEGORIES: Category[] = [
     name: '抖音',
     description: '抖音以 snssdk1128:// 开头，抖音极速版以 snssdk2329:// 开头，TikTok 以 snssdk1233:// 开头。',
   },
+  {
+    id: CATEGORY_IDS.QQMUSIC,
+    name: 'QQ 音乐',
+    description: 'QQ 音乐相关 URL Scheme。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -99,6 +106,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.XITU]: XITU,
   [CATEGORY_IDS.JIANSHU]: JIANSHU,
   [CATEGORY_IDS.DOUYIN]: DOUYIN,
+  [CATEGORY_IDS.QQMUSIC]: QQMUSIC,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

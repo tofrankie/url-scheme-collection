@@ -260,3 +260,8 @@ MIT License
 - 设置-隐私设置：`snssdk1128://privacy/setting`
 - 设置-浏览和访客：`snssdk1128://setting/viewer_and_visitor`
 - 未成年人模式：`snssdk1128://teenage/setting`
+
+### QQ 音乐
+
+- 听歌识曲：`qqmusic://qq.com/ui/recognize`
+- 恢复播放：`qqmusic://qq.com/media/resumeSong`

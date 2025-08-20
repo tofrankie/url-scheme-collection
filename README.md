@@ -264,4 +264,11 @@ MIT License
 ### QQ 音乐
 
 - 听歌识曲：`qqmusic://qq.com/ui/recognize`
+- 播放歌曲：`qqmusic://qq.com/media/playSonglist?p=%7B%22action%22%3A%22play%22%2C%22song%22%3A%5B%7B%22songmid%22%3A%22{song_mid}%22%7D%5D%7D`
 - 恢复播放：`qqmusic://qq.com/media/resumeSong`
+- 最近播放：`qqmusic://today?mid=31&k1=2&k4=0`
+- 猜你喜欢：`qqmusic://qq.com/media/playRadio?p=%7B%22radioId%22%3A%2299%22%7D`
+- 本地音乐：`qqmusic://today?mid=31&k1=3&k4=0`
+- 我的收藏：`qqmusic://qq.com/ui/myTab?p=%7B%22tab%22%3A%22fav%22%7D`
+- 歌单：`qqmusic://qq.com/ui/gedan?p=%7B%22id%22%3A%22{gedan_id}%22%7D`
+- 个人主页：`qqmusic://qq.com/ui/profile`

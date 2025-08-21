@@ -272,3 +272,10 @@ MIT License
 - 我的收藏：`qqmusic://qq.com/ui/myTab?p=%7B%22tab%22%3A%22fav%22%7D`
 - 歌单：`qqmusic://qq.com/ui/gedan?p=%7B%22id%22%3A%22{gedan_id}%22%7D`
 - 个人主页：`qqmusic://qq.com/ui/profile`
+
+### VS Code
+
+- 打开文件（夹）：`vscode://file/{file_or_folder_path}`
+- 打开文件行列：`vscode://file/{file_path}:{line}:{column}`
+- 设置：`vscode://settings/{setting_id}`
+- 扩展：`vscode:extension/{extension_id}`

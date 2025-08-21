@@ -17,6 +17,7 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
     ],
     examples: [
       'vscode://file/Users/frankie/my-project/',
+      'vscode://file/Users/frankie/my-project/?windowId=_blank',
       'vscode://file/Users/frankie/my-project/package.json',
       'vscode://file/c:/my-project/',
     ],
@@ -74,10 +75,10 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
       {
         name: 'extension_id',
         description: '扩展 ID',
-        placeholder: 'PKief.material-icon-theme',
+        placeholder: 'Frankie.github-blogger',
       },
     ],
-    examples: ['vscode://extension/PKief.material-icon-theme'],
+    examples: ['vscode:extension/Frankie.github-blogger'],
   },
 ]
 

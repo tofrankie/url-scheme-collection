@@ -303,7 +303,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     examples: ['App-Prefs:root=General'],
   },
   {
-    id: 'ios-app-store-search',
+    id: 'ios-app-store-search-specific-content',
     name: 'App Store 搜索内容',
     description: '打开 App Store 搜索并搜索指定内容',
     contributors: ['toFrankie'],

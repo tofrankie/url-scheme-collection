@@ -11,6 +11,7 @@ import XITU from './xitu'
 import JIANSHU from './jianshu'
 import DOUYIN from './douyin'
 import QQMUSIC from './qqmusic'
+import VSCODE from './vscode'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -25,6 +26,7 @@ export const CATEGORY_IDS = {
   JIANSHU: 'jianshu',
   DOUYIN: 'douyin',
   QQMUSIC: 'qqmusic',
+  VSCODE: 'vscode',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -92,6 +94,11 @@ export const CATEGORIES: Category[] = [
     name: 'QQ 音乐',
     description: 'QQ 音乐相关 URL Scheme。',
   },
+  {
+    id: CATEGORY_IDS.VSCODE,
+    name: 'VS Code',
+    description: '稳定版以 vscode:// 开头，预览版以 vscode-insiders:// 开头。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -107,6 +114,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.JIANSHU]: JIANSHU,
   [CATEGORY_IDS.DOUYIN]: DOUYIN,
   [CATEGORY_IDS.QQMUSIC]: QQMUSIC,
+  [CATEGORY_IDS.VSCODE]: VSCODE,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

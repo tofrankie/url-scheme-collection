@@ -279,3 +279,9 @@ MIT License
 - 打开文件行列：`vscode://file/{file_path}:{line}:{column}`
 - 设置：`vscode://settings/{setting_id}`
 - 扩展：`vscode:extension/{extension_id}`
+
+### Raycast
+
+- 撒花 🎉：`raycast://confetti`
+- 安装扩展：`raycast://extensions/{author_or_owner_id}/{extension_name}`
+- 执行扩展命令：`raycast://extensions/{author_or_owner_id}/{extension_name}/{command_name}`

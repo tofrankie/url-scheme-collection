@@ -11,7 +11,7 @@ const RAYCAST: UrlSchemeWithoutCategory[] = [
     examples: ['raycast://confetti'],
   },
   {
-    id: 'raycast-extensions',
+    id: 'raycast-install-extension',
     name: '安装扩展',
     description: '在 Raycast 安装指定扩展',
     contributors: ['toFrankie'],
@@ -33,7 +33,7 @@ const RAYCAST: UrlSchemeWithoutCategory[] = [
     examples: ['raycast://extensions/tofrankie/wechat-devtool'],
   },
   {
-    id: 'raycast-extensions',
+    id: 'raycast-run-extension-command',
     name: '执行扩展命令',
     description: '在 Raycast 执行指定扩展的指定命令。可在指定命令的 Action Panel 选择 Copy Deeplink 获取。',
     contributors: ['toFrankie'],

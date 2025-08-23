@@ -69,7 +69,7 @@ MIT License
 ### 米家
 
 - 设备主页：`mihome://device?uid={xiaomi_id}&did={device_id}`
-- 搜索：`mihome://searchstore?keyword={keyword}`
+- 搜索商品：`mihome://searchstore?keyword={keyword}`
 
 ### 小红书
 
@@ -222,26 +222,6 @@ MIT License
 - 理财-黄金：`alipay://platformapi/startapp?appId=20000218`
 - 搜索：`alipay://platformapi/startapp?appId=20001003`
 
-### 稀土掘金
-
-- 签到：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fuser%2Fcenter%2Fsignin%22%7D`
-- 用户主页：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fuser%2F{user_id}%22%7D`
-- 文章：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpost%2F{post_id}%22%7D`
-- 专栏：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcolumn%2F{column_id}%22%7D`
-- 收藏集：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcollection%2F{collection_id}%22%7D`
-- 课程：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D`
-- 掘金小册：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fbook%2F{book_id}%22%7D`
-- 字节内部课：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%2Fbytetech%2F{course_id}%22%7D`
-- 沸点：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D`
-- 沸点详情：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpin%2F{pin_id}%22%7D`
-
-### 简书
-
-- 文章：`jianshu://notes/{article_id}`
-- 专题：`jianshu://collections/{collection_id}`
-- 文集：`jianshu://notebooks/45333472`
-- 用户主页：`jianshu://users/{user_id}`
-
 ### 抖音
 
 - 扫一扫：`snssdk1128://aweme/scan`
@@ -274,6 +254,31 @@ MIT License
 - 设置-浏览和访客：`snssdk1128://setting/viewer_and_visitor`
 - 未成年人模式：`snssdk1128://teenage/setting`
 
+### 淘宝
+
+- 我的-收藏：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fweb.m.taobao.com%2Fapp%2Fmessage-social-front%2Fitao-favor-weex2%2Findex%3Fwh_weex%3Dtrue%26weex_mode%3Ddom%26wx_navbar_hidden%3Dtrue%26wx_statusbar_hidden%3Dtrue%26collection_source%3Dtool`
+- 我的-关注：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fweb.m.taobao.com%2Fapp%2Fsubscription-client-side%2Ffollow-shop-list%2Fshop-list%3Fwh_weex%3Dtrue%26weex_mode%3Ddom%26wx_navbar_hidden%3Dtrue%26wx_navbar_transparent%3Dtrue%26_wx_statusbar_hidden%3Dtrue%26is_loading%3D0%26disableNav%3DYES%26source%3DmyTaoBaoNew`
+- 我的-红包：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fbz%2Fjingmi%2F1592%3FdisableNav%3DYES%26tabType%3DredEnvelope`
+- 我的-足迹：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fweb.m.taobao.com%2Fapp%2Fmessage-social-front%2Ffootprint%2Fhome%3Fwh_weex%3Dtrue%26weex_mode%3Ddom%26wx_navbar_hidden%3Dtrue%26wx_statusbar_hidden%3Dtrue%26myTaobao24Ver%3D5`
+- 我的-优惠券：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fbz%2Fjingmi%2F1592%3FdisableNav%3DYES%26tabType%3Dcoupon`
+- 我的-淘金币：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Ftmtjb%2Ftown%2Fhome%3FdisableNav%3DYES`
+- 我的-天猫积分：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fblackvip%2Fpoint%2Fsuper%3FdisableNav%3DYES`
+- 天天领红包：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fbz%2Fjingmi%2F1592%3FdisableNav%3DYES%26tabType%3DredEnvelope%26dailyRedPacket%3Dtrue%26dailyRedPacketAnchor%3Dtrue`
+- 红包签到：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fvip%2Fhbqd5%2Fhbqd5.0%3FdisableNav%3DYES`
+- 商品详情：`taobao://item.taobao.com/item.htm?id={item_id}`
+- 搜索：`taobao://s.taobao.com/search?q={keyword}`
+- 拍照搜索：`taobao://h5.m.taobao.com/tusou/capture.html`
+- 购物车：`taobao://cart.taobao.com/my_cart.htm`
+- 我的淘宝：`taobao://my.m.taobao.com/myTaobao.htm`
+- 我的订单：`taobao://go/my_orders`
+- 订单详情：`taobao://go/order_detail?orderId={order_id}`
+- 消息：`taobao://message/root`
+- 淘宝省钱卡：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fapp%2Ftb-vip%2Fmonth-card-v2%2Fhome%3FdisableNav%3DYES`
+- 芭芭农场：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fmarket.m.taobao.com%2Fapp%2Ftmall-wireless%2Ftmallfarm%2Findex.html%3FdisableNav%3DYES`
+- 上新：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fheihe%2Fxinpin-tab%2Fshangxin%3FdisableNav%3DYES%26skeleton%3Dtrue`
+- 百亿补贴：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages.tmall.com%2Fwow%2Fbz%2Fjingmi%2F600%3FdisableNav%3DYES`
+- 天猫国际：`tbopen://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fimport%2Ftmg-ice-home%2Findex%3Fx-ssr%3Dtrue%26disableNav%3DYES%26status_bar_transparent%3Dtrue%26slk_gid%3Dgid_er_sidebar_1&action=ali.open.nav&module=h5&bootImage=0&slk_sid=rnd85521f_1755963565776&slk_t=1755963566011&slk_gid=gid_er_sidebar_1&afcPromotionOpen=false&bc_fl_src=h5_huanduan&source=slk_dp`
+
 ### QQ 音乐
 
 - 听歌识曲：`qqmusic://qq.com/ui/recognize`
@@ -285,6 +290,26 @@ MIT License
 - 我的收藏：`qqmusic://qq.com/ui/myTab?p=%7B%22tab%22%3A%22fav%22%7D`
 - 歌单：`qqmusic://qq.com/ui/gedan?p=%7B%22id%22%3A%22{gedan_id}%22%7D`
 - 个人主页：`qqmusic://qq.com/ui/profile`
+
+### 稀土掘金
+
+- 签到：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fuser%2Fcenter%2Fsignin%22%7D`
+- 用户主页：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fuser%2F{user_id}%22%7D`
+- 文章：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpost%2F{post_id}%22%7D`
+- 专栏：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcolumn%2F{column_id}%22%7D`
+- 收藏集：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcollection%2F{collection_id}%22%7D`
+- 课程：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D`
+- 掘金小册：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fbook%2F{book_id}%22%7D`
+- 字节内部课：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%2Fbytetech%2F{course_id}%22%7D`
+- 沸点：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D`
+- 沸点详情：`snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpin%2F{pin_id}%22%7D`
+
+### 简书
+
+- 文章：`jianshu://notes/{article_id}`
+- 专题：`jianshu://collections/{collection_id}`
+- 文集：`jianshu://notebooks/45333472`
+- 用户主页：`jianshu://users/{user_id}`
 
 ### VS Code
 

@@ -25,7 +25,7 @@ const MIHOME: UrlSchemeWithoutCategory[] = [
   },
   {
     id: 'mihome-search-store',
-    name: '搜索',
+    name: '搜索商品',
     description: '打开米家并在商城搜索商品',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-23T00:00:00Z',

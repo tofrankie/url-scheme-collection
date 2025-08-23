@@ -8,10 +8,11 @@ import WXWORK from './wxwork'
 import WEIBO from './weibo'
 import ZHIHU from './zhihu'
 import ALIPAY from './alipay'
+import DOUYIN from './douyin'
+import TAOBAO from './taobao'
+import QQMUSIC from './qqmusic'
 import XITU from './xitu'
 import JIANSHU from './jianshu'
-import DOUYIN from './douyin'
-import QQMUSIC from './qqmusic'
 import VSCODE from './vscode'
 import RAYCAST from './raycast'
 import CLASHX from './clashx'
@@ -26,10 +27,11 @@ export const CATEGORY_IDS = {
   WEIBO: 'weibo',
   ZHIHU: 'zhihu',
   ALIPAY: 'alipay',
+  DOUYIN: 'douyin',
+  TAOBAO: 'taobao',
+  QQMUSIC: 'qqmusic',
   XITU: 'xitu',
   JIANSHU: 'jianshu',
-  DOUYIN: 'douyin',
-  QQMUSIC: 'qqmusic',
   VSCODE: 'vscode',
   RAYCAST: 'raycast',
   CLASHX: 'clashx',
@@ -86,6 +88,21 @@ export const CATEGORIES: Category[] = [
     description: '支付宝相关 URL Scheme。',
   },
   {
+    id: CATEGORY_IDS.DOUYIN,
+    name: '抖音',
+    description: '抖音以 snssdk1128:// 开头，抖音极速版以 snssdk2329:// 开头，TikTok 以 snssdk1233:// 开头。',
+  },
+  {
+    id: CATEGORY_IDS.TAOBAO,
+    name: '淘宝',
+    description: '淘宝相关 URL Scheme。',
+  },
+  {
+    id: CATEGORY_IDS.QQMUSIC,
+    name: 'QQ 音乐',
+    description: 'QQ 音乐相关 URL Scheme。',
+  },
+  {
     id: CATEGORY_IDS.XITU,
     name: '稀土掘金',
     description: '稀土掘金相关 URL Scheme。',
@@ -94,16 +111,6 @@ export const CATEGORIES: Category[] = [
     id: CATEGORY_IDS.JIANSHU,
     name: '简书',
     description: '简书相关 URL Scheme。',
-  },
-  {
-    id: CATEGORY_IDS.DOUYIN,
-    name: '抖音',
-    description: '抖音以 snssdk1128:// 开头，抖音极速版以 snssdk2329:// 开头，TikTok 以 snssdk1233:// 开头。',
-  },
-  {
-    id: CATEGORY_IDS.QQMUSIC,
-    name: 'QQ 音乐',
-    description: 'QQ 音乐相关 URL Scheme。',
   },
   {
     id: CATEGORY_IDS.VSCODE,
@@ -132,10 +139,11 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.WEIBO]: WEIBO,
   [CATEGORY_IDS.ZHIHU]: ZHIHU,
   [CATEGORY_IDS.ALIPAY]: ALIPAY,
+  [CATEGORY_IDS.DOUYIN]: DOUYIN,
+  [CATEGORY_IDS.TAOBAO]: TAOBAO,
+  [CATEGORY_IDS.QQMUSIC]: QQMUSIC,
   [CATEGORY_IDS.XITU]: XITU,
   [CATEGORY_IDS.JIANSHU]: JIANSHU,
-  [CATEGORY_IDS.DOUYIN]: DOUYIN,
-  [CATEGORY_IDS.QQMUSIC]: QQMUSIC,
   [CATEGORY_IDS.VSCODE]: VSCODE,
   [CATEGORY_IDS.RAYCAST]: RAYCAST,
   [CATEGORY_IDS.CLASHX]: CLASHX,

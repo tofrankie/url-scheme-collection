@@ -17,11 +17,6 @@ MIT License
 
 详细参数说明请看[这里](https://url-scheme-collection.vercel.app)。
 
-### 米家
-
-- 设备主页：`mihome://device?uid={xiaomi_id}&did={device_id}`
-- 搜索：`mihome://searchstore?keyword={keyword}`
-
 ### 应用商店
 
 - App Store：`itms-apps://itunes.apple.com/{region}/app/{bundle_id}/id{apple_id}`
@@ -70,6 +65,11 @@ MIT License
 - App Store 更新：`itms-apps://itunes.apple.com/updates`
 - App Store 账户设置：`itms-ui://`
 - Apple Store：`applestore://`
+
+### 米家
+
+- 设备主页：`mihome://device?uid={xiaomi_id}&did={device_id}`
+- 搜索：`mihome://searchstore?keyword={keyword}`
 
 ### 小红书
 
@@ -133,14 +133,14 @@ MIT License
 ### 企业微信
 
 - 扫一扫：`wxwork://platformId=wechat&wwact=qrcode`
-- 个人信息：`wxwork://jump?target=my_profile`
 - 发起群聊：`wxwork://createconversation`
 - 会话：`wxwork://message/?username={username}`
 - 会话：`wxwork://launch?launch_code={code}`
 - 消息：`wxwork://message`
 - 文档：`wxwork://jump?target=doc_tab`
-- 跳转第三方应用：`wxwork://jump?target=jump_to_third_app&businessid={businessid}`
-- 重新绑定微信：`wxwork://jump?target=rebindwx`
+- 第三方应用：`wxwork://jump?target=jump_to_third_app&businessid={businessid}`
+- 个人信息：`wxwork://jump?target=my_profile`
+- 绑定微信：`wxwork://jump?target=rebindwx`
 
 ### 微博
 
@@ -253,7 +253,7 @@ MIT License
 - 用户主页：`snssdk1128://user/profile/{uid}`
 - 视频创作：`snssdk1128://aweme/create`
 - 日常创作：`snssdk1128://aweme/closefriends/moments`
-- 音乐详情(拍同款)：`snssdk1128://music/detail/{id}`
+- 音乐详情（拍同款）：`snssdk1128://music/detail/{id}`
 - 我的：`snssdk1128://user/homepage`
 - 我的-编辑主页：`snssdk1128://profile_edit`
 - 我的钱包：`snssdk1128://wallet`

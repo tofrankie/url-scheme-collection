@@ -17,6 +17,11 @@ MIT License
 
 详细参数说明请看[这里](https://url-scheme-collection.vercel.app)。
 
+### 米家
+
+- 设备主页：`mihome://device?uid={xiaomi_id}&did={device_id}`
+- 搜索：`mihome://searchstore?keyword={keyword}`
+
 ### 应用商店
 
 - App Store：`itms-apps://itunes.apple.com/{region}/app/{bundle_id}/id{apple_id}`

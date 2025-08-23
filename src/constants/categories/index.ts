@@ -1,6 +1,7 @@
 import type { UrlScheme, UrlSchemeWithoutCategory, Category } from '@/types'
 import APP_STORE from './app-store'
 import IOS from './ios'
+import MIHOME from './mihome'
 import XIAOHONGSHU from './xiaohongshu'
 import WECHAT from './wechat'
 import WXWORK from './wxwork'
@@ -18,6 +19,7 @@ import CLASHX from './clashx'
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
   IOS: 'ios',
+  MIHOME: 'mihome',
   XIAOHONGSHU: 'xiaohongshu',
   WECHAT: 'wechat',
   WXWORK: 'wxwork',
@@ -36,6 +38,11 @@ export const CATEGORY_IDS = {
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
 
 export const CATEGORIES: Category[] = [
+  {
+    id: CATEGORY_IDS.MIHOME,
+    name: '米家',
+    description: '米家相关 URL Scheme。',
+  },
   {
     id: CATEGORY_IDS.APP_STORE,
     name: '应用商店',
@@ -118,6 +125,7 @@ export const CATEGORIES: Category[] = [
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
   [CATEGORY_IDS.APP_STORE]: APP_STORE,
   [CATEGORY_IDS.IOS]: IOS,
+  [CATEGORY_IDS.MIHOME]: MIHOME,
   [CATEGORY_IDS.XIAOHONGSHU]: XIAOHONGSHU,
   [CATEGORY_IDS.WECHAT]: WECHAT,
   [CATEGORY_IDS.WXWORK]: WXWORK,

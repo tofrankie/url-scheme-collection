@@ -285,3 +285,9 @@ MIT License
 - 撒花 🎉：`raycast://confetti`
 - 安装扩展：`raycast://extensions/{author_or_owner_id}/{extension_name}`
 - 执行扩展命令：`raycast://extensions/{author_or_owner_id}/{extension_name}/{command_name}`
+
+### ClashX
+
+- 添加配置文件：`clash://install-config?url={config_url}&name={config_name}`
+- ~~更新配置文件~~：`clash://update-config`（已失效）
+- ~~切换状态~~：`clash://toggle`（已失效）

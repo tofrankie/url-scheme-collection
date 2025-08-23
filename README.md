@@ -128,6 +128,14 @@ MIT License
 ### 企业微信
 
 - 扫一扫：`wxwork://platformId=wechat&wwact=qrcode`
+- 个人信息：`wxwork://jump?target=my_profile`
+- 发起群聊：`wxwork://createconversation`
+- 会话：`wxwork://message/?username={username}`
+- 会话：`wxwork://launch?launch_code={code}`
+- 消息：`wxwork://message`
+- 文档：`wxwork://jump?target=doc_tab`
+- 跳转第三方应用：`wxwork://jump?target=jump_to_third_app&businessid={businessid}`
+- 重新绑定微信：`wxwork://jump?target=rebindwx`
 
 ### 微博
 

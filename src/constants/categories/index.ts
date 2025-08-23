@@ -13,6 +13,7 @@ import DOUYIN from './douyin'
 import QQMUSIC from './qqmusic'
 import VSCODE from './vscode'
 import RAYCAST from './raycast'
+import CLASHX from './clashx'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -29,6 +30,7 @@ export const CATEGORY_IDS = {
   QQMUSIC: 'qqmusic',
   VSCODE: 'vscode',
   RAYCAST: 'raycast',
+  CLASHX: 'clashx',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -106,6 +108,11 @@ export const CATEGORIES: Category[] = [
     name: 'Raycast',
     description: 'Raycast 相关 URL Scheme。',
   },
+  {
+    id: CATEGORY_IDS.CLASHX,
+    name: 'ClashX',
+    description: 'ClashX 相关 URL Scheme。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -123,6 +130,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.QQMUSIC]: QQMUSIC,
   [CATEGORY_IDS.VSCODE]: VSCODE,
   [CATEGORY_IDS.RAYCAST]: RAYCAST,
+  [CATEGORY_IDS.CLASHX]: CLASHX,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

@@ -39,11 +39,6 @@ export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
 
 export const CATEGORIES: Category[] = [
   {
-    id: CATEGORY_IDS.MIHOME,
-    name: '米家',
-    description: '米家相关 URL Scheme。',
-  },
-  {
     id: CATEGORY_IDS.APP_STORE,
     name: '应用商店',
     description: '唤起 App Store 和 Android 各应用商店的应用。',
@@ -53,6 +48,11 @@ export const CATEGORIES: Category[] = [
     name: 'iOS',
     description:
       'iOS 18.5+ 后 Apple 似乎严格限制偏好设置访问，类似 Prefs:root=General、App-prefs://、settings-navigation://com.apple.Settings.Apps 等已失效。',
+  },
+  {
+    id: CATEGORY_IDS.MIHOME,
+    name: '米家',
+    description: '米家相关 URL Scheme。',
   },
   {
     id: CATEGORY_IDS.XIAOHONGSHU,

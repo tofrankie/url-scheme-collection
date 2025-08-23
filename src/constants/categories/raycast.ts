@@ -58,7 +58,7 @@ const RAYCAST: UrlSchemeWithoutCategory[] = [
       },
     ],
     examples: [
-      'raycast://extensions/tofrankie/wechat-devtool',
+      'raycast://extensions/tofrankie/wechat-devtool/configure-projects',
       'raycast://extensions/raycast/clipboard-history/clipboard-history',
       'raycast://extensions/raycast/raycast/create-quicklinkraycast://extensions/raycast=https://raycast.com',
     ],

@@ -1,5 +1,5 @@
 import { Box, Text, Button, Stack, Label } from '@primer/react'
-import { PackageIcon } from '@primer/octicons-react'
+import { AppsIcon } from '@primer/octicons-react'
 import type { UrlScheme } from '@/types'
 import { CopyableInput } from './copyable-input'
 import { CATEGORIES } from '@/constants'
@@ -69,7 +69,7 @@ export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
               flexShrink: 0,
             }}
           >
-            <PackageIcon size={16} />
+            <AppsIcon size={18} />
           </Box>
           <Text
             as="h3"
@@ -90,7 +90,6 @@ export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
         </Stack>
 
         <Stack direction="vertical" spacing={1}>
-          {/* 描述 */}
           {scheme.description && (
             <Text
               sx={{

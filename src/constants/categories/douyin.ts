@@ -114,7 +114,7 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
   },
   {
     id: 'douyin-music-detail',
-    name: '音乐详情(拍同款)',
+    name: '音乐详情（拍同款）',
     description: '打开抖音音乐详情',
     contributors: ['toFrankie'],
     updatedAt: '2025-08-17T00:00:00Z',

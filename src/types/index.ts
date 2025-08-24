@@ -43,6 +43,9 @@ export interface Slot {
 
   /** 输入框的占位符文本 */
   placeholder: string
+
+  /** 转换函数 */
+  transform?: (inputValue: string) => string
 }
 
 export interface Category {

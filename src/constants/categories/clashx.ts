@@ -11,8 +11,8 @@ const CLASHX: UrlSchemeWithoutCategory[] = [
     slots: [
       {
         name: 'config_url',
-        description: '配置链接（需编码处理）',
-        placeholder: 'https://s.youyun666.site/link/xxx?clash=1',
+        description: '配置链接',
+        placeholder: 'https://s.youyun666.site/link/20sf3KhR89FA8Os5?clash=1',
       },
       {
         name: 'config_name',

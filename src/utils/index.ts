@@ -9,7 +9,8 @@ export function genUrlScheme(scheme: UrlScheme, slotValues: Record<string, strin
       const value = slotValues[slot.name]
       if (!value) continue
       // /{[^}]+}/g
-      replacedUrl = replacedUrl.replace(new RegExp(`\\{${slot.name}\\}`, 'g'), value)
+      const transformedValue = slot.transform?.(value) ?? value
+      replacedUrl = replacedUrl.replace(new RegExp(`\\{${slot.name}\\}`, 'g'), transformedValue)
     }
   }
 

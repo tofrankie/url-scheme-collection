@@ -10,6 +10,7 @@ import ZHIHU from './zhihu'
 import ALIPAY from './alipay'
 import DOUYIN from './douyin'
 import TAOBAO from './taobao'
+import MEITUAN from './meituan'
 import QQMUSIC from './qqmusic'
 import XITU from './xitu'
 import JIANSHU from './jianshu'
@@ -29,6 +30,7 @@ export const CATEGORY_IDS = {
   ALIPAY: 'alipay',
   DOUYIN: 'douyin',
   TAOBAO: 'taobao',
+  MEITUAN: 'meituan',
   QQMUSIC: 'qqmusic',
   XITU: 'xitu',
   JIANSHU: 'jianshu',
@@ -98,6 +100,11 @@ export const CATEGORIES: Category[] = [
     description: '淘宝相关 URL Scheme。',
   },
   {
+    id: CATEGORY_IDS.MEITUAN,
+    name: '美团',
+    description: '美团相关 URL Scheme。',
+  },
+  {
     id: CATEGORY_IDS.QQMUSIC,
     name: 'QQ 音乐',
     description: 'QQ 音乐相关 URL Scheme。',
@@ -141,6 +148,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.ALIPAY]: ALIPAY,
   [CATEGORY_IDS.DOUYIN]: DOUYIN,
   [CATEGORY_IDS.TAOBAO]: TAOBAO,
+  [CATEGORY_IDS.MEITUAN]: MEITUAN,
   [CATEGORY_IDS.QQMUSIC]: QQMUSIC,
   [CATEGORY_IDS.XITU]: XITU,
   [CATEGORY_IDS.JIANSHU]: JIANSHU,

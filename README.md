@@ -279,6 +279,18 @@ MIT License
 - 百亿补贴：`taobao://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages.tmall.com%2Fwow%2Fbz%2Fjingmi%2F600%3FdisableNav%3DYES`
 - 天猫国际：`tbopen://m.taobao.com/tbopen/index.html?h5Url=https%3A%2F%2Fpages-fast.m.taobao.com%2Fwow%2Fz%2Fimport%2Ftmg-ice-home%2Findex%3Fx-ssr%3Dtrue%26disableNav%3DYES%26status_bar_transparent%3Dtrue%26slk_gid%3Dgid_er_sidebar_1&action=ali.open.nav&module=h5&bootImage=0&slk_sid=rnd85521f_1755963565776&slk_t=1755963566011&slk_gid=gid_er_sidebar_1&afcPromotionOpen=false&bc_fl_src=h5_huanduan&source=slk_dp`
 
+### 美团
+
+- 首页：`imeituan://www.meituan.com/home`
+- 消息：`imeituan://www.meituan.com/messagecenter`
+- 购物车：`imeituan://www.meituan.com/tabshoppingcart`
+- 我的：`imeituan://www.meituan.com/user`
+- 更多服务：`imeituan://www.meituan.com/morecates`
+- 酒店民宿：`imeituan://www.meituan.com/hotel/homepage`
+- 搜索酒店民宿：`imeituan://www.meituan.com/hotel/search/input`
+- 预订酒店民宿：`imeituan://www.meituan.com/mrn?productId={product_id}&startDate={startDate}&endDate={endDate}&bizType=0&mrn_biz=zhenguo&mrn_entry=product&mrn_component=zhenguo-product`
+- 美团钱包：`imeituan://wallet/launch`
+
 ### QQ 音乐
 
 - 听歌识曲：`qqmusic://qq.com/ui/recognize`

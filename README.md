@@ -288,7 +288,11 @@ MIT License
 - 更多服务：`imeituan://www.meituan.com/morecates`
 - 酒店民宿：`imeituan://www.meituan.com/hotel/homepage`
 - 搜索酒店民宿：`imeituan://www.meituan.com/hotel/search/input`
+- 搜索酒店民宿（海外）：`imeituan://www.meituan.com/overseahotel/search`
 - 预订酒店民宿：`imeituan://www.meituan.com/mrn?productId={product_id}&startDate={startDate}&endDate={endDate}&bizType=0&mrn_biz=zhenguo&mrn_entry=product&mrn_component=zhenguo-product`
+- 美食：`imeituan://www.meituan.com/food/homepage`
+- 美食店铺：`imeituan://www.meituan.com/mrn?mrn_biz=meishi&mrn_entry=food-poi&mrn_component=food-poi&poiId={poi_id}`
+- 景点详情：`imeituan://www.meituan.com/travel/poi?id={poi_id}`
 - 美团钱包：`imeituan://wallet/launch`
 
 ### QQ 音乐

@@ -17,6 +17,7 @@ import JIANSHU from './jianshu'
 import VSCODE from './vscode'
 import RAYCAST from './raycast'
 import CLASHX from './clashx'
+import CHROME from './chrome'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -37,6 +38,7 @@ export const CATEGORY_IDS = {
   VSCODE: 'vscode',
   RAYCAST: 'raycast',
   CLASHX: 'clashx',
+  CHROME: 'chrome',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -134,6 +136,12 @@ export const CATEGORIES: Category[] = [
     name: 'ClashX',
     description: 'ClashX 相关 URL Scheme。',
   },
+  {
+    id: CATEGORY_IDS.CHROME,
+    name: 'Chrome',
+    description:
+      '出于安全考虑，普通网页无法通过脚本访问 chrome:// 页面，只能在地址栏输入。开发 Chrome Extension 时可以使用 API chrome.runtime.openOptionsPage() 唤起。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -155,6 +163,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.VSCODE]: VSCODE,
   [CATEGORY_IDS.RAYCAST]: RAYCAST,
   [CATEGORY_IDS.CLASHX]: CLASHX,
+  [CATEGORY_IDS.CHROME]: CHROME,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

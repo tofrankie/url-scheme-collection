@@ -67,6 +67,15 @@ const MEITUAN: UrlSchemeWithoutCategory[] = [
     examples: ['imeituan://www.meituan.com/hotel/search/input'],
   },
   {
+    id: 'meituan_overseas_hotel_search',
+    name: '搜索酒店民宿（海外）',
+    description: '打开美团搜索海外酒店民宿',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-28T00:00:00Z',
+    urlSchemeTemplate: 'imeituan://www.meituan.com/overseahotel/search',
+    examples: ['imeituan://www.meituan.com/overseahotel/search'],
+  },
+  {
     id: 'meituan_mrn_zhenguo_product',
     name: '预订酒店民宿',
     description: '打开美团指定酒店民宿房源详情（预订）',
@@ -97,6 +106,51 @@ const MEITUAN: UrlSchemeWithoutCategory[] = [
     ],
   },
   {
+    id: 'meituan_food_homepage',
+    name: '美食',
+    description: '打开美团美食服务',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-28T00:00:00Z',
+    urlSchemeTemplate: 'imeituan://www.meituan.com/food/homepage',
+    examples: ['imeituan://www.meituan.com/food/homepage'],
+  },
+  {
+    id: 'meituan_food_mrn',
+    name: '美食店铺',
+    description: '打开美食店铺详情',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-28T00:00:00Z',
+    urlSchemeTemplate:
+      'imeituan://www.meituan.com/mrn?mrn_biz=meishi&mrn_entry=food-poi&mrn_component=food-poi&poiId={poi_id}',
+    slots: [
+      {
+        name: 'poi_id',
+        description:
+          'POI ID（Point of interest）是美团给商家门店设置的唯一 ID。在店铺选择分享，复制链接到浏览器打开，在地址栏可获取 poiId。',
+        placeholder: '1180935216',
+      },
+    ],
+    examples: [
+      'imeituan://www.meituan.com/mrn?mrn_biz=meishi&mrn_entry=food-poi&mrn_component=food-poi&poiId=1180935216',
+    ],
+  },
+  {
+    id: 'meituan_travel_poi',
+    name: '景点详情',
+    description: '打开美团指定景点详情',
+    contributors: ['toFrankie'],
+    updatedAt: '2025-08-28T00:00:00Z',
+    urlSchemeTemplate: 'imeituan://www.meituan.com/travel/poi?id={poi_id}',
+    slots: [
+      {
+        name: 'poi_id',
+        description: '景点 ID。在景点选择分享，复制链接到浏览器打开，在地址栏可获取 poiId。',
+        placeholder: '271772',
+      },
+    ],
+    examples: ['imeituan://www.meituan.com/travel/poi?id=271772'],
+  },
+  {
     id: 'meituan_wallet_launch',
     name: '美团钱包',
     description: '打开美团钱包',
@@ -105,75 +159,7 @@ const MEITUAN: UrlSchemeWithoutCategory[] = [
     urlSchemeTemplate: 'imeituan://wallet/launch',
     examples: ['imeituan://wallet/launch'],
   },
-
   // TODO: 待验证
-  // {
-  //   id: 'meituan_hotel_review_list',
-  //   name: '酒店评价列表',
-  //   description: '打开酒店评价列表页面',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/hotel/review/list',
-  //   examples: ['imeituan://www.meituan.com/hotel/review/list'],
-  // },
-  // {
-  //   id: 'meituan_overseas_hotel_search',
-  //   name: '境外酒店搜索',
-  //   description: '打开境外酒店搜索页面',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/overseahotel/search',
-  //   examples: ['imeituan://www.meituan.com/overseahotel/search'],
-  // },
-  // {
-  //   id: 'meituan_overseas_hotel_poi',
-  //   name: '境外酒店详情',
-  //   description: '打开境外酒店详情页面',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/overseahotel/poi',
-  //   examples: ['imeituan://www.meituan.com/overseahotel/poi'],
-  // },
-  // {
-  //   id: 'meituan_overseas_hotel_order',
-  //   name: '境外酒店订单',
-  //   description: '打开境外酒店订单页面',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/overseahotel/order',
-  //   examples: ['imeituan://www.meituan.com/overseahotel/order'],
-  // },
-
-  // // 美食相关
-  // {
-  //   id: 'meituan_food_homepage',
-  //   name: '美食首页',
-  //   description: '打开美团美食首页',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/food/homepage',
-  //   examples: ['imeituan://www.meituan.com/food/homepage'],
-  // },
-  // {
-  //   id: 'meituan_food_mrn',
-  //   name: '美食 MRN 页面',
-  //   description: '打开美食 MRN 页面',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/food/home/mrn',
-  //   examples: ['imeituan://www.meituan.com/food/home/mrn'],
-  // },
-
-  // // 旅游相关
-  // {
-  //   id: 'meituan_travel_poi',
-  //   name: '旅游景点详情',
-  //   description: '打开旅游景点详情页面',
-  //   contributors: ['toFrankie'],
-  //   updatedAt: '2025-08-26T00:00:00Z',
-  //   urlSchemeTemplate: 'imeituan://www.meituan.com/travel/poi',
-  //   examples: ['imeituan://www.meituan.com/travel/poi'],
-  // },
   // {
   //   id: 'meituan_mtp_order_buy',
   //   name: '门票购买',

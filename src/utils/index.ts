@@ -31,13 +31,10 @@ export async function copyToClipboard(text: string) {
   }
 }
 
-export function debounce<A extends unknown[], R, T = unknown>(
-  func: (this: T, ...args: A) => R,
-  wait: number
-): (this: T, ...args: A) => void {
-  let timer: NodeJS.Timeout | null = null
-
-  return function (this: T, ...args: A) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export function debounce<T extends (...args: any[]) => any>(func: T, wait: number) {
+  let timer: ReturnType<typeof setTimeout> | null = null
+  return function (this: ThisParameterType<T>, ...args: Parameters<T>) {
     if (timer) clearTimeout(timer)
 
     timer = setTimeout(() => {

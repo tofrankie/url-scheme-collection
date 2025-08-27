@@ -341,3 +341,23 @@ MIT License
 - 添加配置文件：`clash://install-config?url={config_url}&name={config_name}`
 - ~~更新配置文件~~：`clash://update-config`（已失效）
 - ~~切换状态~~：`clash://toggle`（已失效）
+
+### Chrome
+
+- 可用列表：`chrome://chrome-urls`
+- 新标签页：`chrome://newtab`
+- 扩展程序：`chrome://extensions`
+- 书签管理器：`chrome://bookmarks`
+- 历史记录：`chrome://history`
+- 下载记录：`chrome://downloads`
+- 设置：`chrome://settings`
+- 设置-关于 Chrome：`chrome://settings/help`
+- Web 应用：`chrome://apps`
+- 调试：`chrome://inspect`
+- 实验性功能：`chrome://flags`
+- 版本信息：`chrome://version`
+- 新变化：`chrome://whats-new`
+- 崩溃报告：`chrome://crashes`
+- 系统诊断：`chrome://system`
+- 网络统计：`chrome://net-internals`
+- GPU 信息：`chrome://gpu`

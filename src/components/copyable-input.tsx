@@ -8,7 +8,7 @@ interface CopyableInputProps {
   onCopy?: () => void
 }
 
-export function CopyableInput({ value, onCopy }: CopyableInputProps) {
+export default function CopyableInput({ value, onCopy }: CopyableInputProps) {
   const [copied, setCopied] = useState(false)
 
   const handleCopy = async () => {

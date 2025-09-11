@@ -1,16 +1,16 @@
 import { Box, Text, Button, Stack, Label } from '@primer/react'
 import { AppsIcon } from '@primer/octicons-react'
 import type { UrlScheme } from '@/types'
-import { CopyableInput } from './copyable-input'
 import { CATEGORIES } from '@/constants'
 import { trackUrlSchemeCopy, trackUrlSchemeDetail } from '@/utils/track'
+import CopyableInput from './copyable-input'
 
 interface URLSchemeCardProps {
   scheme: UrlScheme
   onShowDetails?: (scheme: UrlScheme) => void
 }
 
-export function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
+export default function URLSchemeCard({ scheme, onShowDetails }: URLSchemeCardProps) {
   const category = CATEGORIES.find(c => c.id === scheme.category)
   const categoryName = category?.name || ''
 

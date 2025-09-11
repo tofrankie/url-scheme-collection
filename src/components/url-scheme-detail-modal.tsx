@@ -14,7 +14,7 @@ import {
 import { CalendarIcon, PeopleIcon } from '@primer/octicons-react'
 import type { UrlScheme } from '@/types'
 import { genUrlScheme } from '@/utils'
-import { CopyableInput } from './copyable-input'
+import CopyableInput from './copyable-input'
 import { CATEGORIES } from '@/constants'
 import { trackUrlSchemeCopy } from '@/utils/track'
 
@@ -23,7 +23,7 @@ interface URLSchemeDetailModalProps {
   onClose: () => void
 }
 
-export function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalProps) {
+export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetailModalProps) {
   const [slotValues, setSlotValues] = useState<Record<string, string>>({})
 
   const finalUrlScheme = useMemo(() => genUrlScheme(scheme, slotValues), [scheme, slotValues])

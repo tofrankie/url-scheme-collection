@@ -11,7 +11,7 @@ interface CategoriesProps {
   onCategoryChange: (categoryId?: CategoryId) => void
 }
 
-export function Categories({ categories, schemes, selectedCategory, onCategoryChange }: CategoriesProps) {
+export default function Categories({ categories, schemes, selectedCategory, onCategoryChange }: CategoriesProps) {
   const handleCategoryClick = (categoryId?: CategoryId) => {
     onCategoryChange(categoryId)
 

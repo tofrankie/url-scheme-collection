@@ -8,7 +8,7 @@ interface AppHeaderProps {
   onSearchChange: (query: string) => void
 }
 
-export function AppHeader({ searchQuery, onSearchChange }: AppHeaderProps) {
+export default function AppHeader({ searchQuery, onSearchChange }: AppHeaderProps) {
   const { colorMode, setColorMode } = useTheme()
 
   const toggleTheme = () => {

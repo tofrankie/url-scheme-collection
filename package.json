@@ -3,14 +3,14 @@
   "version": "0.0.1",
   "type": "module",
   "license": "MIT",
-  "author": "toFrankie <1426203851@qq.com>",
+  "author": "Frankie <1426203851@qq.com>",
   "repository": {
     "type": "git",
-    "url": "https://github.com/toFrankie/url-scheme-collection"
+    "url": "https://github.com/tofrankie/url-scheme-collection"
   },
-  "homepage": "https://github.com/toFrankie/url-scheme-collection",
+  "homepage": "https://github.com/tofrankie/url-scheme-collection",
   "bugs": {
-    "url": "https://github.com/toFrankie/url-scheme-collection/issues"
+    "url": "https://github.com/tofrankie/url-scheme-collection/issues"
   },
   "keywords": [
     "url-scheme",

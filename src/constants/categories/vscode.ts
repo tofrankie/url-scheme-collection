@@ -5,7 +5,7 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
     id: 'vscode-open-file-or-folder',
     name: '打开文件（夹）',
     description: '用 VS Code 打开指定文件（夹）',
-    contributors: ['toFrankie'],
+    contributors: ['tofrankie'],
     updatedAt: '2025-08-21T00:00:00Z',
     urlSchemeTemplate: 'vscode://file/{file_or_folder_path}',
     slots: [
@@ -26,7 +26,7 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
     id: 'vscode-open-file-line-column',
     name: '打开文件行列',
     description: '用 VS Code 打开指定文件行列',
-    contributors: ['toFrankie'],
+    contributors: ['tofrankie'],
     updatedAt: '2025-08-21T00:00:00Z',
     urlSchemeTemplate: 'vscode://file/{file_path}:{line}:{column}',
     slots: [
@@ -52,7 +52,7 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
     id: 'vscode-settings',
     name: '设置',
     description: '打开 VS Code 设置',
-    contributors: ['toFrankie'],
+    contributors: ['tofrankie'],
     updatedAt: '2025-08-21T00:00:00Z',
     urlSchemeTemplate: 'vscode://settings/{setting_id}',
     slots: [
@@ -68,7 +68,7 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
     id: 'vscode-open-extension',
     name: '扩展',
     description: '用 VS Code 打开指定扩展',
-    contributors: ['toFrankie'],
+    contributors: ['tofrankie'],
     updatedAt: '2025-08-21T00:00:00Z',
     urlSchemeTemplate: 'vscode:extension/{extension_id}',
     slots: [

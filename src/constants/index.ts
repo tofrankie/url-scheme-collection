@@ -1,6 +1,6 @@
 export * from './categories'
 
-export const GITHUB_REPO_URL = 'https://github.com/toFrankie/url-scheme-collection'
+export const GITHUB_REPO_URL = 'https://github.com/tofrankie/url-scheme-collection'
 
 export const GITHUB_ISSUES_URL = `${GITHUB_REPO_URL}/issues`
 

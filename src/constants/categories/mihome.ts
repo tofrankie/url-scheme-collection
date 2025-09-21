@@ -6,7 +6,7 @@ const MIHOME: UrlSchemeWithoutCategory[] = [
     id: 'mihome-specific-device',
     name: '设备主页',
     description: '打开米家指定设备主页',
-    contributors: ['toFrankie'],
+    contributors: ['tofrankie'],
     updatedAt: '2025-08-23T00:00:00Z',
     urlSchemeTemplate: 'mihome://device?uid={xiaomi_id}&did={device_id}',
     slots: [
@@ -27,7 +27,7 @@ const MIHOME: UrlSchemeWithoutCategory[] = [
     id: 'mihome-search-store',
     name: '搜索商品',
     description: '打开米家并在商城搜索商品',
-    contributors: ['toFrankie'],
+    contributors: ['tofrankie'],
     updatedAt: '2025-08-23T00:00:00Z',
     urlSchemeTemplate: 'mihome://searchstore?keyword={keyword}',
     slots: [

@@ -66,6 +66,17 @@ MIT License
 - App Store 账户设置：`itms-ui://`
 - Apple Store：`applestore://`
 
+### macOS
+
+- Mac App Store 探索：`macappstore://itunes.apple.com/discover`
+- Mac App Store 创作：`macappstore://itunes.apple.com/create`
+- Mac App Store 工作：`macappstore://itunes.apple.com/work`
+- Mac App Store 游戏：`macappstore://itunes.apple.com/play`
+- Mac App Store Arcade：`macappstore://itunes.apple.com/arcade`
+- Mac App Store 开发：`macappstore://itunes.apple.com/develop`
+- Mac App Store 类别：`macappstore://itunes.apple.com/categories`
+- Mac App Store 更新：`macappstore://itunes.apple.com/updates`
+
 ### 米家
 
 - 设备主页：`mihome://device?uid={xiaomi_id}&did={device_id}`

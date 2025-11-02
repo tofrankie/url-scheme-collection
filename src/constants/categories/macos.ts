@@ -1,0 +1,78 @@
+import type { UrlSchemeWithoutCategory } from '@/types'
+
+const MACOS: UrlSchemeWithoutCategory[] = [
+  {
+    id: 'macos-app-store-discover',
+    name: 'Mac App Store 探索',
+    description: '打开 Mac App Store 探索页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/discover',
+    examples: ['macappstore://itunes.apple.com/discover', 'itms-apps://itunes.apple.com/discover'],
+  },
+  {
+    id: 'macos-app-store-create',
+    name: 'Mac App Store 创作',
+    description: '打开 Mac App Store 创作页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/create',
+    examples: ['macappstore://itunes.apple.com/create', 'itms-apps://itunes.apple.com/create'],
+  },
+  {
+    id: 'macos-app-store-work',
+    name: 'Mac App Store 工作',
+    description: '打开 Mac App Store 工作页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/work',
+    examples: ['macappstore://itunes.apple.com/work', 'itms-apps://itunes.apple.com/work'],
+  },
+  {
+    id: 'macos-app-store-play',
+    name: 'Mac App Store 游戏',
+    description: '打开 Mac App Store 游戏页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/play',
+    examples: ['macappstore://itunes.apple.com/play', 'itms-apps://itunes.apple.com/play'],
+  },
+  {
+    id: 'macos-app-store-arcade',
+    name: 'Mac App Store Arcade',
+    description: '打开 Mac App Store Arcade 页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/arcade',
+    examples: ['macappstore://itunes.apple.com/arcade', 'itms-apps://itunes.apple.com/arcade'],
+  },
+  {
+    id: 'macos-app-store-develop',
+    name: 'Mac App Store 开发',
+    description: '打开 Mac App Store 开发页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/develop',
+    examples: ['macappstore://itunes.apple.com/develop', 'itms-apps://itunes.apple.com/develop'],
+  },
+  {
+    id: 'macos-app-store-categories',
+    name: 'Mac App Store 类别',
+    description: '打开 Mac App Store 类别页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/categories',
+    examples: ['macappstore://itunes.apple.com/categories', 'itms-apps://itunes.apple.com/categories'],
+  },
+  {
+    id: 'macos-app-store-updates',
+    name: 'Mac App Store 更新',
+    description: '打开 Mac App Store 更新页面',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-11-03T00:00:00Z',
+    urlSchemeTemplate: 'macappstore://itunes.apple.com/updates',
+    examples: ['macappstore://itunes.apple.com/updates', 'itms-apps://itunes.apple.com/updates'],
+  },
+]
+
+export default MACOS

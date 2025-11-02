@@ -1,6 +1,7 @@
 import type { UrlScheme, UrlSchemeWithoutCategory, Category } from '@/types'
 import APP_STORE from './app-store'
 import IOS from './ios'
+import MACOS from './macos'
 import MIHOME from './mihome'
 import XIAOHONGSHU from './xiaohongshu'
 import WECHAT from './wechat'
@@ -22,6 +23,7 @@ import CHROME from './chrome'
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
   IOS: 'ios',
+  MACOS: 'macos',
   MIHOME: 'mihome',
   XIAOHONGSHU: 'xiaohongshu',
   WECHAT: 'wechat',
@@ -54,6 +56,11 @@ export const CATEGORIES: Category[] = [
     name: 'iOS',
     description:
       'iOS 18.5+ 后 Apple 似乎严格限制偏好设置访问，类似 Prefs:root=General、App-prefs://、settings-navigation://com.apple.Settings.Apps 等已失效。',
+  },
+  {
+    id: CATEGORY_IDS.MACOS,
+    name: 'macOS',
+    description: 'macOS 相关 URL Scheme。',
   },
   {
     id: CATEGORY_IDS.MIHOME,
@@ -147,6 +154,7 @@ export const CATEGORIES: Category[] = [
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
   [CATEGORY_IDS.APP_STORE]: APP_STORE,
   [CATEGORY_IDS.IOS]: IOS,
+  [CATEGORY_IDS.MACOS]: MACOS,
   [CATEGORY_IDS.MIHOME]: MIHOME,
   [CATEGORY_IDS.XIAOHONGSHU]: XIAOHONGSHU,
   [CATEGORY_IDS.WECHAT]: WECHAT,

@@ -39,7 +39,7 @@ const JIANSHU: UrlSchemeWithoutCategory[] = [
     description: '打开简书文集',
     contributors: ['tofrankie'],
     updatedAt: '2025-08-08T00:00:00Z',
-    urlSchemeTemplate: 'jianshu://notebooks/45333472',
+    urlSchemeTemplate: 'jianshu://notebooks/{notebook_id}',
     slots: [
       {
         name: 'notebook_id',

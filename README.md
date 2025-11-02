@@ -335,7 +335,7 @@ MIT License
 
 - 文章：`jianshu://notes/{article_id}`
 - 专题：`jianshu://collections/{collection_id}`
-- 文集：`jianshu://notebooks/45333472`
+- 文集：`jianshu://notebooks/{notebook_id}`
 - 用户主页：`jianshu://users/{user_id}`
 
 ### VS Code

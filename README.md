@@ -20,11 +20,12 @@ MIT License
 ### 应用商店
 
 - App Store：`itms-apps://itunes.apple.com/{region}/app/{bundle_id}/id{apple_id}`
-- 小米应用商店：`https://app.mi.com/details?id={package_name}`
+- ~~小米应用商店~~：`https://app.mi.com/details?id={package_name}`（已失效）
 - 魅族应用商店：`market://details?id={package_name}`
 - OPPO 应用商店：`market://details?id={package_name}`
 - vivo 应用商店：`vivomarket://details?id={package_name}`
 - 华为应用市场：`appmarket://details?pkgname={package_name}`
+- HarmonyOS 应用市场：`hiapplink://com.huawei.appmarket?appId={app_id}`
 - 荣耀应用商店：`market://details?id={package_name}`
 - 三星应用商店：`samsungapps://ProductDetail/{package_name}`
 - 应用宝：`tmast://appdetails?pname={package_name}`

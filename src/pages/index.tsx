@@ -148,7 +148,17 @@ function App() {
                         <Blankslate.Description>请尝试调整搜索关键词或选择不同的分类</Blankslate.Description>
                       </Blankslate>
                     ) : (
-                      <Box sx={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 3 }}>
+                      <Box
+                        sx={{
+                          display: 'grid',
+                          gridTemplateColumns: 'repeat(3, 1fr)',
+                          gap: 3,
+                          '& > *': {
+                            minWidth: 0,
+                            width: '100%',
+                          },
+                        }}
+                      >
                         {displaySchemes.map((scheme: UrlScheme) => (
                           <URLSchemeCard key={scheme.id} scheme={scheme} onShowDetails={openDetail} />
                         ))}
@@ -186,6 +196,10 @@ function App() {
                             display: 'grid',
                             gridTemplateColumns: 'repeat(3, 1fr)',
                             gap: 3,
+                            '& > *': {
+                              minWidth: 0,
+                              width: '100%',
+                            },
                           }}
                         >
                           {categoryData.schemes.map((scheme: UrlScheme) => (

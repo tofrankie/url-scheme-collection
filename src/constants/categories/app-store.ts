@@ -31,9 +31,9 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
     id: 'app-store-xiaomi',
     name: '小米应用商店',
     description:
-      '打开小米应用商店指定应用，原 mimarket://details?id=<package_name> 已失效，唯有先通过浏览器打开再唤起应用商店',
+      '打开小米应用商店指定应用。原来的 mimarket://details?id={package_name} 已失效，现在可通过直投 2.0 https://dev.mi.com/xiaomihyperos/documentation/detail?pId=1729 方式唤起，但这种方式需要技术接入。除此之外，也可以通过浏览器打开 https://app.mi.com/details?id={package_name} 再唤起应用商店，但仅限小米系统浏览器，第三方浏览器可能会打开 Web 版的小米应用商店。',
     contributors: ['tofrankie'],
-    updatedAt: '2025-08-03T00:00:00Z',
+    updatedAt: '2025-12-12T00:00:00Z',
     urlSchemeTemplate: 'https://app.mi.com/details?id={package_name}',
     slots: [
       {
@@ -42,7 +42,8 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
         placeholder: 'com.tencent.mm',
       },
     ],
-    examples: ['https://app.mi.com/details?id=com.tencent.mm'],
+    examples: ['https://app.mi.com/details?id=com.tencent.mm', 'mimarket://details?id=com.tencent.mm'],
+    deprecated: true,
   },
   {
     id: 'app-store-meizu',
@@ -95,7 +96,7 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
   {
     id: 'app-store-huawei',
     name: '华为应用市场',
-    description: '打开华为应用商店指定应用',
+    description: '打开华为应用商店指定应用（Android）',
     contributors: ['tofrankie'],
     updatedAt: '2025-08-03T00:00:00Z',
     urlSchemeTemplate: 'appmarket://details?pkgname={package_name}',
@@ -107,6 +108,23 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
       },
     ],
     examples: ['appmarket://details?pkgname=com.tencent.mm'],
+  },
+  {
+    id: 'app-store-harmonyos',
+    name: 'HarmonyOS 应用市场',
+    description:
+      '打开 HarmonyOS 应用市场指定应用，更多：https://developer.huawei.com/consumer/cn/forum/topic/0201448086867860655',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-12-12T00:00:00Z',
+    urlSchemeTemplate: 'hiapplink://com.huawei.appmarket?appId={app_id}',
+    slots: [
+      {
+        name: 'app_id',
+        description: '应用的 ID。在 AppGallery Connect - 我的应用 - 应用信息处获取。',
+        placeholder: 'C100170981',
+      },
+    ],
+    examples: ['hiapplink://com.huawei.appmarket?appId=C100170981'],
   },
   {
     id: 'app-store-honor',

@@ -16,6 +16,7 @@ import QQMUSIC from './qqmusic'
 import XITU from './xitu'
 import JIANSHU from './jianshu'
 import VSCODE from './vscode'
+import CURSOR from './cursor'
 import RAYCAST from './raycast'
 import CLASHX from './clashx'
 import CHROME from './chrome'
@@ -39,6 +40,7 @@ export const CATEGORY_IDS = {
   XITU: 'xitu',
   JIANSHU: 'jianshu',
   VSCODE: 'vscode',
+  CURSOR: 'cursor',
   RAYCAST: 'raycast',
   CLASHX: 'clashx',
   CHROME: 'chrome',
@@ -136,6 +138,11 @@ export const CATEGORIES: Category[] = [
     description: '稳定版以 vscode:// 开头，预览版以 vscode-insiders:// 开头。',
   },
   {
+    id: CATEGORY_IDS.CURSOR,
+    name: 'Cursor',
+    description: '基本与 VS Code 相同，不同在于前缀是 cursor://。',
+  },
+  {
     id: CATEGORY_IDS.RAYCAST,
     name: 'Raycast',
     description: 'Raycast 相关 URL Scheme。',
@@ -176,6 +183,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.XITU]: XITU,
   [CATEGORY_IDS.JIANSHU]: JIANSHU,
   [CATEGORY_IDS.VSCODE]: VSCODE,
+  [CATEGORY_IDS.CURSOR]: CURSOR,
   [CATEGORY_IDS.RAYCAST]: RAYCAST,
   [CATEGORY_IDS.CLASHX]: CLASHX,
   [CATEGORY_IDS.CHROME]: CHROME,

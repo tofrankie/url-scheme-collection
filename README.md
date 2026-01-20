@@ -342,6 +342,14 @@
 - 设置：`vscode://settings/{setting_id}`
 - 扩展：`vscode:extension/{extension_id}`
 
+### Cursor
+
+- 打开文件（夹）：`cursor://file/{file_or_folder_path}`
+- 打开文件行列：`cursor://file/{file_path}:{line}:{column}`
+- 设置：`cursor://settings/{setting_id}`
+- 扩展：`cursor:extension/{extension_id}`
+- Cursor AI 设置：`cursor://settings/aisettings`
+
 ### Raycast
 
 - 撒花 🎉：`raycast://confetti`

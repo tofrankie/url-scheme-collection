@@ -19,6 +19,7 @@ import VSCODE from './vscode'
 import RAYCAST from './raycast'
 import CLASHX from './clashx'
 import CHROME from './chrome'
+import SLACK from './slack'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -41,6 +42,7 @@ export const CATEGORY_IDS = {
   RAYCAST: 'raycast',
   CLASHX: 'clashx',
   CHROME: 'chrome',
+  SLACK: 'slack',
 } as const
 
 export type CategoryId = (typeof CATEGORY_IDS)[keyof typeof CATEGORY_IDS]
@@ -149,6 +151,11 @@ export const CATEGORIES: Category[] = [
     description:
       '出于安全考虑，普通网页无法通过脚本访问 chrome:// 页面，只能在地址栏输入。开发 Chrome Extension 时可以使用 API chrome.runtime.openOptionsPage() 唤起。',
   },
+  {
+    id: CATEGORY_IDS.SLACK,
+    name: 'Slack',
+    description: 'Slack 相关 URL Scheme。',
+  },
 ] as const
 
 export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]> = {
@@ -172,6 +179,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.RAYCAST]: RAYCAST,
   [CATEGORY_IDS.CLASHX]: CLASHX,
   [CATEGORY_IDS.CHROME]: CHROME,
+  [CATEGORY_IDS.SLACK]: SLACK,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>

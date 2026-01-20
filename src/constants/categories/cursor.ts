@@ -89,6 +89,22 @@ const CURSOR: UrlSchemeWithoutCategory[] = [
     urlSchemeTemplate: 'cursor://settings/aisettings',
     examples: ['cursor://settings/aisettings'],
   },
+  {
+    id: 'cursor-create-chat-with-prompt',
+    name: '使用 Prompt 创建 Chat',
+    description: '使用指定 Prompt 创建 Chat。',
+    contributors: ['tofrankie'],
+    updatedAt: '2026-01-22T00:00:00Z',
+    urlSchemeTemplate: 'cursor://anysphere.cursor-deeplink/prompt?text={prompt}',
+    slots: [
+      {
+        name: 'prompt',
+        description: 'prompt text',
+        placeholder: 'Research+and+find+one+bug+in+this+codebase',
+      },
+    ],
+    examples: ['cursor://anysphere.cursor-deeplink/prompt?text=Research+and+find+one+bug+in+this+codebase'],
+  },
 ]
 
 export default CURSOR

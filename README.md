@@ -349,6 +349,7 @@
 - 设置：`cursor://settings/{setting_id}`
 - 扩展：`cursor:extension/{extension_id}`
 - Cursor AI 设置：`cursor://settings/aisettings`
+- 使用 Prompt 创建 Chat：`cursor://anysphere.cursor-deeplink/prompt?text={prompt}`
 
 ### Raycast
 

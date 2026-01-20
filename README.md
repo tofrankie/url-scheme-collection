@@ -374,6 +374,16 @@
 - 网络统计：`chrome://net-internals`
 - GPU 信息：`chrome://gpu`
 
+### Slack
+
+- 打开 Slack：`slack://open`
+- 打开 Slack 团队：`slack://open?team={team_id}`
+- 打开 Slack 频道：`slack://channel?team={team_id}&id={channel_id}`
+- 打开 Slack 对话：`slack://user?team={team_id}&id={user_id}`
+- 打开 Slack 应用主页：`slack://app?team={team_id}&id={app_id}`
+- 打开 Slack 文件：`slack://file?team={team_id}&id={file_id}`
+- 分享 Slack 文件：`slack://share-file?team={team_id}&id={file_id}`
+
 ## 📝 License
 
 MIT License

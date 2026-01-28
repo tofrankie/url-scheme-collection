@@ -350,6 +350,7 @@
 - 扩展：`cursor:extension/{extension_id}`
 - Cursor AI 设置：`cursor://settings/aisettings`
 - 使用 Prompt 创建 Chat：`cursor://anysphere.cursor-deeplink/prompt?text={prompt}`
+- 安装 MCP：`cursor://anysphere.cursor-deeplink/mcp/install?name={name}&config={config}`
 
 ### Raycast
 

@@ -1,4 +1,5 @@
 import type { UrlSchemeWithoutCategory } from '@/types'
+import { encode } from 'js-base64'
 
 const CURSOR: UrlSchemeWithoutCategory[] = [
   {
@@ -104,6 +105,39 @@ const CURSOR: UrlSchemeWithoutCategory[] = [
       },
     ],
     examples: ['cursor://anysphere.cursor-deeplink/prompt?text=Research+and+find+one+bug+in+this+codebase'],
+  },
+  {
+    id: 'cursor-install-mcp-server',
+    name: '安装 MCP',
+    description: '在 Cursor 中安装 MCP 服务器。',
+    contributors: ['tofrankie'],
+    updatedAt: '2026-01-28T00:00:00Z',
+    urlSchemeTemplate: 'cursor://anysphere.cursor-deeplink/mcp/install?name={name}&config={config}',
+    slots: [
+      {
+        name: 'name',
+        description: 'MCP 服务器名称',
+        placeholder: 'deepwiki',
+      },
+      {
+        name: 'config',
+        description:
+          'MCP 服务器配置。可以直接输入 JSON 字符串，也可以输入经过 JSON.stringify() 处理后再用 base64 编码后的字符串。',
+        placeholder: '{"url":"https://mcp.deepwiki.com/mcp"}',
+        transform: (inputValue: string) => {
+          try {
+            const json = JSON.parse(inputValue)
+            const jsonStr = JSON.stringify(json)
+            return encode(jsonStr)
+          } catch {
+            return inputValue
+          }
+        },
+      },
+    ],
+    examples: [
+      'cursor://anysphere.cursor-deeplink/mcp/install?name=deepwiki&config=eyJ1cmwiOiJodHRwczovL21jcC5kZWVwd2lraS5jb20vbWNwIn0=',
+    ],
   },
 ]
 

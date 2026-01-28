@@ -44,6 +44,7 @@
     "@tanstack/react-query": "^5.84.1",
     "@tanstack/react-query-devtools": "^5.84.1",
     "@vercel/analytics": "^1.5.0",
+    "js-base64": "^3.7.8",
     "react": "^19.1.1",
     "react-dom": "^19.1.1"
   },

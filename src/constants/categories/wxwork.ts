@@ -45,7 +45,8 @@ const WXWORK: UrlSchemeWithoutCategory[] = [
     slots: [
       {
         name: 'code',
-        description: '可根据文档通过接口获取 https://developer.work.weixin.qq.com/document/path/94345',
+        description:
+          '可根据文档通过接口获取 https://developer.work.weixin.qq.com/document/path/94345',
         placeholder: 'xxx',
       },
     ],

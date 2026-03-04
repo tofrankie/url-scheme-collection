@@ -1,22 +1,22 @@
-import { useMemo, useState } from 'react'
+import type { UrlScheme } from '@/types'
+import { CalendarIcon, PeopleIcon } from '@primer/octicons-react'
 import {
+  Avatar,
+  AvatarStack,
+  Dialog,
+  FormControl,
+  Heading,
+  Label,
+  RelativeTime,
+  Stack,
   Text,
   TextInput,
-  Heading,
-  Stack,
-  FormControl,
-  Label,
-  Dialog,
-  RelativeTime,
-  AvatarStack,
-  Avatar,
 } from '@primer/react'
-import { CalendarIcon, PeopleIcon } from '@primer/octicons-react'
-import type { UrlScheme } from '@/types'
-import { genUrlScheme } from '@/utils'
-import CopyableInput from './copyable-input'
+import { useMemo, useState } from 'react'
 import { CATEGORIES } from '@/constants'
+import { genUrlScheme } from '@/utils'
 import { trackUrlSchemeCopy } from '@/utils/track'
+import CopyableInput from './copyable-input'
 
 interface URLSchemeDetailModalProps {
   scheme: UrlScheme
@@ -52,7 +52,9 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
   }
 
   const missSlotNames = scheme.slots?.filter(slot => !slotValues[slot.name]).map(slot => slot.name)
-  const exampleVisible = Boolean(scheme.examples?.length && (scheme.examples.length > 1 || scheme.slots?.length))
+  const exampleVisible = Boolean(
+    scheme.examples?.length && (scheme.examples.length > 1 || scheme.slots?.length)
+  )
 
   return (
     <Dialog
@@ -72,7 +74,9 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
       sx={{ zIndex: 1000 }}
     >
       <Stack>
-        {scheme.description && <Text sx={{ color: 'fg.muted', fontSize: 1 }}>{scheme.description}</Text>}
+        {scheme.description && (
+          <Text sx={{ color: 'fg.muted', fontSize: 1 }}>{scheme.description}</Text>
+        )}
 
         {scheme.slots && scheme.slots.length > 0 && (
           <>
@@ -84,10 +88,14 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
                   <TextInput
                     placeholder={`如 ${slot.placeholder}`}
                     value={slotValue}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSlotChange(slot.name, e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+                      handleSlotChange(slot.name, e.target.value)
+                    }
                     block
                   />
-                  <FormControl.Caption sx={{ wordBreak: 'break-all' }}>{slot.description}</FormControl.Caption>
+                  <FormControl.Caption sx={{ wordBreak: 'break-all' }}>
+                    {slot.description}
+                  </FormControl.Caption>
                 </FormControl>
               )
             })}
@@ -111,14 +119,19 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
               示例
             </Heading>
             <Stack direction="vertical" spacing={2}>
-              {scheme.examples?.map((example, index) => (
-                <CopyableInput key={index} value={example} />
+              {scheme.examples?.map(example => (
+                <CopyableInput key={example} value={example} />
               ))}
             </Stack>
           </Stack>
         )}
 
-        <Stack direction="horizontal" align="center" gap="condensed" sx={{ color: 'fg.muted', fontSize: 1 }}>
+        <Stack
+          direction="horizontal"
+          align="center"
+          gap="condensed"
+          sx={{ color: 'fg.muted', fontSize: 1 }}
+        >
           <PeopleIcon />
           <Text>Contributed by</Text>
           <AvatarStack>
@@ -134,7 +147,12 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
           </AvatarStack>
         </Stack>
 
-        <Stack direction="horizontal" align="center" gap="condensed" sx={{ color: 'fg.muted', fontSize: 1 }}>
+        <Stack
+          direction="horizontal"
+          align="center"
+          gap="condensed"
+          sx={{ color: 'fg.muted', fontSize: 1 }}
+        >
           <CalendarIcon />
           <Text>
             Updated at <RelativeTime date={new Date(scheme.updatedAt)} />

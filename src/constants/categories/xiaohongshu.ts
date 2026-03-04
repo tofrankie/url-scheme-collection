@@ -29,7 +29,10 @@ const XIAOHONGSHU: UrlSchemeWithoutCategory[] = [
       //   placeholder: 'normal',
       // },
     ],
-    examples: ['xhsdiscover://item/6879e557000000000d01a0da', 'xhsdiscover://item/discovery.6879e557000000000d01a0da'],
+    examples: [
+      'xhsdiscover://item/6879e557000000000d01a0da',
+      'xhsdiscover://item/discovery.6879e557000000000d01a0da',
+    ],
   },
   {
     id: 'xiaohongshu-video-feed',

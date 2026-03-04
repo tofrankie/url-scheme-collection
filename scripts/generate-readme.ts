@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
-import path from 'node:path'
 import fs from 'node:fs/promises'
+import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const __filename = fileURLToPath(import.meta.url)
@@ -69,7 +69,7 @@ function generateMarkdownContent() {
       const schemeName = scheme.deprecated ? `~~${scheme.name}~~` : scheme.name
       let item = `${schemeName}：\`${scheme.urlSchemeTemplate}\``
       if (scheme.deprecated) {
-        item += `（已失效）`
+        item += '（已失效）'
       }
       content += `- ${item}\n`
     })

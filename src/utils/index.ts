@@ -31,7 +31,6 @@ export async function copyToClipboard(text: string) {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function debounce<T extends (...args: any[]) => any>(func: T, wait: number) {
   let timer: ReturnType<typeof setTimeout> | null = null
   return function (this: ThisParameterType<T>, ...args: Parameters<T>) {

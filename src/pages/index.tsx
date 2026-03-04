@@ -1,11 +1,11 @@
-import { useState, useMemo } from 'react'
-import { Box, Text, Stack, CounterLabel, Link, Heading, PageHeader } from '@primer/react'
-import { Blankslate } from '@primer/react/experimental'
-import { AppHeader, Categories, URLSchemeCard, URLSchemeDetailModal } from '@/components'
-import { URL_SCHEMES, CATEGORIES, GITHUB_REPO_URL } from '@/constants'
-import type { UrlScheme, Category } from '@/types'
 import type { CategoryId } from '@/constants'
+import type { Category, UrlScheme } from '@/types'
 import { SearchIcon } from '@primer/octicons-react'
+import { Box, CounterLabel, Heading, Link, PageHeader, Stack, Text } from '@primer/react'
+import { Blankslate } from '@primer/react/experimental'
+import { useMemo, useState } from 'react'
+import { AppHeader, Categories, URLSchemeCard, URLSchemeDetailModal } from '@/components'
+import { CATEGORIES, GITHUB_REPO_URL, URL_SCHEMES } from '@/constants'
 
 interface CategoryWithSchemes extends Category {
   schemes: UrlScheme[]
@@ -69,7 +69,9 @@ function App() {
     window.scrollTo({ top: 0, behavior: 'smooth' })
   }
 
-  const displaySchemes = selectedCategory ? groupedSchemes[selectedCategory].schemes : filteredSchemes
+  const displaySchemes = selectedCategory
+    ? groupedSchemes[selectedCategory].schemes
+    : filteredSchemes
 
   return (
     <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
@@ -122,12 +124,21 @@ function App() {
                   <PageHeader.Description sx={{ color: 'fg.muted' }}>
                     <span>
                       主流应用的 URL Scheme
-                      虽然网上不难找到，但总是零零散散的。我只是把它们尽可能地聚合在一起，仅此而已。 欢迎提交{' '}
-                      <Link href={GITHUB_REPO_URL} target="_blank" style={{ fontWeight: 'semibold' }}>
+                      虽然网上不难找到，但总是零零散散的。我只是把它们尽可能地聚合在一起，仅此而已。
+                      欢迎提交{' '}
+                      <Link
+                        href={GITHUB_REPO_URL}
+                        target="_blank"
+                        style={{ fontWeight: 'semibold' }}
+                      >
                         PR 📢
                       </Link>{' '}
                       一起完善它，如果觉得有用也欢迎点个{' '}
-                      <Link href={GITHUB_REPO_URL} target="_blank" style={{ fontWeight: 'semibold' }}>
+                      <Link
+                        href={GITHUB_REPO_URL}
+                        target="_blank"
+                        style={{ fontWeight: 'semibold' }}
+                      >
                         Star ⭐
                       </Link>
                       ，谢谢！
@@ -145,7 +156,9 @@ function App() {
                           <SearchIcon size="medium" />
                         </Blankslate.Visual>
                         <Blankslate.Heading>暂无可用 URL Scheme</Blankslate.Heading>
-                        <Blankslate.Description>请尝试调整搜索关键词或选择不同的分类</Blankslate.Description>
+                        <Blankslate.Description>
+                          请尝试调整搜索关键词或选择不同的分类
+                        </Blankslate.Description>
                       </Blankslate>
                     ) : (
                       <Box
@@ -160,54 +173,66 @@ function App() {
                         }}
                       >
                         {displaySchemes.map((scheme: UrlScheme) => (
-                          <URLSchemeCard key={scheme.id} scheme={scheme} onShowDetails={openDetail} />
+                          <URLSchemeCard
+                            key={scheme.id}
+                            scheme={scheme}
+                            onShowDetails={openDetail}
+                          />
                         ))}
                       </Box>
                     )}
                   </>
                 ) : (
                   <Stack direction="vertical" spacing={6}>
-                    {Object.entries(groupedSchemes).map(([categoryId, categoryData]: [string, CategoryWithSchemes]) => (
-                      <Stack key={categoryId}>
-                        <Box
-                          sx={{
-                            position: 'sticky',
-                            top: 0,
-                            zIndex: 10,
-                            bg: 'canvas.default',
-                            py: 3,
-                            borderBottom: '1px solid',
-                            borderColor: 'border.subtle',
-                            backdropFilter: 'blur(8px)',
-                          }}
-                        >
-                          <Stack direction="horizontal" align="center" gap="condensed">
-                            <Heading as="h2" sx={{ fontSize: 3 }}>
-                              {categoryData.name}
-                            </Heading>
-                            <CounterLabel>{categoryData.schemes.length}</CounterLabel>
-                          </Stack>
-                        </Box>
+                    {Object.entries(groupedSchemes).map(
+                      ([categoryId, categoryData]: [string, CategoryWithSchemes]) => (
+                        <Stack key={categoryId}>
+                          <Box
+                            sx={{
+                              position: 'sticky',
+                              top: 0,
+                              zIndex: 10,
+                              bg: 'canvas.default',
+                              py: 3,
+                              borderBottom: '1px solid',
+                              borderColor: 'border.subtle',
+                              backdropFilter: 'blur(8px)',
+                            }}
+                          >
+                            <Stack direction="horizontal" align="center" gap="condensed">
+                              <Heading as="h2" sx={{ fontSize: 3 }}>
+                                {categoryData.name}
+                              </Heading>
+                              <CounterLabel>{categoryData.schemes.length}</CounterLabel>
+                            </Stack>
+                          </Box>
 
-                        <Text sx={{ color: 'fg.muted', fontSize: 1 }}>{categoryData.description}</Text>
+                          <Text sx={{ color: 'fg.muted', fontSize: 1 }}>
+                            {categoryData.description}
+                          </Text>
 
-                        <Box
-                          sx={{
-                            display: 'grid',
-                            gridTemplateColumns: 'repeat(3, 1fr)',
-                            gap: 3,
-                            '& > *': {
-                              minWidth: 0,
-                              width: '100%',
-                            },
-                          }}
-                        >
-                          {categoryData.schemes.map((scheme: UrlScheme) => (
-                            <URLSchemeCard key={scheme.id} scheme={scheme} onShowDetails={openDetail} />
-                          ))}
-                        </Box>
-                      </Stack>
-                    ))}
+                          <Box
+                            sx={{
+                              display: 'grid',
+                              gridTemplateColumns: 'repeat(3, 1fr)',
+                              gap: 3,
+                              '& > *': {
+                                minWidth: 0,
+                                width: '100%',
+                              },
+                            }}
+                          >
+                            {categoryData.schemes.map((scheme: UrlScheme) => (
+                              <URLSchemeCard
+                                key={scheme.id}
+                                scheme={scheme}
+                                onShowDetails={openDetail}
+                              />
+                            ))}
+                          </Box>
+                        </Stack>
+                      )
+                    )}
                   </Stack>
                 )}
               </Box>
@@ -216,7 +241,9 @@ function App() {
         </Box>
       </Box>
 
-      {selectedUrlScheme && open && <URLSchemeDetailModal scheme={selectedUrlScheme} onClose={handleCloseModal} />}
+      {selectedUrlScheme && open && (
+        <URLSchemeDetailModal scheme={selectedUrlScheme} onClose={handleCloseModal} />
+      )}
     </Box>
   )
 }

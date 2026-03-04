@@ -1,26 +1,26 @@
-import type { UrlScheme, UrlSchemeWithoutCategory, Category } from '@/types'
-import APP_STORE from './app-store'
-import IOS from './ios'
-import MACOS from './macos'
-import MIHOME from './mihome'
-import XIAOHONGSHU from './xiaohongshu'
-import WECHAT from './wechat'
-import WXWORK from './wxwork'
-import WEIBO from './weibo'
-import ZHIHU from './zhihu'
+import type { Category, UrlScheme, UrlSchemeWithoutCategory } from '@/types'
 import ALIPAY from './alipay'
-import DOUYIN from './douyin'
-import TAOBAO from './taobao'
-import MEITUAN from './meituan'
-import QQMUSIC from './qqmusic'
-import XITU from './xitu'
-import JIANSHU from './jianshu'
-import VSCODE from './vscode'
-import CURSOR from './cursor'
-import RAYCAST from './raycast'
-import CLASHX from './clashx'
+import APP_STORE from './app-store'
 import CHROME from './chrome'
+import CLASHX from './clashx'
+import CURSOR from './cursor'
+import DOUYIN from './douyin'
+import IOS from './ios'
+import JIANSHU from './jianshu'
+import MACOS from './macos'
+import MEITUAN from './meituan'
+import MIHOME from './mihome'
+import QQMUSIC from './qqmusic'
+import RAYCAST from './raycast'
 import SLACK from './slack'
+import TAOBAO from './taobao'
+import VSCODE from './vscode'
+import WECHAT from './wechat'
+import WEIBO from './weibo'
+import WXWORK from './wxwork'
+import XIAOHONGSHU from './xiaohongshu'
+import XITU from './xitu'
+import ZHIHU from './zhihu'
 
 export const CATEGORY_IDS = {
   APP_STORE: 'app_store',
@@ -105,7 +105,8 @@ export const CATEGORIES: Category[] = [
   {
     id: CATEGORY_IDS.DOUYIN,
     name: '抖音',
-    description: '抖音以 snssdk1128:// 开头，抖音极速版以 snssdk2329:// 开头，TikTok 以 snssdk1233:// 开头。',
+    description:
+      '抖音以 snssdk1128:// 开头，抖音极速版以 snssdk2329:// 开头，TikTok 以 snssdk1233:// 开头。',
   },
   {
     id: CATEGORY_IDS.TAOBAO,
@@ -190,9 +191,10 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.SLACK]: SLACK,
 } as const
 
-export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(([categoryId, schemes]) =>
-  schemes.map(scheme => ({
-    ...scheme,
-    category: categoryId as CategoryId,
-  }))
+export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(
+  ([categoryId, schemes]) =>
+    schemes.map(scheme => ({
+      ...scheme,
+      category: categoryId as CategoryId,
+    }))
 )

@@ -1,5 +1,6 @@
+import type { EventName, EventParams } from '@/constants/events'
 import { track } from '@vercel/analytics'
-import { type EventName, type EventParams, EVENT_NAMES } from '@/constants/events'
+import { EVENT_NAMES } from '@/constants/events'
 import { debounce } from './index'
 
 export function trackEvent<T extends EventName>(eventName: T, data: EventParams<T>): void {
@@ -22,6 +23,7 @@ export function trackEvent<T extends EventName>(eventName: T, data: EventParams<
 
 /**
  * 搜索事件
+ * @param data
  */
 export function trackSearch(data: EventParams<'search'>): void {
   trackEvent(EVENT_NAMES.SEARCH, data)
@@ -41,6 +43,7 @@ export function trackFeedback(): void {
 
 /**
  * 主题切换事件
+ * @param data
  */
 export function trackThemeToggle(data: EventParams<'theme_toggle'>): void {
   trackEvent(EVENT_NAMES.THEME_TOGGLE, data)
@@ -55,6 +58,7 @@ export function trackGithubHomepage(): void {
 
 /**
  * 分类导航事件
+ * @param data
  */
 export function trackCategoryNav(data: EventParams<'category_nav'>): void {
   trackEvent(EVENT_NAMES.CATEGORY_NAV, data)
@@ -62,6 +66,7 @@ export function trackCategoryNav(data: EventParams<'category_nav'>): void {
 
 /**
  * URL Scheme 复制事件
+ * @param data
  */
 export function trackUrlSchemeCopy(data: EventParams<'url_scheme_copy'>): void {
   trackEvent(EVENT_NAMES.URL_SCHEME_COPY, data)
@@ -69,6 +74,7 @@ export function trackUrlSchemeCopy(data: EventParams<'url_scheme_copy'>): void {
 
 /**
  * URL Scheme 详情查看事件
+ * @param data
  */
 export function trackUrlSchemeDetail(data: EventParams<'url_scheme_detail'>): void {
   trackEvent(EVENT_NAMES.URL_SCHEME_DETAIL, data)
@@ -76,6 +82,7 @@ export function trackUrlSchemeDetail(data: EventParams<'url_scheme_detail'>): vo
 
 /**
  * URL Scheme 启动事件
+ * @param data
  */
 export function trackUrlSchemeLaunch(data: EventParams<'url_scheme_launch'>): void {
   trackEvent(EVENT_NAMES.URL_SCHEME_LAUNCH, data)

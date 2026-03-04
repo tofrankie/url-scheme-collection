@@ -1,6 +1,6 @@
+import { CheckIcon, CopyIcon } from '@primer/octicons-react'
+import { IconButton, Stack, TextInput } from '@primer/react'
 import { useState } from 'react'
-import { TextInput, IconButton, Stack } from '@primer/react'
-import { CopyIcon, CheckIcon } from '@primer/octicons-react'
 import { copyToClipboard } from '@/utils'
 
 interface CopyableInputProps {

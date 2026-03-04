@@ -26,6 +26,7 @@ dist-ssr
 
 # Build cache
 .eslintcache
+.stylelintcache
 
 # Vercel
 .vercel

@@ -1,6 +1,6 @@
-import { Box, Text, Button, Stack, Label } from '@primer/react'
-import { AppsIcon } from '@primer/octicons-react'
 import type { UrlScheme } from '@/types'
+import { AppsIcon } from '@primer/octicons-react'
+import { Box, Button, Label, Stack, Text } from '@primer/react'
 import { CATEGORIES } from '@/constants'
 import { trackUrlSchemeCopy, trackUrlSchemeDetail } from '@/utils/track'
 import CopyableInput from './copyable-input'

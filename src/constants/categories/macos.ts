@@ -62,7 +62,10 @@ const MACOS: UrlSchemeWithoutCategory[] = [
     contributors: ['tofrankie'],
     updatedAt: '2025-11-03T00:00:00Z',
     urlSchemeTemplate: 'macappstore://itunes.apple.com/categories',
-    examples: ['macappstore://itunes.apple.com/categories', 'itms-apps://itunes.apple.com/categories'],
+    examples: [
+      'macappstore://itunes.apple.com/categories',
+      'itms-apps://itunes.apple.com/categories',
+    ],
   },
   {
     id: 'macos-app-store-updates',

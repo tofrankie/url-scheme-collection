@@ -1,9 +1,12 @@
+import baseOptions from '@tofrankie/prettier'
+import htmlOptions from '@tofrankie/prettier/options/sort-html'
+
 export default {
-  semi: false,
-  singleQuote: true,
-  tabWidth: 2,
-  trailingComma: 'es5',
-  printWidth: 120,
-  bracketSpacing: true,
-  arrowParens: 'avoid',
+  ...baseOptions,
+  overrides: [
+    {
+      files: ['*.html'],
+      options: htmlOptions,
+    },
+  ],
 }

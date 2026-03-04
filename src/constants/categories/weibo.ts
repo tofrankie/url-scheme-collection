@@ -210,7 +210,10 @@ const WEIBO: UrlSchemeWithoutCategory[] = [
         placeholder: 'Hi~',
       },
     ],
-    examples: ['sinaweibo://messagelist?uid=2759906397', 'sinaweibo://messagelist?uid=2759906397&content=Hi~'],
+    examples: [
+      'sinaweibo://messagelist?uid=2759906397',
+      'sinaweibo://messagelist?uid=2759906397&content=Hi~',
+    ],
   },
   {
     id: 'weibo-groupchat',

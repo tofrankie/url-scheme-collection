@@ -1,7 +1,7 @@
-import React from 'react'
-import { Text, NavList, CounterLabel, Stack } from '@primer/react'
-import type { Category, UrlScheme } from '@/types'
 import type { CategoryId } from '@/constants'
+import type { Category, UrlScheme } from '@/types'
+import { CounterLabel, NavList, Stack, Text } from '@primer/react'
+import * as React from 'react'
 import { trackCategoryNav } from '@/utils/track'
 
 interface CategoriesProps {
@@ -11,7 +11,12 @@ interface CategoriesProps {
   onCategoryChange: (categoryId?: CategoryId) => void
 }
 
-export default function Categories({ categories, schemes, selectedCategory, onCategoryChange }: CategoriesProps) {
+export default function Categories({
+  categories,
+  schemes,
+  selectedCategory,
+  onCategoryChange,
+}: CategoriesProps) {
   const handleCategoryClick = (categoryId?: CategoryId) => {
     onCategoryChange(categoryId)
 

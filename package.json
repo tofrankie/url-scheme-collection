@@ -1,71 +1,64 @@
 {
   "name": "url-scheme-collection",
-  "version": "0.0.1",
   "type": "module",
-  "license": "MIT",
+  "version": "0.0.1",
+  "packageManager": "pnpm@10.28.0",
   "author": "Frankie <1426203851@qq.com>",
+  "license": "MIT",
+  "homepage": "https://github.com/tofrankie/url-scheme-collection",
   "repository": {
     "type": "git",
     "url": "https://github.com/tofrankie/url-scheme-collection"
   },
-  "homepage": "https://github.com/tofrankie/url-scheme-collection",
   "bugs": {
     "url": "https://github.com/tofrankie/url-scheme-collection/issues"
   },
   "keywords": [
+    "frankie",
+    "tofrankie",
     "url-scheme",
     "url-scheme-collection"
   ],
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "lint": "run-p lint:*",
+    "lint": "run-s lint:*",
     "lint:eslint": "eslint . --fix --cache",
-    "lint:prettier": "prettier . --write --cache",
+    "lint:prettier": "prettier . --write --cache --log-level silent",
+    "lint:stylelint": "stylelint 'src/**/*.css' --cache --fix",
     "preview": "vite preview",
     "deploy": "vercel --prod",
     "deploy:preview": "vercel",
     "generate:readme": "tsx scripts/generate-readme.ts"
   },
-  "lint-staged": {
-    "*.{js,jsx,ts,tsx}": [
-      "eslint --fix",
-      "prettier --write"
-    ],
-    "*.{json,md}": [
-      "prettier --write"
-    ]
-  },
   "dependencies": {
-    "@primer/css": "^22.0.2",
-    "@primer/octicons-react": "^19.15.5",
-    "@primer/primitives": "^11.0.0",
+    "@primer/css": "^22.1.0",
+    "@primer/octicons-react": "^19.22.0",
+    "@primer/primitives": "^11.5.1",
     "@primer/react": "^37.30.0",
-    "@tanstack/react-query": "^5.84.1",
-    "@tanstack/react-query-devtools": "^5.84.1",
-    "@vercel/analytics": "^1.5.0",
+    "@tanstack/react-query": "^5.90.21",
+    "@tanstack/react-query-devtools": "^5.91.3",
+    "@vercel/analytics": "^1.6.1",
     "js-base64": "^3.7.8",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1"
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@eslint/js": "^9.32.0",
-    "@types/node": "^24.3.0",
-    "@types/react": "^19.1.9",
-    "@types/react-dom": "^19.1.7",
+    "@tofrankie/eslint": "^0.0.10",
+    "@tofrankie/prettier": "^0.0.5",
+    "@tofrankie/stylelint": "^0.0.5",
+    "@types/node": "^24.11.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^9.32.0",
-    "eslint-plugin-react-hooks": "^5.2.0",
-    "eslint-plugin-react-refresh": "^0.4.20",
-    "globals": "^16.3.0",
+    "eslint": "^9.39.3",
     "husky": "^9.1.7",
-    "lint-staged": "^16.1.2",
+    "lint-staged": "^16.3.2",
     "npm-run-all2": "^8.0.4",
     "prettier": "^3.6.2",
-    "tsx": "^4.20.4",
-    "typescript": "~5.8.3",
-    "typescript-eslint": "^8.38.0",
-    "vite": "^7.0.6"
-  },
-  "packageManager": "pnpm@10.6.3+sha512.bb45e34d50a9a76e858a95837301bfb6bd6d35aea2c5d52094fa497a467c43f5c440103ce2511e9e0a2f89c3d6071baac3358fc68ac6fb75e2ceb3d2736065e6"
+    "stylelint": "^17.4.0",
+    "tsx": "^4.21.0",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1"
+  }
 }

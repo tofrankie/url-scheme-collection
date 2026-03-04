@@ -197,7 +197,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
 ```
 
 > [!TIP]
-> 页面分类导航是按照 `CATEGORIES` 顺序展示的，编写代码时，分类的 `import` 语句、`CATEGORY_IDS` 和 `CATEGORY_SCHEMES_MAP` 的 `key` 顺序应与 `CATEGORIES` 保持一致。
+> 页面分类导航是按照 `CATEGORIES` 顺序展示的，编写代码时，分类的 `CATEGORY_IDS` 和 `CATEGORY_SCHEMES_MAP` 的 `key` 顺序应与 `CATEGORIES` 保持一致。
 
 ### 🔄 更新 URL Scheme
 

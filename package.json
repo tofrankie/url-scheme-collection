@@ -23,8 +23,8 @@
     "dev": "vite",
     "build": "tsc -b && vite build",
     "lint": "run-s lint:*",
-    "lint:eslint": "eslint . --fix --cache",
-    "lint:prettier": "prettier . --write --cache --log-level silent",
+    "lint:eslint": "eslint . --cache --fix",
+    "lint:prettier": "prettier . --cache --write --log-level silent",
     "lint:stylelint": "stylelint 'src/**/*.css' --cache --fix",
     "preview": "vite preview",
     "deploy": "vercel --prod",
@@ -44,21 +44,21 @@
     "react-dom": "^19.2.4"
   },
   "devDependencies": {
-    "@tofrankie/eslint": "^0.0.10",
+    "@tofrankie/eslint": "^0.0.13",
     "@tofrankie/prettier": "^0.0.5",
-    "@tofrankie/stylelint": "^0.0.5",
-    "@types/node": "^24.11.0",
+    "@tofrankie/stylelint": "^0.0.6",
+    "@types/node": "^25.5.0",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
-    "@vitejs/plugin-react": "^4.7.0",
-    "eslint": "^9.39.3",
+    "@vitejs/plugin-react": "^6.0.1",
+    "eslint": "^9.39.4",
     "husky": "^9.1.7",
-    "lint-staged": "^16.3.2",
+    "lint-staged": "^16.3.3",
     "npm-run-all2": "^8.0.4",
-    "prettier": "^3.6.2",
+    "prettier": "^3.8.1",
     "stylelint": "^17.4.0",
     "tsx": "^4.21.0",
     "typescript": "^5.9.3",
-    "vite": "^7.3.1"
+    "vite": "^8.0.0"
   }
 }

@@ -139,10 +139,7 @@ const TAOBAO: UrlSchemeWithoutCategory[] = [
         placeholder: 'adererror',
       },
     ],
-    examples: [
-      'taobao://s.taobao.com/search?q=adererror',
-      'taobao://s.m.taobao.com/search.htm?q=adererror',
-    ],
+    examples: ['taobao://s.taobao.com/search?q=adererror', 'taobao://s.m.taobao.com/search.htm?q=adererror'],
   },
   {
     id: 'taobao-tusou-capture',

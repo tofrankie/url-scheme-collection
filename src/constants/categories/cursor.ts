@@ -84,8 +84,7 @@ const CURSOR: UrlSchemeWithoutCategory[] = [
   {
     id: 'cursor-settings-ai-settings',
     name: 'Cursor AI 设置',
-    description:
-      '用 Cursor 打开 AI 设置。可以在命令面板输入 Cursor Settings 进入 Cursor Full Settings 页面。',
+    description: '用 Cursor 打开 AI 设置。可以在命令面板输入 Cursor Settings 进入 Cursor Full Settings 页面。',
     contributors: ['tofrankie'],
     updatedAt: '2026-01-22T00:00:00Z',
     urlSchemeTemplate: 'cursor://settings/aisettings',
@@ -105,9 +104,7 @@ const CURSOR: UrlSchemeWithoutCategory[] = [
         placeholder: 'Research+and+find+one+bug+in+this+codebase',
       },
     ],
-    examples: [
-      'cursor://anysphere.cursor-deeplink/prompt?text=Research+and+find+one+bug+in+this+codebase',
-    ],
+    examples: ['cursor://anysphere.cursor-deeplink/prompt?text=Research+and+find+one+bug+in+this+codebase'],
   },
   {
     id: 'cursor-install-mcp-server',

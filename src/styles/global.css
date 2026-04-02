@@ -1,5 +1,5 @@
-@import url(@primer/primitives/dist/css/functional/themes/light.css);
-@import url(@primer/css/dist/primer.css);
+@import url('@primer/primitives/dist/css/functional/themes/light.css');
+@import url('@primer/css/dist/primer.css');
 
 /* stylelint-disable-next-line selector-id-pattern */
 #__primerPortalRoot__ {

@@ -1,12 +1,7 @@
 import { CommentIcon, MarkGithubIcon, MoonIcon, SearchIcon, SunIcon } from '@primer/octicons-react'
 import { Box, Button, IconButton, PageHeader, Stack, TextInput, useTheme } from '@primer/react'
 import { GITHUB_ISSUES_URL, GITHUB_REPO_URL, STORAGE_KEYS } from '@/constants'
-import {
-  debouncedTrackSearch,
-  trackFeedback,
-  trackGithubHomepage,
-  trackThemeToggle,
-} from '@/utils/track'
+import { debouncedTrackSearch, trackFeedback, trackGithubHomepage, trackThemeToggle } from '@/utils/track'
 
 interface AppHeaderProps {
   searchQuery: string

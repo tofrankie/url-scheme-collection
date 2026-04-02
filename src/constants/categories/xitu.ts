@@ -95,11 +95,8 @@ const XITU: UrlSchemeWithoutCategory[] = [
     description: '打开稀土掘金课程 Tab',
     contributors: ['tofrankie'],
     updatedAt: '2025-08-06T00:00:00Z',
-    urlSchemeTemplate:
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D',
-    examples: [
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D',
-    ],
+    urlSchemeTemplate: 'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D',
+    examples: ['snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fcourse%22%7D'],
   },
   {
     id: 'xitu-book',
@@ -145,11 +142,8 @@ const XITU: UrlSchemeWithoutCategory[] = [
     description: '打开稀土掘金沸点 Tab',
     contributors: ['tofrankie'],
     updatedAt: '2025-08-08T00:00:00Z',
-    urlSchemeTemplate:
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D',
-    examples: [
-      'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D',
-    ],
+    urlSchemeTemplate: 'snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D',
+    examples: ['snssdk2606://?zlink_data=%7B%22redirecturl%22%3A%22https%3A%2F%2Fjuejin.cn%2Fpins%22%7D'],
   },
   {
     id: 'xitu-pin',

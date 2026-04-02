@@ -52,9 +52,7 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
   }
 
   const missSlotNames = scheme.slots?.filter(slot => !slotValues[slot.name]).map(slot => slot.name)
-  const exampleVisible = Boolean(
-    scheme.examples?.length && (scheme.examples.length > 1 || scheme.slots?.length)
-  )
+  const exampleVisible = Boolean(scheme.examples?.length && (scheme.examples.length > 1 || scheme.slots?.length))
 
   return (
     <Dialog
@@ -74,9 +72,7 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
       sx={{ zIndex: 1000 }}
     >
       <Stack>
-        {scheme.description && (
-          <Text sx={{ color: 'fg.muted', fontSize: 1 }}>{scheme.description}</Text>
-        )}
+        {scheme.description && <Text sx={{ color: 'fg.muted', fontSize: 1 }}>{scheme.description}</Text>}
 
         {scheme.slots && scheme.slots.length > 0 && (
           <>
@@ -88,14 +84,10 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
                   <TextInput
                     placeholder={`如 ${slot.placeholder}`}
                     value={slotValue}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                      handleSlotChange(slot.name, e.target.value)
-                    }
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => handleSlotChange(slot.name, e.target.value)}
                     block
                   />
-                  <FormControl.Caption sx={{ wordBreak: 'break-all' }}>
-                    {slot.description}
-                  </FormControl.Caption>
+                  <FormControl.Caption sx={{ wordBreak: 'break-all' }}>{slot.description}</FormControl.Caption>
                 </FormControl>
               )
             })}
@@ -126,12 +118,7 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
           </Stack>
         )}
 
-        <Stack
-          direction="horizontal"
-          align="center"
-          gap="condensed"
-          sx={{ color: 'fg.muted', fontSize: 1 }}
-        >
+        <Stack direction="horizontal" align="center" gap="condensed" sx={{ color: 'fg.muted', fontSize: 1 }}>
           <PeopleIcon />
           <Text>Contributed by</Text>
           <AvatarStack>
@@ -147,12 +134,7 @@ export default function URLSchemeDetailModal({ scheme, onClose }: URLSchemeDetai
           </AvatarStack>
         </Stack>
 
-        <Stack
-          direction="horizontal"
-          align="center"
-          gap="condensed"
-          sx={{ color: 'fg.muted', fontSize: 1 }}
-        >
+        <Stack direction="horizontal" align="center" gap="condensed" sx={{ color: 'fg.muted', fontSize: 1 }}>
           <CalendarIcon />
           <Text>
             Updated at <RelativeTime date={new Date(scheme.updatedAt)} />

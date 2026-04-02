@@ -43,10 +43,7 @@ const DOUYIN: UrlSchemeWithoutCategory[] = [
         placeholder: 'homepage_hot',
       },
     ],
-    examples: [
-      'snssdk1128://land_tab?tabid=homepage_hot',
-      'snssdk1128://land_tab?tabid=homepage_follow',
-    ],
+    examples: ['snssdk1128://land_tab?tabid=homepage_hot', 'snssdk1128://land_tab?tabid=homepage_follow'],
   },
   {
     id: 'douyin-search',

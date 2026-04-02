@@ -148,8 +148,7 @@ const IOS: UrlSchemeWithoutCategory[] = [
     slots: [
       {
         name: 'playlist_id',
-        description:
-          '播放列表 ID。在播放列表，点击右上角，选择分享播放列表并拷贝，URL 中 pl. 后面的便是播放列表 ID',
+        description: '播放列表 ID。在播放列表，点击右上角，选择分享播放列表并拷贝，URL 中 pl. 后面的便是播放列表 ID',
         placeholder: 'u-xlyNEdkuoB7rMak',
       },
     ],

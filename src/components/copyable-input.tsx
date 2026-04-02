@@ -15,7 +15,7 @@ export default function CopyableInput({ value, onCopy }: CopyableInputProps) {
     const success = await copyToClipboard(value)
     if (success) {
       setCopied(true)
-      setTimeout(() => setCopied(false), 2000)
+      setTimeout(setCopied, 2000, false)
 
       onCopy?.()
     }

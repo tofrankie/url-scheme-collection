@@ -63,10 +63,7 @@ export type ValidateURLSchemes<T extends readonly UrlScheme[]> = {
   [K in keyof T]: T[K] extends { category: CategoryId } ? T[K] : never
 }
 
-export type ValidateUniqueIds<T extends readonly UrlScheme[]> = T extends readonly [
-  infer First,
-  ...infer Rest,
-]
+export type ValidateUniqueIds<T extends readonly UrlScheme[]> = T extends readonly [infer First, ...infer Rest]
   ? First extends UrlScheme
     ? Rest extends readonly UrlScheme[]
       ? First['id'] extends Rest[number]['id']

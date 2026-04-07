@@ -1,12 +1,11 @@
-import baseOptions from '@tofrankie/prettier'
-import htmlOptions from '@tofrankie/prettier/options/sort-html'
+import { base, html } from '@tofrankie/prettier'
 
 export default {
-  ...baseOptions,
+  ...base,
   overrides: [
     {
       files: ['*.html'],
-      options: htmlOptions,
+      options: html,
     },
   ],
 }

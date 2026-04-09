@@ -35,7 +35,8 @@ const RAYCAST: UrlSchemeWithoutCategory[] = [
   {
     id: 'raycast-run-extension-command',
     name: '执行扩展命令',
-    description: '在 Raycast 执行指定扩展的指定命令。可在指定命令的 Action Panel 选择 Copy Deeplink 获取。',
+    description:
+      '在 Raycast 执行指定扩展的指定命令。可在指定命令的 Action Panel 选择 Copy Deeplink 获取。',
     contributors: ['tofrankie'],
     updatedAt: '2025-08-22T00:00:00Z',
     urlSchemeTemplate: 'raycast://extensions/{author_or_owner_id}/{extension_name}/{command_name}',

@@ -42,7 +42,10 @@ const APP_STORE: UrlSchemeWithoutCategory[] = [
         placeholder: 'com.tencent.mm',
       },
     ],
-    examples: ['https://app.mi.com/details?id=com.tencent.mm', 'mimarket://details?id=com.tencent.mm'],
+    examples: [
+      'https://app.mi.com/details?id=com.tencent.mm',
+      'mimarket://details?id=com.tencent.mm',
+    ],
     deprecated: true,
   },
   {

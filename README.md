@@ -341,6 +341,8 @@
 - 打开文件行列：`vscode://file/{file_path}:{line}:{column}`
 - 设置：`vscode://settings/{setting_id}`
 - 扩展：`vscode:extension/{extension_id}`
+- 安装 MCP：`vscode:mcp/by-name/{server_name}`
+- 安装 MCP：`vscode:mcp/install?{mcp_config}`
 
 ### Cursor
 

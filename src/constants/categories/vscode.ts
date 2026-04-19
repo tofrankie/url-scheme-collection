@@ -75,10 +75,55 @@ const VSCODE: UrlSchemeWithoutCategory[] = [
       {
         name: 'extension_id',
         description: '扩展 ID',
-        placeholder: 'Frankie.github-blogger',
+        placeholder: 'frankie.github-blogger',
       },
     ],
-    examples: ['vscode:extension/Frankie.github-blogger'],
+    examples: ['vscode:extension/frankie.github-blogger'],
+  },
+  {
+    id: 'vscode-install-mcp-by-name',
+    name: '安装 MCP',
+    description: '用 VS Code 安装指定 MCP（通过 MCP 服务名称）',
+    contributors: ['tofrankie'],
+    updatedAt: '2026-04-19T00:00:00Z',
+    urlSchemeTemplate: 'vscode:mcp/by-name/{server_name}',
+    slots: [
+      {
+        name: 'server_name',
+        description:
+          'MCP 服务器名称，可以在 https://github.com/mcp 搜索指定 MCP 通过控制台获取其 MCP ID',
+        placeholder: 'microsoft/markitdown',
+      },
+    ],
+    examples: ['vscode:mcp/by-name/microsoft/markitdown'],
+  },
+  {
+    id: 'vscode-install-mcp-by-config',
+    name: '安装 MCP',
+    description: '用 VS Code 安装指定 MCP（通过配置）',
+    contributors: ['tofrankie'],
+    updatedAt: '2025-08-21T00:00:00Z',
+    urlSchemeTemplate: 'vscode:mcp/install?{mcp_config}',
+    slots: [
+      {
+        name: 'mcp_config',
+        description:
+          'MCP 配置。可以直接输入 JSON 字符串，也可以输入经过 JSON.stringify() 处理后再用 base64 编码后的字符串。',
+        placeholder: '{"name":"Raycast API","url":"https://developers.raycast.com/~gitbook/mcp"}',
+        transform: (inputValue: string) => {
+          try {
+            const json = JSON.parse(inputValue)
+            const jsonStr = JSON.stringify(json)
+            return encodeURIComponent(jsonStr)
+          } catch {
+            return inputValue
+          }
+        },
+      },
+    ],
+    examples: [
+      'vscode:mcp/install?%7B%22name%22%3A%22Raycast%20API%22%2C%22url%22%3A%22https%3A%2F%2Fdevelopers.raycast.com%2F~gitbook%2Fmcp%22%7D',
+    ],
   },
 ]
 

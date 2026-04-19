@@ -76,7 +76,7 @@ const CURSOR: UrlSchemeWithoutCategory[] = [
       {
         name: 'extension_id',
         description: '扩展 ID',
-        placeholder: 'Frankie.github-blogger',
+        placeholder: 'frankie.github-blogger',
       },
     ],
     examples: ['cursor:extension/frankie.github-blogger'],

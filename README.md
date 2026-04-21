@@ -376,6 +376,7 @@
 - 下载记录：`chrome://downloads`
 - 设置：`chrome://settings`
 - 设置-关于 Chrome：`chrome://settings/help`
+- Chrome Skills：`chrome://skills/browse`
 - Web 应用：`chrome://apps`
 - 调试：`chrome://inspect`
 - 实验性功能：`chrome://flags`
@@ -398,4 +399,4 @@
 
 ## 📝 License
 
-MIT License
+[MIT](./LICENSE) License © [Frankie](https://github.com/tofrankie)

@@ -17,4 +17,4 @@
 
 ## 📝 License
 
-MIT License
+[MIT](./LICENSE) License © [Frankie](https://github.com/tofrankie)

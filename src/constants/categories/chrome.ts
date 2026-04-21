@@ -74,6 +74,15 @@ const CHROME: UrlSchemeWithoutCategory[] = [
     examples: ['chrome://settings/help'],
   },
   {
+    id: 'chrome-skills-browse',
+    name: 'Chrome Skills',
+    description: '打开 Chrome Skills',
+    contributors: ['tofrankie'],
+    updatedAt: '2026-04-21T00:00:00Z',
+    urlSchemeTemplate: 'chrome://skills/browse',
+    examples: ['chrome://skills/browse'],
+  },
+  {
     id: 'chrome-apps',
     name: 'Web 应用',
     description: '打开 Chrome 安装的 Web 应用',

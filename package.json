@@ -29,7 +29,8 @@
     "preview": "vite preview",
     "deploy": "vercel --prod",
     "deploy:preview": "vercel",
-    "generate:readme": "tsx scripts/generate-readme.ts"
+    "generate:readme": "tsx scripts/generate-readme.ts",
+    "prepare": "husky"
   },
   "dependencies": {
     "@primer/css": "^22.1.1",
@@ -44,6 +45,8 @@
     "react-dom": "^19.2.5"
   },
   "devDependencies": {
+    "@commitlint/cli": "^20.5.0",
+    "@tofrankie/commitlint": "^0.0.6",
     "@tofrankie/eslint": "^0.2.1",
     "@tofrankie/prettier": "^0.2.0",
     "@tofrankie/stylelint": "^0.2.0",

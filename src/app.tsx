@@ -4,7 +4,7 @@ import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Analytics } from '@vercel/analytics/react'
 import { StrictMode } from 'react'
 import { STORAGE_KEYS } from '@/constants'
-import Index from '@/pages/index.tsx'
+import Index from '@/pages/index'
 
 import '@/styles/global.css'
 

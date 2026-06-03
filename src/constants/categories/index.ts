@@ -146,7 +146,7 @@ export const CATEGORIES: Category[] = [
   {
     id: CATEGORY_IDS.RAYCAST,
     name: 'Raycast',
-    description: 'Raycast 相关 URL Scheme。',
+    description: 'Raycast 相关 URL Scheme。Raycast v2 的 URL Scheme 以 raycast-x:// 开头。',
   },
   {
     id: CATEGORY_IDS.CLASHX,

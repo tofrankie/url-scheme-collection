@@ -41,6 +41,7 @@
     "@tanstack/react-query-devtools": "^5.101.0",
     "@vercel/analytics": "^1.6.1",
     "js-base64": "^3.7.8",
+    "path-browserify": "^1.0.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7"
   },
@@ -52,6 +53,7 @@
     "@tofrankie/stylelint": "^0.3.0",
     "@tofrankie/tsconfig": "^0.2.0",
     "@types/node": "^25.9.1",
+    "@types/path-browserify": "^1.0.3",
     "@types/react": "^19.2.16",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",

@@ -10,6 +10,7 @@ import JIANSHU from './jianshu'
 import MACOS from './macos'
 import MEITUAN from './meituan'
 import MIHOME from './mihome'
+import OBSIDIAN from './obsidian'
 import QQMUSIC from './qqmusic'
 import RAYCAST from './raycast'
 import SLACK from './slack'
@@ -41,6 +42,7 @@ export const CATEGORY_IDS = {
   JIANSHU: 'jianshu',
   VSCODE: 'vscode',
   CURSOR: 'cursor',
+  OBSIDIAN: 'obsidian',
   RAYCAST: 'raycast',
   CLASHX: 'clashx',
   CHROME: 'chrome',
@@ -144,6 +146,11 @@ export const CATEGORIES: Category[] = [
     description: '基本与 VS Code 相同，不同在于前缀是 cursor://。',
   },
   {
+    id: CATEGORY_IDS.OBSIDIAN,
+    name: 'Obsidian',
+    description: 'Obsidian 相关 URL Scheme。',
+  },
+  {
     id: CATEGORY_IDS.RAYCAST,
     name: 'Raycast',
     description: 'Raycast 相关 URL Scheme。Raycast v2 的 URL Scheme 以 raycast-x:// 开头。',
@@ -185,6 +192,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.JIANSHU]: JIANSHU,
   [CATEGORY_IDS.VSCODE]: VSCODE,
   [CATEGORY_IDS.CURSOR]: CURSOR,
+  [CATEGORY_IDS.OBSIDIAN]: OBSIDIAN,
   [CATEGORY_IDS.RAYCAST]: RAYCAST,
   [CATEGORY_IDS.CLASHX]: CLASHX,
   [CATEGORY_IDS.CHROME]: CHROME,

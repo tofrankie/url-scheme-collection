@@ -2,6 +2,7 @@
   "name": "url-scheme-collection",
   "type": "module",
   "version": "0.0.1",
+  "private": true,
   "packageManager": "pnpm@10.28.0",
   "author": "Frankie <1426203851@qq.com>",
   "license": "MIT",

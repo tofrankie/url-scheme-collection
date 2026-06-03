@@ -354,6 +354,13 @@
 - 使用 Prompt 创建 Chat：`cursor://anysphere.cursor-deeplink/prompt?text={prompt}`
 - 安装 MCP：`cursor://anysphere.cursor-deeplink/mcp/install?name={name}&config={config}`
 
+### Obsidian
+
+- 打开 Obsidian Vault：`obsidian://open?vault={vault_name_or_id}`
+- 打开 Obsidian Vault 文件（相对路径）：`obsidian://open?vault={vault_name_or_id}&file={file_relative_path}`
+- 打开 Obsidian Vault 文件（绝对路径）：`obsidian://open?path={file_absolute_path}`
+- 创建 Obsidian 笔记：`obsidian://new?vault={vault_name_or_id}&file={file_relative_path}`
+
 ### Raycast
 
 - 撒花 🎉：`raycast://confetti`

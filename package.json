@@ -34,7 +34,6 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@primer/css": "^22.2.0",
     "@primer/octicons-react": "^19.28.0",
     "@primer/primitives": "^11.9.0",
     "@primer/react": "^37.30.0",

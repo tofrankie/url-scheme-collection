@@ -74,7 +74,14 @@ function App() {
     : filteredSchemes
 
   return (
-    <Box sx={{ height: '100vh', display: 'flex', flexDirection: 'column' }}>
+    <Box
+      sx={{
+        height: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        backgroundColor: 'var(--bgColor-default)',
+      }}
+    >
       <AppHeader searchQuery={searchQuery} onSearchChange={setSearchQuery} />
 
       <Box

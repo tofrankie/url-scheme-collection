@@ -34,7 +34,7 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@primer/octicons-react": "^19.28.0",
+    "@primer/octicons-react": "^19.28.1",
     "@primer/primitives": "^11.9.0",
     "@primer/react": "^37.30.0",
     "@tanstack/react-query": "^5.101.0",
@@ -48,13 +48,13 @@
   "devDependencies": {
     "@commitlint/cli": "^21.0.2",
     "@tofrankie/commitlint": "^0.0.6",
-    "@tofrankie/eslint": "^0.3.1",
+    "@tofrankie/eslint": "^0.4.0",
     "@tofrankie/prettier": "^0.2.0",
     "@tofrankie/stylelint": "^0.3.0",
-    "@tofrankie/tsconfig": "^0.2.0",
-    "@types/node": "^25.9.1",
+    "@tofrankie/tsconfig": "^0.2.1",
+    "@types/node": "^25.9.2",
     "@types/path-browserify": "^1.0.3",
-    "@types/react": "^19.2.16",
+    "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "@vitejs/plugin-react": "^6.0.2",
     "eslint": "^10.4.1",
@@ -62,7 +62,7 @@
     "lint-staged": "^17.0.7",
     "npm-run-all2": "^9.0.1",
     "prettier": "^3.8.3",
-    "stylelint": "^17.12.0",
+    "stylelint": "^17.13.0",
     "tsx": "^4.22.4",
     "typescript": "^5.9.3",
     "vite": "^8.0.16"

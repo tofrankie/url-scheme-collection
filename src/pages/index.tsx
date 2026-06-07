@@ -120,7 +120,7 @@ function App() {
               <PageHeader>
                 <PageHeader.TitleArea>
                   <PageHeader.Title sx={{ fontSize: 4 }}>
-                    {selectedCategory ? groupedSchemes[selectedCategory].name : '👋 Hey~'}
+                    {selectedCategory ? groupedSchemes[selectedCategory].name : '👋'}
                   </PageHeader.Title>
                 </PageHeader.TitleArea>
                 {selectedCategory ? (
@@ -130,8 +130,8 @@ function App() {
                 ) : (
                   <PageHeader.Description sx={{ color: 'fg.muted' }}>
                     <span>
-                      主流应用的 URL Scheme
-                      虽然网上不难找到，但总是零零散散的。我只是把它们尽可能地聚合在一起，仅此而已。欢迎提交{' '}
+                      应用的 URL Scheme
+                      虽然不难找到，但总是零零散散的，这里将它们尽可能地聚合在一起，方便查找和使用。欢迎提交{' '}
                       <Link
                         href={GITHUB_REPO_URL}
                         target="_blank"

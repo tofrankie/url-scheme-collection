@@ -373,6 +373,19 @@
 - ~~更新配置文件~~：`clash://update-config`（已失效）
 - ~~切换状态~~：`clash://toggle`（已失效）
 
+### Shadowrocket
+
+- 打开 VPN 开关：`shadowrocket://connect`
+- 关闭 VPN 开关：`shadowrocket://disconnect`
+- 切换 VPN 开关：`shadowrocket://toggle`
+- 连通性测试：`shadowrocket://connectivity-test`
+- 添加订阅节点：`shadowrocket://add/sub://{url}?remark={remark}`
+- 更新订阅：`shadowrocket://update-subs`
+- 切换全局路由 - 代理：`shadowrocket://route/proxy`
+- 切换全局路由 - 配置：`shadowrocket://route/config`
+- 切换全局路由 - 直连：`shadowrocket://route/direct`
+- 切换全局路由 - 场景：`shadowrocket://route/scene`
+
 ### Chrome
 
 - 可用列表：`chrome://chrome-urls`

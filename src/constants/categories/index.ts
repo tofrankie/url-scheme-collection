@@ -13,6 +13,7 @@ import MIHOME from './mihome'
 import OBSIDIAN from './obsidian'
 import QQMUSIC from './qqmusic'
 import RAYCAST from './raycast'
+import SHADOWROCKET from './shadowrocket'
 import SLACK from './slack'
 import TAOBAO from './taobao'
 import VSCODE from './vscode'
@@ -45,6 +46,7 @@ export const CATEGORY_IDS = {
   OBSIDIAN: 'obsidian',
   RAYCAST: 'raycast',
   CLASHX: 'clashx',
+  SHADOWROCKET: 'shadowrocket',
   CHROME: 'chrome',
   SLACK: 'slack',
 } as const
@@ -161,6 +163,11 @@ export const CATEGORIES: Category[] = [
     description: 'ClashX 相关 URL Scheme。',
   },
   {
+    id: CATEGORY_IDS.SHADOWROCKET,
+    name: 'Shadowrocket',
+    description: 'Shadowrocket 相关 URL Scheme，以 shadowrocket:// 开头',
+  },
+  {
     id: CATEGORY_IDS.CHROME,
     name: 'Chrome',
     description:
@@ -197,6 +204,7 @@ export const CATEGORY_SCHEMES_MAP: Record<CategoryId, UrlSchemeWithoutCategory[]
   [CATEGORY_IDS.CLASHX]: CLASHX,
   [CATEGORY_IDS.CHROME]: CHROME,
   [CATEGORY_IDS.SLACK]: SLACK,
+  [CATEGORY_IDS.SHADOWROCKET]: SHADOWROCKET,
 } as const
 
 export const URL_SCHEMES: UrlScheme[] = Object.entries(CATEGORY_SCHEMES_MAP).flatMap(
